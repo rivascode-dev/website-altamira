@@ -1,0 +1,25 @@
+
+> altamira@0.1.0 build D:\devProjects\websites\altamira
+> next build
+
+Ôû▓ Next.js 16.2.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 9.0s
+  Running TypeScript ...
+  Finished TypeScript in 8.6s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+  Generating static pages using 5 workers (1/4) 
+  Generating static pages using 5 workers (2/4) 
+  Generating static pages using 5 workers (3/4) 
+Ô£ô Generating static pages using 5 workers (4/4) in 1283ms
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî Ôùï /
+Ôöö Ôùï /_not-found
+
+
+Ôùï  (Static)  prerendered as static content
+

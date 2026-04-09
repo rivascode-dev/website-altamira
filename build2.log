@@ -1,0 +1,16 @@
+Ôû▓ Next.js 16.2.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.4s
+  Running TypeScript ...
+  Finished TypeScript in 4.8s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Attempted to call the default export of [project]/node_modules/.pnpm/@mui+material@9.0.0_@emotio_95896d20ac349591eb59814cab0df443/node_modules/@mui/material/styles/useTheme.mjs from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at <unknown> (D:\devProjects\websites\altamira\.next\server\chunks\ssr\_0z2ajz6._.js:1:14035)
+    at A (D:\devProjects\websites\altamira\.next\server\chunks\ssr\_0z2ajz6._.js:1:23609) {
+  digest: '786067755'
+}
+Export encountered an error on /page: /, exiting the build.
+Ô¿» Next.js build worker exited with code: 1 and signal: null

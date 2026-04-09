@@ -1,0 +1,28 @@
+
+> altamira@0.1.0 build D:\devProjects\websites\altamira
+> next build
+
+Ôû▓ Next.js 16.2.2 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.5s
+  Running TypeScript ...
+Failed to type check.
+
+./src/sections/home/AboutUsSection.tsx:10:12
+Type error: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element; item: true; xs: number; md: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element; item: true; xs: number; md: number; }' is not assignable to type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+      Property 'item' does not exist on type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+
+   8 |       <Container maxWidth="lg">
+   9 |         <Grid container spacing={8} sx={{ alignItems: 'center' }}>
+> 10 |           <Grid item xs={12} md={6}>
+     |            ^
+  11 |             <Box sx={{ position: 'relative' }}>
+  12 |               <Box
+  13 |                 sx={{
+Next.js build worker exited with code: 1 and signal: null
+ÔÇëELIFECYCLEÔÇë Command failed with exit code 1.

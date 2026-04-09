@@ -1,0 +1,411 @@
+src/components/Footer.tsx(13,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; mb: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/components/Footer.tsx(20,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Footer.tsx(30,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "caption"; fontWeight: number; color: "primary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; display: string; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "caption"; fontWeight: number; color: "primary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; display: string; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Footer.tsx(65,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "caption"; fontWeight: number; color: "primary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; display: string; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "caption"; fontWeight: number; color: "primary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; display: string; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Footer.tsx(68,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; spacing: number; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; spacing: number; mb: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/components/Footer.tsx(79,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "caption"; color: "text.secondary"; fontStyle: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "caption"; color: "text.secondary"; fontStyle: string; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontStyle' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Footer.tsx(86,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: (string | number)[]; variant: "caption"; color: "text.secondary"; display: string; textAlign: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: (string | number)[]; variant: "caption"; color: "text.secondary"; display: string; textAlign: string; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'display' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Header.tsx(32,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: (false | Element)[]; direction: "row"; justifyContent: string; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: (false | Element)[]; direction: "row"; justifyContent: string; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'justifyContent' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/components/Header.tsx(33,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/components/Header.tsx(40,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h6"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h6"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Header.tsx(46,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: (Element | Element[])[]; direction: "row"; spacing: number; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: (Element | Element[])[]; direction: "row"; spacing: number; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/components/Header.tsx(52,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Type '{ children: string; key: string; component: "a"; href: string; onClick: (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => void; fontWeight: number; sx: { ...; }; }' is not assignable to type 'IntrinsicAttributes & { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; key: string; component: string; href: string; onClick: (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => void; fontWeight: number; sx: { ...; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'component' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/Header.tsx(68,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Type '{ children: string; component: "a"; href: string; onClick: (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => void; fontWeight: number; sx: { ...; }; }' is not assignable to type 'IntrinsicAttributes & { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & { component: "a"; } & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 9 more ... | "variantMapping">'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; component: string; href: string; onClick: (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => void; fontWeight: number; sx: { ...; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'component' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/components/SectionWrapper.tsx(18,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Omit<MotionComponentProps<DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>>, "children"> & { ...; }, context?: any): string | ... 8 more ... | undefined', gave the following error.
+    Type '{ children: ReactNode; ref?: Ref<unknown> | undefined; sx?: SxProps<Theme> | undefined; className?: string | undefined; style?: CSSProperties | undefined; ... 282 more ...; transition: { ...; }; }' is not assignable to type 'Omit<MotionComponentProps<DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>>, "children">'.
+      Types of property 'onDrag' are incompatible.
+        Type 'DragEventHandler<HTMLDivElement> | undefined' is not assignable to type '((event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void) | undefined'.
+          Type 'DragEventHandler<HTMLDivElement>' is not assignable to type '(event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void'.
+            Types of parameters 'event' and 'event' are incompatible.
+              Type 'MouseEvent | TouchEvent | PointerEvent' is not assignable to type 'DragEvent<HTMLDivElement>'.
+                Type 'MouseEvent' is missing the following properties from type 'DragEvent<HTMLDivElement>': dataTransfer, nativeEvent, isDefaultPrevented, isPropagationStopped, persist
+  Overload 2 of 2, '(props: Omit<MotionComponentProps<DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>>, "children"> & { ...; }): string | ... 8 more ... | undefined', gave the following error.
+    Type '{ children: ReactNode; ref?: Ref<unknown> | undefined; sx?: SxProps<Theme> | undefined; className?: string | undefined; style?: CSSProperties | undefined; ... 282 more ...; transition: { ...; }; }' is not assignable to type 'Omit<MotionComponentProps<DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>>, "children">'.
+      Types of property 'onDrag' are incompatible.
+        Type 'DragEventHandler<HTMLDivElement> | undefined' is not assignable to type '((event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void) | undefined'.
+          Type 'DragEventHandler<HTMLDivElement>' is not assignable to type '(event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void'.
+            Types of parameters 'event' and 'event' are incompatible.
+              Type 'MouseEvent | TouchEvent | PointerEvent' is not assignable to type 'DragEvent<HTMLDivElement>'.
+                Type 'MouseEvent' is missing the following properties from type 'DragEvent<HTMLDivElement>': dataTransfer, nativeEvent, isDefaultPrevented, isPropagationStopped, persist
+src/layout/Footer.tsx(11,30): error TS2307: Cannot find module '@/data/contact' or its corresponding type declarations.
+src/layout/Footer.tsx(17,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; container: true; spacing: number; justifyContent: string; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; container: true; spacing: number; justifyContent: string; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+      Property 'justifyContent' does not exist on type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+src/layout/Footer.tsx(40,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: any; direction: "row"; spacing: number; justifyContent: { xs: string; md: string; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: any; direction: "row"; spacing: number; justifyContent: { xs: string; md: string; }; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'justifyContent' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/layout/Footer.tsx(45,32): error TS7006: Parameter 'social' implicitly has an 'any' type.
+src/layout/Footer.tsx(45,40): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/layout/Navbar.tsx(20,30): error TS2307: Cannot find module '@/data/contact' or its corresponding type declarations.
+src/layout/Navbar.tsx(90,17): error TS2322: Type '{ primary: string; primaryTypographyProps: { fontWeight: number; fontSize: string; }; }' is not assignable to type 'IntrinsicAttributes & ListItemTextProps<"span", "p">'.
+  Property 'primaryTypographyProps' does not exist on type 'IntrinsicAttributes & ListItemTextProps<"span", "p">'.
+src/layout/Navbar.tsx(111,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: any; direction: "row"; spacing: number; justifyContent: string; sx: { mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: any; direction: "row"; spacing: number; justifyContent: string; sx: { mb: number; }; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'justifyContent' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/layout/Navbar.tsx(112,28): error TS7006: Parameter 'social' implicitly has an 'any' type.
+src/layout/Navbar.tsx(112,36): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/layout/Navbar.tsx(135,11): error TS2322: Type '{ secondary: string; secondaryTypographyProps: { variant: string; color: string; }; }' is not assignable to type 'IntrinsicAttributes & ListItemTextProps<"span", "p">'.
+  Property 'secondaryTypographyProps' does not exist on type 'IntrinsicAttributes & ListItemTextProps<"span", "p">'.
+src/layout/Navbar.tsx(223,9): error TS2322: Type '{ children: Element; anchor: "right"; open: boolean; onClose: (event: KeyboardEvent<Element> | MouseEvent<Element, MouseEvent>) => void; PaperProps: { ...; }; }' is not assignable to type 'IntrinsicAttributes & DrawerProps'.
+  Property 'PaperProps' does not exist on type 'IntrinsicAttributes & DrawerProps'.
+src/sections/home/AboutUsSection.tsx(9,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; container: true; spacing: number; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; container: true; spacing: number; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+src/sections/home/AboutUsSection.tsx(44,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "secondary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "secondary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/AboutUsSection.tsx(47,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "white"; textTransform: string; letterSpacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "white"; textTransform: string; letterSpacing: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/AboutUsSection.tsx(54,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/AboutUsSection.tsx(57,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; lineHeight: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; lineHeight: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/AboutUsSection.tsx(60,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; lineHeight: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; lineHeight: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/AboutUsSection.tsx(73,20): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/AboutUsSection.tsx(75,22): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ComplementaryServicesSection.tsx(11,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; textAlign: string; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; textAlign: string; mb: number; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'textAlign' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/ComplementaryServicesSection.tsx(12,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ComplementaryServicesSection.tsx(15,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ComplementaryServicesSection.tsx(18,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; color: "text.secondary"; maxWidth: number; mx: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; color: "text.secondary"; maxWidth: number; mx: string; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'maxWidth' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ComplementaryServicesSection.tsx(72,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h5"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h5"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/DifferentiatorSection.tsx(11,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'textAlign' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/EmergencyBannerSection.tsx(9,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: { xs: "column"; md: "row"; }; alignItems: string; justifyContent: string; spacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: { xs: "column"; md: "row"; }; alignItems: string; justifyContent: string; spacing: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/EmergencyBannerSection.tsx(15,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/GallerySection.tsx(17,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'textAlign' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/HowWeWorkSection.tsx(10,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; textAlign: string; sx: { mb: number; }; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'textAlign' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/ProblemSection.tsx(17,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; container: true; spacing: number; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; container: true; spacing: number; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & GridBaseProps & { sx?: SxProps<Theme> | undefined; } & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "sx" | keyof GridBaseProps>'.
+src/sections/home/ProblemSection.tsx(35,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; key: number; direction: "row"; alignItems: string; spacing: number; sx: { '&:hover .icon-box': { bgcolor: "secondary.main"; }; '&:hover .icon-svg': { color: "white"; }; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; key: number; direction: "row"; alignItems: string; spacing: number; sx: { '&:hover .icon-box': { bgcolor: "secondary.main"; }; '&:hover .icon-svg': { color: "white"; }; }; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/ProblemSection.tsx(78,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; direction: "row"; alignItems: string; spacing: number; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/QuoteSection.tsx(1,34): error TS2724: '"@mui/material"' has no exported member named 'Grid2'. Did you mean 'Grid'?
+src/sections/home/QuoteSection.tsx(2,22): error TS2307: Cannot find module '@mui/icons-material' or its corresponding type declarations.
+src/sections/home/QuoteSection.tsx(13,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/QuoteSection.tsx(16,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/QuoteSection.tsx(19,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; sx: { lineHeight: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; sx: { lineHeight: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/QuoteSection.tsx(25,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "subtitle2"; fontWeight: number; textTransform: string; mb: number; sx: { opacity: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "subtitle2"; fontWeight: number; textTransform: string; mb: number; sx: { opacity: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/QuoteSection.tsx(28,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h5"; fontWeight: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h5"; fontWeight: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(1,26): error TS2724: '"@mui/material"' has no exported member named 'Grid2'. Did you mean 'Grid'?
+src/sections/home/RegulationsSection.tsx(2,55): error TS2307: Cannot find module '@mui/icons-material' or its corresponding type declarations.
+src/sections/home/RegulationsSection.tsx(38,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h4"; fontWeight: number; color: "primary.main"; mb: number; mt: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h4"; fontWeight: number; color: "primary.main"; mb: number; mt: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(41,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; sx: { lineHeight: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; color: "text.secondary"; mb: number; sx: { lineHeight: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(51,20): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; key: number; direction: "row"; spacing: number; alignItems: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; key: number; direction: "row"; spacing: number; alignItems: string; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/RegulationsSection.tsx(54,24): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "subtitle1"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "subtitle1"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(68,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(71,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(74,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h6"; color: "text.secondary"; fontWeight: number; sx: { lineHeight: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h6"; color: "text.secondary"; fontWeight: number; sx: { lineHeight: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/RegulationsSection.tsx(78,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; mt: number; sx: { display: "flex"; flexWrap: "wrap"; gap: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; mt: number; sx: { display: "flex"; flexWrap: "wrap"; gap: number; }; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'mt' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/ServicesSection.tsx(1,34): error TS2724: '"@mui/material"' has no exported member named 'Grid2'. Did you mean 'Grid'?
+src/sections/home/ServicesSection.tsx(2,108): error TS2307: Cannot find module '@mui/icons-material' or its corresponding type declarations.
+src/sections/home/ServicesSection.tsx(11,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; textAlign: string; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element | null', gave the following error.
+    Type '{ children: Element[]; textAlign: string; mb: number; }' is not assignable to type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+      Property 'textAlign' does not exist on type 'IntrinsicAttributes & BoxOwnProps<Theme> & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof BoxOwnProps<...>>'.
+src/sections/home/ServicesSection.tsx(12,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; fontWeight: number; color: "secondary.main"; sx: { letterSpacing: number; textTransform: "uppercase"; mb: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(15,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(93,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h6"; fontWeight: number; color: "white"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h6"; fontWeight: number; color: "white"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(96,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; color: "rgba(255,255,255,0.7)"; mb: number; lineHeight: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; color: "rgba(255,255,255,0.7)"; mb: number; lineHeight: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(175,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h6"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h6"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(178,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body2"; color: "text.secondary"; mb: number; lineHeight: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body2"; color: "text.secondary"; mb: number; lineHeight: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'mb' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/ServicesSection.tsx(182,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "caption"; fontWeight: number; color: "secondary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "caption"; fontWeight: number; color: "secondary.main"; sx: { textTransform: "uppercase"; letterSpacing: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/TechnicalReportSection.tsx(1,26): error TS2724: '"@mui/material"' has no exported member named 'Grid2'. Did you mean 'Grid'?
+src/sections/home/TechnicalReportSection.tsx(2,76): error TS2307: Cannot find module '@mui/icons-material' or its corresponding type declarations.
+src/sections/home/TechnicalReportSection.tsx(32,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h3"; fontWeight: number; color: "primary.main"; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/TechnicalReportSection.tsx(35,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "h6"; color: "text.secondary"; fontWeight: number; mb: number; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "h6"; color: "text.secondary"; fontWeight: number; mb: number; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+src/sections/home/TechnicalReportSection.tsx(45,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & StackOwnProps & CommonProps & Omit<any, keyof CommonProps | keyof StackOwnProps>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; key: number; direction: "row"; alignItems: string; spacing: number; sx: { p: number; borderRadius: number; bgcolor: "background.paper" | "#eceeef"; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<StackTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ children: Element[]; key: number; direction: "row"; alignItems: string; spacing: number; sx: { p: number; borderRadius: number; bgcolor: "background.paper" | "#eceeef"; }; }' is not assignable to type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+      Property 'alignItems' does not exist on type 'IntrinsicAttributes & StackOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof CommonProps | keyof StackOwnProps>'.
+src/sections/home/TechnicalReportSection.tsx(47,20): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & TypographyOwnProps & CommonProps & Omit<any, "children" | ... 9 more ... | "variantMapping">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<TypographyTypeMap<{}, "span">>): Element | null', gave the following error.
+    Type '{ children: string; variant: "body1"; fontWeight: number; color: "primary.main"; }' is not assignable to type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
+      Property 'fontWeight' does not exist on type 'IntrinsicAttributes & TypographyOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "children" | ... 9 more ... | "variantMapping">'.
