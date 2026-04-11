@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# velite
+.velite/
+
+# logs and temporary files
+*.log
+*.log*
+stitch.html
+fix_grid*.js
