@@ -185,7 +185,6 @@ export default function ContactSection() {
                       bgcolor: 'secondary.main',
                       color: 'white',
                       border: '1px solid',
-                      display: { xs: 'none', md: 'inline-flex' },
                       '&:active': { transform: 'scale(0.95)' },
                       '&:hover': {
                         bgcolor: 'white',

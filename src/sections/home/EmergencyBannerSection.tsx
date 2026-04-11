@@ -60,7 +60,7 @@ export default function EmergencyBannerSection() {
           </Stack>
 
           <Stack
-            direction={{ xs: 'row', sm: 'column' }}
+            direction='column'
             spacing={2}
             sx={{ width: { xs: '100%', md: 'auto' } }}
           >
