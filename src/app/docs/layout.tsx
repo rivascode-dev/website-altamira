@@ -1,0 +1,10 @@
+import { docs } from '@/velite';
+import { DocsSidebar } from '@/components/docs/DocsSidebar';
+
+export default function DocsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <DocsSidebar docs={docs}>{children}</DocsSidebar>;
+}

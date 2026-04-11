@@ -16,6 +16,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 const DATA_DIFFERENTIATORS = [
   {
@@ -39,10 +40,7 @@ export default function BecauseWeSection() {
   const theme = useTheme();
 
   return (
-    <SectionWrapper
-      id='diferenciadores'
-      sx={{ py: 12, bgcolor: 'primary.main' }}
-    >
+    <SectionWrapper id='diferenciadores' sx={{ bgcolor: 'primary.main' }}>
       <Container maxWidth='lg'>
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Typography variant='overline' color='secondary'>
@@ -99,7 +97,9 @@ export default function BecauseWeSection() {
           ))}
         </Grid>
         <Box sx={{ textAlign: 'center' }}>
-          <Button
+          {/* <Button
+            component={Link}
+            href='/docs/porque'
             variant='contained'
             color='secondary'
             size='large'
@@ -107,6 +107,26 @@ export default function BecauseWeSection() {
             sx={{ mt: 4, maxWidth: 200 }}
           >
             Ver más
+          </Button> */}
+          <Button
+            component={Link}
+            href='/docs/porque'
+            variant='outlined'
+            size='large'
+            endIcon={<ArrowRight />}
+            sx={{
+              mt: 4,
+              color: 'white',
+              borderColor: 'white',
+
+              '&:hover': {
+                bgcolor: 'white',
+                color: 'primary.main',
+              },
+              '&:active': { transform: 'scale(0.95)' },
+            }}
+          >
+            Leer Más
           </Button>
         </Box>
       </Container>

@@ -15,9 +15,9 @@ import {
   Video,
   BugOff,
   ArrowRight,
-  Link,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 const DATA_COMPLEMENTARY_SERVICES = [
   {
@@ -49,9 +49,7 @@ export default function ComplementaryServicesSection() {
     <SectionWrapper
       id='complementary-services'
       sx={{
-        py: 12,
-        bgcolor:
-          theme.palette.mode === 'dark' ? 'background.default' : '#ffffff',
+        bgcolor: theme.palette.mode === 'dark' ? 'background.default' : '#fff',
       }}
     >
       <Container maxWidth='lg'>
@@ -128,15 +126,28 @@ export default function ComplementaryServicesSection() {
                 {item.cta && (
                   <Box sx={{ textAlign: 'center' }}>
                     <Button
-                      variant='contained'
-                      color='secondary'
-                      size='large'
-                      endIcon={<ArrowRight />}
-                      sx={{ mt: 4 }}
-                      //LinkComponent={Link}
+                      component={Link}
                       href={item.cta_link}
+                      variant='outlined'
+                      size='large'
+                      color='secondary'
+                      endIcon={<ArrowRight />}
+                      sx={{
+                        mt: 4,
+                        borderColor: 'secondary.main',
+                        bgcolor: 'secondary.main',
+                        color: 'white',
+                        border: '1px solid',
+                        display: { xs: 'none', md: 'inline-flex' },
+                        '&:active': { transform: 'scale(0.95)' },
+                        '&:hover': {
+                          bgcolor: 'white',
+                          color: 'secondary.main',
+                          border: '1px solid',
+                        },
+                      }}
                     >
-                      {item.cta_text}
+                      Ir a Boca Ratón
                     </Button>
                   </Box>
                 )}

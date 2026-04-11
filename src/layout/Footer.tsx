@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { BadgeCheck, ShieldCheck, HardHat } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 export default function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -28,16 +29,19 @@ export default function Footer() {
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, md: 3 }}>
             <Stack
-              direction={isMobile ? 'column' : 'row'}
+              direction='row'
               spacing={1}
-              sx={{ alignItems: 'center' }}
+              sx={{
+                justifyContent: { xs: 'center', md: 'flex-start' },
+                mb: { xs: 4, md: 0 },
+              }}
             >
               <Image
                 src='/assets/logos/logo-altamira-limpieza-ductos-vertical.png'
                 alt='Altamira Ductos Logo'
                 width={100}
                 height={100}
-                style={{ width: '55%', height: 'auto' }}
+                style={{ width: isMobile ? '120px' : '55%', height: 'auto' }}
                 priority
               />
             </Stack>
@@ -190,8 +194,16 @@ export default function Footer() {
           color='text.secondary'
           sx={{ display: 'block', textAlign: 'center' }}
         >
-          © {new Date().getFullYear()} Altamira Ductos. Todos los derechos
-          reservados.
+          © {new Date().getFullYear()} Altamira Ductos | Todos los derechos
+          reservados | Desarrollado por{' '}
+          <Link
+            href='https://rivascode.dev/'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{ color: theme.palette.secondary.main }}
+          >
+            rivascode.dev
+          </Link>
         </Typography>
       </Container>
     </Box>

@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
   useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -41,6 +42,8 @@ const DATA_CONTACT = [
 
 export default function ContactSection() {
   const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <SectionWrapper
@@ -100,11 +103,12 @@ export default function ContactSection() {
                     <Typography
                       component={item.link !== '#' ? 'a' : 'p'}
                       href={item.link !== '#' ? item.link : undefined}
-                      variant='h6'
+                      //variant='h6'
                       color='primary'
                       sx={{
-                        // fontWeight: 700,
                         textDecoration: 'none',
+                        fontSize: isMobile ? '0.8rem' : '1rem',
+
                         '&:hover':
                           item.link !== '#' ? { color: 'secondary.main' } : {},
                       }}
@@ -122,7 +126,7 @@ export default function ContactSection() {
               component='form'
               sx={{
                 bgcolor: 'white',
-                p: { xs: 4, md: 6 },
+                p: { xs: 3, sm: 4, md: 6 },
                 borderRadius: 4,
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)',
                 border:
@@ -159,7 +163,7 @@ export default function ContactSection() {
                   />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <Button
+                  {/* <Button
                     variant='contained'
                     fullWidth
                     endIcon={<Send />}
@@ -168,6 +172,29 @@ export default function ContactSection() {
                     color='secondary'
                   >
                     Solicitar Evaluación
+                  </Button> */}
+                  <Button
+                    variant='outlined'
+                    size='large'
+                    color='secondary'
+                    endIcon={<Send />}
+                    fullWidth
+                    sx={{
+                      mt: 2,
+                      borderColor: 'secondary.main',
+                      bgcolor: 'secondary.main',
+                      color: 'white',
+                      border: '1px solid',
+                      display: { xs: 'none', md: 'inline-flex' },
+                      '&:active': { transform: 'scale(0.95)' },
+                      '&:hover': {
+                        bgcolor: 'white',
+                        color: 'secondary.main',
+                        border: '1px solid',
+                      },
+                    }}
+                  >
+                    Solicitar evaluación técnica
                   </Button>
                 </Grid>
               </Grid>

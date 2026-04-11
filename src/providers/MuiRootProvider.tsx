@@ -6,8 +6,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from '@/theme/customTheme';
 import Box from '@mui/material/Box';
-import Header from '@/layout/Header';
-import Footer from '@/layout/Footer';
+import { ConditionalHeader } from '@/layout/ConditionalHeader';
+import { ConditionalFooter } from '@/layout/ConditionalFooter';
+import WhatsAppFab from '@/components/WhatsAppFab';
 
 export default function MuiRootProvider({
   children,
@@ -32,7 +33,7 @@ export default function MuiRootProvider({
           }}
         >
           <Box sx={{ position: 'sticky', top: 0, zIndex: 1100 }}>
-            <Header />
+            <ConditionalHeader />
           </Box>
           <Box
             component='main'
@@ -50,9 +51,12 @@ export default function MuiRootProvider({
               borderColor: 'divider',
             }}
           >
-            <Footer />
+            <ConditionalFooter />
           </Box>
         </Box>
+        
+        {/* Botón Flotante de WhatsApp */}
+        <WhatsAppFab />
       </ThemeProvider>
     </AppRouterCacheProvider>
   );

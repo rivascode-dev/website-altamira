@@ -8,17 +8,16 @@ export default function PhraseCTASection() {
     <SectionWrapper
       id='cta-final'
       sx={{
-        py: 12,
-        bgcolor: 'primary',
+        bgcolor: 'white',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
+      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.15 }}>
         <Box
           component='img'
-          src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2670&auto=format&fit=crop'
-          alt='Building background'
+          src='/assets/images/altamira-ducts-cta-bg.png'
+          alt='Technical background'
           sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </Box>
@@ -26,27 +25,51 @@ export default function PhraseCTASection() {
         maxWidth='md'
         sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}
       >
-        <Typography variant='h3' color='primary'>
+        <Typography variant='h3' color='primary' sx={{ fontWeight: 700 }}>
           Un ducto limpio no se ve…
         </Typography>
-        <Typography variant='h3' color='secondary'>
+        <Typography variant='h3' color='secondary' sx={{ fontWeight: 700 }}>
           pero se nota cuando falla
         </Typography>
         <Typography
           variant='overline'
-          color='rgba(255,255,255,0.9)'
-          sx={{ mt: 2 }}
+          sx={{ mt: 2, display: 'block', color: 'primary.main' }}
         >
           En Altamira ductos - su confianza es nuestra prioridad
         </Typography>
 
         <Box sx={{ textAlign: 'center' }}>
-          <Button
+          {/* <Button
+            href='#contact'
             variant='contained'
             color='secondary'
             size='large'
             endIcon={<ArrowRight />}
             sx={{ mt: 4 }}
+          >
+            Solicitar Evaluación
+          </Button> */}
+
+          <Button
+            href='#contact'
+            variant='outlined'
+            size='large'
+            color='secondary'
+            endIcon={<ArrowRight />}
+            sx={{
+              mt: 4,
+              borderColor: 'secondary.main',
+              bgcolor: 'secondary.main',
+              color: 'white',
+              border: '1px solid',
+              display: { xs: 'none', md: 'inline-flex' },
+              '&:active': { transform: 'scale(0.95)' },
+              '&:hover': {
+                bgcolor: 'white',
+                color: 'secondary.main',
+                border: '1px solid',
+              },
+            }}
           >
             Solicitar Evaluación
           </Button>

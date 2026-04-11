@@ -1,11 +1,19 @@
 'use client';
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
     <SectionWrapper
       id='hero'
@@ -16,22 +24,15 @@ export default function HeroSection() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
+        bgcolor: 'primary.main',
       }}
     >
-      <Box sx={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
         <Image
           src='/assets/images/altamira-limpieza-ductos-hero.png'
           alt='Technical engineer inspecting ventilation systems'
           fill
           style={{ objectFit: 'cover' }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(to right, rgba(0, 51, 69, 0.9), rgba(0, 51, 69, 0.4))',
-          }}
         />
       </Box>
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>
@@ -48,7 +49,7 @@ export default function HeroSection() {
               fontWeight: 600,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              borderRadius: 2,
+              borderRadius: 4,
               mb: 3,
             }}
           >
@@ -68,7 +69,7 @@ export default function HeroSection() {
             <Typography
               variant='caption'
               sx={{
-                letterSpacing: 3,
+                letterSpacing: isMobile ? 1 : 3,
                 textTransform: 'uppercase',
               }}
             >
@@ -79,16 +80,16 @@ export default function HeroSection() {
             variant='h1'
             sx={{
               color: 'white',
+              //mb: 1,
             }}
           >
-            Limpieza de ductos{' '}
+            Limpieza de ductos
           </Typography>
           <Typography
             variant='h3'
             component='h2'
             sx={{
               color: 'white',
-
               lineHeight: 1.1,
               mb: 4,
             }}
@@ -103,7 +104,6 @@ export default function HeroSection() {
             sx={{
               color: 'white',
               maxWidth: 650,
-
               fontStyle: 'italic',
             }}
           >
@@ -126,29 +126,35 @@ export default function HeroSection() {
             sx={{ mt: 4 }}
           >
             <Button
+              href='#services'
+              variant='outlined'
+              size='large'
+              sx={{
+                mt: 4,
+                borderColor: 'white',
+                color: 'white',
+                '&:hover': { backgroundColor: 'white', color: 'primary.main' },
+                '&:active': { transform: 'scale(0.95)' },
+              }}
+            >
+              Ver Servicios
+            </Button>
+
+            <Button
+              href='#contact'
               variant='contained'
               color='secondary'
               size='large'
               endIcon={<ArrowRight />}
-            >
-              Solicitar evaluación técnica
-            </Button>
-            <Button
-              variant='outlined'
-              size='large'
               sx={{
-                color: 'white',
-                borderColor: 'rgba(255,255,255,0.3)',
-                bgcolor: 'rgba(255,255,255,0.1)',
-                backdropFilter: 'blur(10px)',
-
                 '&:hover': {
-                  bgcolor: 'rgba(255,255,255,0.2)',
-                  borderColor: 'rgba(255,255,255,0.5)',
+                  bgcolor: 'white',
+                  color: 'secondary.main',
                 },
+                '&:active': { transform: 'scale(0.95)' },
               }}
             >
-              Ver Servicios
+              Solicitar evaluación técnica
             </Button>
           </Stack>
         </Box>

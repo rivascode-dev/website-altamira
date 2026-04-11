@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { BadgeCheck, ShieldAlert, Landmark, ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 const DATA_REGULATIONS = [
   {
@@ -36,7 +37,6 @@ export default function RegulationsSection() {
     <SectionWrapper
       id='regulations'
       sx={{
-        py: 12,
         bgcolor:
           theme.palette.mode === 'dark' ? 'background.default' : '#f8fafb',
       }}
@@ -52,29 +52,29 @@ export default function RegulationsSection() {
                 boxShadow:
                   '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
                 position: 'relative',
+                mt: { xs: 4, sm: 0 },
               }}
             >
               <Box
                 sx={{
                   position: 'absolute',
-                  top: -24,
-                  left: 48,
+                  top: { xs: -16, sm: -24 },
+                  left: { xs: 16, sm: 48 },
+                  right: { xs: 16, sm: 'auto' },
                   bgcolor: 'secondary.main',
                   color: 'white',
                   px: 3,
                   py: 1,
                   borderRadius: 2,
-                  fontWeight: 800,
+                  //fontWeight: 800,
+                  fontSize: { xs: '0.7rem', sm: '1rem' },
+                  textAlign: 'center',
                   boxShadow: '0 10px 15px -3px rgba(211, 47, 47, 0.3)',
                 }}
               >
                 CUMPLIMIENTO DE NORMATIVAS Y RESPONSABILIDAD
               </Box>
-              <Typography
-                variant='h4'
-                color='primary'
-                sx={{ fontWeight: 800, mb: 3, mt: 2 }}
-              >
+              <Typography variant='h3' color='primary' sx={{ mb: 3, mt: 2 }}>
                 Ley N° 21.442 de Copropiedad
               </Typography>
               <Typography
@@ -122,14 +122,30 @@ export default function RegulationsSection() {
                   </Stack>
                 ))}
               </Stack>
+
               <Button
+                component={Link}
+                href='/docs/normativa'
                 variant='outlined'
-                color='secondary'
                 size='large'
+                color='secondary'
                 endIcon={<ArrowRight />}
-                sx={{ mt: 4, maxWidth: 200 }}
+                sx={{
+                  mt: 4,
+                  borderColor: 'secondary.main',
+                  bgcolor: 'secondary.main',
+                  color: 'white',
+                  border: '1px solid',
+                  display: { xs: 'none', md: 'inline-flex' },
+                  '&:active': { transform: 'scale(0.95)' },
+                  '&:hover': {
+                    bgcolor: 'white',
+                    color: 'secondary.main',
+                    border: '1px solid',
+                  },
+                }}
               >
-                Ver más
+                Leer Más
               </Button>
             </Box>
           </Grid>

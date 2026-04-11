@@ -16,7 +16,6 @@ export default function GallerySection() {
     <SectionWrapper
       id='gallery'
       sx={{
-        py: 12,
         bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
       }}
     >

@@ -136,8 +136,11 @@ const getTheme = (mode: 'light' | 'dark') =>
         fontWeight: 400,
         lineHeight: 1.167,
         letterSpacing: '-0.01562em',
+        '@media (max-width:900px)': {
+          fontSize: '4.5rem',
+        },
         '@media (max-width:600px)': {
-          fontSize: '3.5rem',
+          fontSize: '2.5rem',
         },
       },
       h2: {
@@ -145,8 +148,11 @@ const getTheme = (mode: 'light' | 'dark') =>
         fontWeight: 300,
         lineHeight: 1.2,
         letterSpacing: '-0.00833em',
+        '@media (max-width:900px)': {
+          fontSize: '3rem',
+        },
         '@media (max-width:600px)': {
-          fontSize: '2.5rem',
+          fontSize: '2.25rem',
         },
       },
       h3: {
@@ -154,8 +160,11 @@ const getTheme = (mode: 'light' | 'dark') =>
         fontWeight: 400,
         lineHeight: 1.167,
         letterSpacing: '0em',
+        '@media (max-width:900px)': {
+          fontSize: '2.5rem',
+        },
         '@media (max-width:600px)': {
-          fontSize: '2.25rem',
+          fontSize: '1.75rem',
         },
       },
       h4: {
@@ -163,8 +172,11 @@ const getTheme = (mode: 'light' | 'dark') =>
         fontWeight: 400,
         lineHeight: 1.235,
         letterSpacing: '0.00735em',
-        '@media (max-width:600px)': {
+        '@media (max-width:900px)': {
           fontSize: '1.75rem',
+        },
+        '@media (max-width:600px)': {
+          fontSize: '1.5rem',
         },
       },
       h5: {
@@ -231,6 +243,21 @@ const getTheme = (mode: 'light' | 'dark') =>
       },
     },
     components: {
+      MuiContainer: {
+        defaultProps: {
+          maxWidth: 'lg',
+        },
+        styleOverrides: {
+          root: {
+            paddingLeft: 24,
+            paddingRight: 24,
+            '@media (max-width:600px)': {
+              paddingLeft: 20,
+              paddingRight: 20,
+            },
+          },
+        },
+      },
       MuiButtonBase: {
         defaultProps: {
           disableTouchRipple: true,

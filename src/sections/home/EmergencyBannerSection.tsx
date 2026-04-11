@@ -1,7 +1,13 @@
 'use client';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
-import { TriangleAlert } from 'lucide-react';
+import {
+  ArrowRight,
+  MessageCircle,
+  MessageCircleCheck,
+  TriangleAlert,
+} from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 export default function EmergencyBannerSection() {
   return (
@@ -45,58 +51,55 @@ export default function EmergencyBannerSection() {
               </Typography>
               <Typography
                 variant='body1'
-                sx={{ color: 'white', fontWeight: 500 }}
+                sx={{ color: 'white', fontWeight: 500, maxWidth: 650 }}
               >
-                Atendemos situaciones críticas de forma inmediata.
-                <br />
-                Este servicio requiere pago inmediato para su ejecución. Ver
-                condiciones del servicio.
+                Atendemos situaciones críticas de forma inmediata. Este servicio
+                requiere pago inmediato para su ejecución.
               </Typography>
             </Box>
           </Stack>
 
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={{ xs: 'row', sm: 'column' }}
             spacing={2}
             sx={{ width: { xs: '100%', md: 'auto' } }}
           >
             <Button
               component='a'
               href='https://wa.me/56982811148'
-              variant='contained'
+              variant='outlined'
+              endIcon={<MessageCircle />}
               sx={{
-                flex: { xs: 1, md: 'none' },
-                bgcolor: 'white',
-                color: 'secondary.main',
-                fontWeight: 800,
-                py: 2,
-                px: 4,
-                '&:hover': { bgcolor: 'secondary.dark', color: 'white' },
+                bgcolor: '#25D366',
+                color: 'white',
+                border: '1px solid #25D366',
+
+                '&:hover': {
+                  bgcolor: '#128C7E',
+                },
+                '&:active': { transform: 'scale(0.95)' },
               }}
             >
               WhatsApp Urgencias
             </Button>
-            {/* <Button
-              component='a'
-              href='tel:+56997902704'
+            <Button
+              component={Link}
+              href='/docs/condiciones'
               variant='outlined'
+              endIcon={<ArrowRight />}
               sx={{
-                flex: { xs: 1, md: 'none' },
-                borderColor: 'white',
                 color: 'white',
-                borderWidth: 2,
-                fontWeight: 800,
-                py: 2,
-                px: 4,
+                borderColor: 'white',
+
                 '&:hover': {
                   bgcolor: 'white',
                   color: 'secondary.main',
-                  borderWidth: 2,
                 },
+                '&:active': { transform: 'scale(0.95)' },
               }}
             >
-              Llamar Central
-            </Button> */}
+              Leer Condiciones Servicio
+            </Button>
           </Stack>
         </Stack>
       </Container>

@@ -3,6 +3,7 @@ import { Box, Container, Grid, Typography, Stack } from '@mui/material';
 import { CircleCheck } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutUsSection() {
   return (
@@ -89,7 +90,19 @@ export default function AboutUsSection() {
               Trabajamos con equipos especializados para intervenir ductos
               verticales, horizontales, cámaras de alcantarillado y ductos de
               basura con sus salas, asegurando resultados eficientes, seguros y
-              duraderos.
+              duraderos.{'  '}
+              <Box
+                component={Link}
+                href='/docs/nosotros'
+                sx={{
+                  color: 'secondary.main',
+                  fontWeight: 800,
+                  fontStyle: 'italic',
+                  textDecoration: 'none',
+                }}
+              >
+                Leer más...
+              </Box>
             </Typography>
 
             <Grid container spacing={3}>
@@ -99,7 +112,7 @@ export default function AboutUsSection() {
                 'Resolución Sanitaria',
                 'Cobertura Nacional',
               ].map((text) => (
-                <Grid size={6} key={text}>
+                <Grid size={{ xs: 12, sm: 6 }} key={text}>
                   <Stack
                     direction='row'
                     spacing={1.5}

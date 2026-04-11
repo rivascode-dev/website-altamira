@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 const DATA_TECHNICAL_REPORT = [
   {
@@ -39,7 +40,6 @@ export default function TechnicalReportSection() {
     <SectionWrapper
       id='informe-tecnico'
       sx={{
-        py: 12,
         bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
       }}
     >
@@ -54,7 +54,12 @@ export default function TechnicalReportSection() {
             flexDirection: { xs: 'column', lg: 'row' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', lg: '50%' }, p: { xs: 6, lg: 8 } }}>
+          <Box
+            sx={{
+              width: { xs: '100%', lg: '50%' },
+              p: { xs: 3, sm: 6, lg: 8 },
+            }}
+          >
             <Box
               sx={{
                 display: 'inline-flex',
@@ -119,13 +124,28 @@ export default function TechnicalReportSection() {
             </Stack>
 
             <Button
+              component={Link}
+              href='/docs/informe'
               variant='outlined'
-              color='secondary'
               size='large'
+              color='secondary'
               endIcon={<ArrowRight />}
-              sx={{ mt: 4, maxWidth: 200 }}
+              sx={{
+                mt: 4,
+                borderColor: 'secondary.main',
+                bgcolor: 'secondary.main',
+                color: 'white',
+                border: '1px solid',
+                display: { xs: 'none', md: 'inline-flex' },
+                '&:active': { transform: 'scale(0.95)' },
+                '&:hover': {
+                  bgcolor: 'white',
+                  color: 'secondary.main',
+                  border: '1px solid',
+                },
+              }}
             >
-              Ver más
+              Leer Más
             </Button>
           </Box>
           <Box

@@ -43,9 +43,7 @@ export default function HowWeWorkSection() {
     <SectionWrapper
       id='how-we-work'
       sx={{
-        py: 12,
-        bgcolor:
-          theme.palette.mode === 'dark' ? 'background.default' : '#f8fafb',
+        bgcolor: theme.palette.mode === 'dark' ? 'background.default' : '#fff',
       }}
     >
       <Container maxWidth='lg'>

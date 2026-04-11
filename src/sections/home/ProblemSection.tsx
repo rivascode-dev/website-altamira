@@ -1,8 +1,9 @@
 'use client';
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
-import { Ban, Biohazard, Waves, Video } from 'lucide-react';
+import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { Ban, Biohazard, Waves, Video, ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const DATA_PROBLEMS = [
   {
@@ -24,10 +25,9 @@ export default function ProblemSection() {
     <SectionWrapper
       id='el-problema'
       sx={{
-        py: 12,
-        bgcolor: 'primary.main',
         position: 'relative',
         overflow: 'hidden',
+        bgcolor: 'primary.main',
       }}
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
@@ -155,6 +155,24 @@ export default function ProblemSection() {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{ textAlign: 'center' }}>
+          <Button
+            component={Link}
+            href='/docs/preguntas'
+            variant='outlined'
+            size='large'
+            endIcon={<ArrowRight />}
+            sx={{
+              mt: 4,
+              borderColor: 'white',
+              color: 'white',
+              '&:hover': { backgroundColor: 'white', color: 'primary.main' },
+              '&:active': { transform: 'scale(0.95)' },
+            }}
+          >
+            Preguntas Frecuentes
+          </Button>
+        </Box>
       </Container>
     </SectionWrapper>
   );

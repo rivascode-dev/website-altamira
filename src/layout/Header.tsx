@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Box,
   Button,
@@ -8,7 +9,16 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Divider,
+  alpha,
 } from '@mui/material';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const DATA_MENU = [
@@ -23,12 +33,26 @@ const DATA_MENU = [
 export default function Header() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = (open: boolean) => () => {
+    setIsMenuOpen(open);
+  };
+
+  const handleLogoClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleLinkClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
+    event: React.MouseEvent<
+      HTMLAnchorElement | HTMLButtonElement | HTMLDivElement
+    >,
     targetId: string,
   ) => {
     event.preventDefault();
+    setIsMenuOpen(false);
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -60,7 +84,16 @@ export default function Header() {
           direction='row'
           sx={{ justifyContent: 'space-between', alignItems: 'center' }}
         >
-          <Box sx={{ width: { xs: 140, md: 180 }, display: 'flex' }}>
+          <Box
+            onClick={handleLogoClick}
+            sx={{
+              width: { xs: 120, sm: 140, md: 180 },
+              display: 'flex',
+              cursor: 'pointer',
+              '&:active': { transform: 'scale(0.98)' },
+              transition: 'transform 0.2s',
+            }}
+          >
             <Image
               src='/assets/logos/logo-altamira-limpieza-ductos-small.png'
               alt='Altamira Ductos Logo'
@@ -96,23 +129,171 @@ export default function Header() {
             </Stack>
           )}
 
-          <Button
-            variant='contained'
-            color='secondary'
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-              handleLinkClick(e, 'contact')
-            }
-            sx={{
-              fontWeight: 700,
-              boxShadow: '0 10px 15px -3px rgba(211, 47, 47, 0.2)',
-              '&:active': { transform: 'scale(0.95)' },
-              display: { xs: 'none', md: 'inline-flex' },
-            }}
-          >
-            Solicitar evaluación técnica
-          </Button>
+          <Stack direction='row' spacing={2} sx={{ alignItems: 'center' }}>
+            <Button
+              variant='outlined'
+              size='large'
+              color='secondary'
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                handleLinkClick(e, 'contact')
+              }
+              sx={{
+                borderColor: 'secondary.main',
+                bgcolor: 'secondary.main',
+                color: 'white',
+                border: '1px solid secondary.main',
+                display: { xs: 'none', md: 'inline-flex' },
+                '&:active': { transform: 'scale(0.95)' },
+                '&:hover': {
+                  bgcolor: 'white',
+                  color: 'secondary.main',
+                  border: '1px solid',
+                },
+              }}
+            >
+              Solicitar evaluación técnica
+            </Button>
+
+            {isMobile && (
+              <IconButton
+                color='primary'
+                onClick={toggleMenu(true)}
+                aria-label='Abrir menú'
+                sx={{
+                  ml: 1,
+                  bgcolor: alpha(theme.palette.primary.main, 0.05),
+                  '&:hover': {
+                    bgcolor: alpha(theme.palette.primary.main, 0.1),
+                  },
+                }}
+              >
+                <Menu size={28} />
+              </IconButton>
+            )}
+          </Stack>
         </Stack>
       </Container>
+
+      {/* Menú Móvil */}
+      <Drawer
+        anchor='right'
+        open={isMenuOpen}
+        onClose={toggleMenu(false)}
+        sx={{
+          '& .MuiDrawer-paper': {
+            width: 320,
+            bgcolor: 'background.default',
+            backgroundImage: 'none',
+            borderRight: 'none',
+            boxSizing: 'border-box',
+          },
+        }}
+      >
+        <Box
+          sx={{
+            p: 2,
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <Stack
+            direction='row'
+            sx={{
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              onClick={handleLogoClick}
+              sx={{
+                width: 140,
+                mt: 1,
+                cursor: 'pointer',
+                '&:active': { transform: 'scale(0.98)' },
+                transition: 'transform 0.2s',
+              }}
+            >
+              <Image
+                src='/assets/logos/logo-altamira-limpieza-ductos-small.png'
+                alt='Altamira Ductos Logo'
+                width={854}
+                height={285}
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
+            <IconButton onClick={toggleMenu(false)} color='primary'>
+              <X size={28} />
+            </IconButton>
+          </Stack>
+
+          <List sx={{ flexGrow: 1 }}>
+            {DATA_MENU.map((item) => (
+              <ListItem key={item.target} disablePadding>
+                <ListItemButton
+                  onClick={(e) => handleLinkClick(e, item.target)}
+                  sx={{
+                    py: 2,
+                    borderRadius: 2,
+                    mb: 1,
+                  }}
+                >
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant='h6'
+                        sx={{
+                          fontWeight: 600,
+                          color: 'primary.main',
+                        }}
+                      >
+                        {item.label}
+                      </Typography>
+                    }
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+
+          <Divider sx={{ my: 3 }} />
+
+          <Stack spacing={2} sx={{ mt: 'auto', pb: 2 }}>
+            <Button
+              variant='contained'
+              color='secondary'
+              fullWidth
+              size='large'
+              onClick={(e) => handleLinkClick(e, 'contact')}
+              sx={{ fontWeight: 700, py: 1.5 }}
+            >
+              Solicitar evaluación técnica
+            </Button>
+
+            <Button
+              variant='contained'
+              color='success'
+              fullWidth
+              size='large'
+              startIcon={<MessageCircle size={20} />}
+              component='a'
+              href='https://wa.me/56982811148'
+              target='_blank'
+              rel='noopener noreferrer'
+              sx={{
+                fontWeight: 700,
+                py: 1.5,
+                bgcolor: 'success.main',
+                '&:hover': {
+                  bgcolor: 'success.dark',
+                },
+              }}
+            >
+              WhatsApp Urgencias
+            </Button>
+          </Stack>
+        </Box>
+      </Drawer>
     </Box>
   );
 }
