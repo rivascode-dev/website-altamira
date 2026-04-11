@@ -19,7 +19,7 @@ const DATA_HOW_WE_WORK = [
     step: '03',
     title: 'Sanitización',
     desc: 'Aplicación de agentes químicos certificados.',
-    active: true,
+    active: false,
   },
   {
     step: '04',
