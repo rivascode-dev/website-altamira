@@ -4,8 +4,8 @@ export default defineConfig({
   root: 'content',
   output: {
     data: '.velite',
-    static: 'public/static',
-    filename: '[name]-[hash].[ext]',
+    assets: 'public/static',
+    name: '[name]-[hash].[ext]',
     clean: true
   },
   collections: {
@@ -15,7 +15,7 @@ export default defineConfig({
       schema: s
         .object({
           title: s.string().max(99),
-          slug: s.path(), // Esto generará 'docs/nombre-del-archivo' basado en la ruta del archivo
+          slug: s.slug(), // Esto generará 'nombre-del-archivo' basado en el nombre del archivo
           description: s.string().max(999).optional(),
           order: s.number().default(0),
           content: s.mdx()

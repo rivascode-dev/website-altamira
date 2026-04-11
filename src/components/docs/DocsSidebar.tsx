@@ -111,8 +111,7 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
       >
         <Box component='nav' sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
           {sortedDocs.map((doc) => {
-            const cleanSlug = doc.slug.replace(/^docs\//, '');
-            const href = `/docs/${cleanSlug}`;
+            const href = `/docs/${doc.slug}`;
             const isExactActive = pathname === href || pathname === `${href}/`;
             const isDefaultActive =
               (pathname === '/docs' || pathname === '/docs/') &&

@@ -10,7 +10,7 @@ interface PageProps {
 export async function generateStaticParams() {
   return docs.map((doc) => {
     return {
-      slug: doc.slug.split('/').slice(1),
+      slug: [doc.slug],
     };
   });
 }
@@ -22,7 +22,7 @@ export async function generateMetadata({
   const slug = resolvedParams.slug
     ? resolvedParams.slug.join('/')
     : 'nosotros';
-  const doc = docs.find((doc) => doc.slug === `docs/${slug}`);
+  const doc = docs.find((doc) => doc.slug === slug);
 
   if (!doc) {
     return {};
@@ -39,7 +39,7 @@ export default async function DocPage({ params }: PageProps) {
   const slug = resolvedParams.slug
     ? resolvedParams.slug.join('/')
     : 'nosotros';
-  const doc = docs.find((doc) => doc.slug === `docs/${slug}`);
+  const doc = docs.find((doc) => doc.slug === slug);
 
   if (!doc) {
     notFound();
