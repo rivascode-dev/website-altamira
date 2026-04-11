@@ -9,7 +9,7 @@ export const metadata: Metadata = {
       'es-CL': '/es-CL',
     },
   },
-  title: 'Altamira Ductos | Soluciones de Limpieza de Ductos',
+  title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
   description:
     'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
   icons: {
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Altamira Ductos | Soluciones de Limpieza de Ductos',
+    title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
     description:
       'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
     images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
   },
   openGraph: {
-    title: 'Altamira Ductos | Soluciones de Limpieza de Ductos',
+    title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
     description:
       'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
     images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
