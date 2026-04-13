@@ -52,7 +52,7 @@ export default function AboutUsSection() {
                 }}
               >
                 <Typography variant='h3' color='secondary'>
-                  15+
+                  +Años
                 </Typography>
                 <Typography
                   variant='body2'
@@ -63,7 +63,7 @@ export default function AboutUsSection() {
                     color: 'white',
                   }}
                 >
-                  Años de Especialización
+                  de Experiencia
                 </Typography>
               </Box>
             </Box>

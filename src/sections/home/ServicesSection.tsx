@@ -23,32 +23,33 @@ const DATA_SERVICES = [
     icon: <ArrowUpDown size={32} />,
     title: 'Ductos verticales',
     description:
-      'Limpieza profunda de shafts de ventilación y extracción en edificios de gran altura.',
+      'Limpieza y mantención de ductos verticales en edificios, evitando obstrucciones y emergencias sanitarias.',
     accent: 'Incluye Sanitización',
   },
   {
     icon: <MoveHorizontal size={32} />,
     title: 'Ductos horizontales',
     description:
-      'Mantenimiento de redes de extracción en estacionamientos y cocinas industriales.',
+      'Limpieza y mantención de ductos horizontales con eliminación de residuos acumulados e incluye sanitización.',
+    accent: 'Incluye Sanitización',
   },
   {
     icon: <Droplets size={32} />,
     title: 'Alcantarillado',
     description:
-      'Desobstrucción técnica y mantenimiento preventivo de redes de aguas servidas.',
+      'Desobstrucción y mantención de alcantarillado para prevenir rebalses y daños estructurales.',
   },
   {
     icon: <CloudRain size={32} />,
     title: 'Aguas lluvias',
     description:
-      'Preparación estacional de ductos para evitar colapsos por lluvias intensas.',
+      'Limpieza de sistemas de aguas lluvias para evitar saturaciones, filtraciones y colapsos en temporada.',
   },
   {
     icon: <Trash2 size={32} />,
     title: 'Ductos de basura',
     description:
-      'Lavado a presión y desinfección de alta gama para control de olores y plagas.',
+      'Limpieza, sanitización y desinfección de ductos de basura para eliminar olores, bacterias y focos infecciosos.',
 
     featured: true,
   },
@@ -56,7 +57,7 @@ const DATA_SERVICES = [
     icon: <TriangleAlert size={32} />,
     title: 'Emergencias sanitarias',
     description:
-      'Atención inmediata ante colapsos u obstrucciones críticas que comprometen la salud.',
+      'Atención inmediata 24/7 ante colapsos, rebalses y situaciones críticas en la red sanitaria.',
   },
 ];
 

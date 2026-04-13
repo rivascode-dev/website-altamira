@@ -20,14 +20,15 @@ export async function sendEmail(prevState: any, formData: FormData) {
       return { success: false, message: firstError };
     }
 
-    const { nombre, email, mensaje, fax } = validatedFields.data;
-    
+    const { name, phone, email, comuna, message, fax } = validatedFields.data;
+
     // Honeypot validation (bots tend to fill all fields)
     if (fax) {
       console.warn('Posible SPAM detectado via Honeypot. Bloqueando envío.');
       return {
         success: true,
-        message: '¡Propuesta enviada con éxito! Nos pondremos en contacto pronto.',
+        message:
+          '¡Propuesta enviada con éxito! Nos pondremos en contacto pronto.',
       };
     }
 
@@ -43,16 +44,18 @@ export async function sendEmail(prevState: any, formData: FormData) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'rivascode.dev <onboarding@resend.dev>',
-      to: ['rivascode.dev@gmail.com'],
-      subject: `Mensaje de Contacto - ${nombre}`,
+      from: 'Altamira Ductos <onboarding@resend.dev>',
+      to: ['marjorie.limpiezadeductos@gmail.com'],
+      subject: `Mensaje de Contacto - ${name}`,
       html: `
         <h2>Nuevo mensaje recibido desde el sitio web</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Nombre:</strong> ${name}</p>
+        <p><strong>Teléfono:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Comuna:</strong> ${comuna}</p>
         <br/>
         <h3>Mensaje:</h3>
-        <p style="white-space: pre-wrap;">${mensaje}</p>
+        <p style="white-space: pre-wrap;">${message}</p>
       `,
     });
 

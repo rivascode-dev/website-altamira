@@ -10,7 +10,7 @@ interface SectionProps extends Omit<BoxProps, 'transition' | 'onDrag' | 'onDragS
   delay?: number;
 }
 
-const MotionBox = m(Box);
+const MotionBox = m.create(Box);
 
 export default function SectionWrapper({
   children,

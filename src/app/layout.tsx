@@ -11,7 +11,23 @@ export const metadata: Metadata = {
   },
   title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
   description:
-    'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
+    'En Altamira nos especializamos en la limpieza, mantención y sanitización de sistemas de ductos en edificios y comunidades.',
+  keywords: [
+    'limpieza ductos',
+    'limpieza de ductos edificios',
+    'mantención de ductos',
+    'mantención ductos sanitarios',
+    'limpieza alcantarillado',
+    'ductos verticales',
+    'ductos horizontales',
+    'ductos de basura',
+    'salas de basura limpieza',
+    'emergencias sanitarias edificios',
+    'empresa limpieza ductos chile',
+    'Destape',
+    'Desobstrucción ductos',
+    'Aguas lluvias',
+  ],
   icons: {
     icon: '/assets/logos/logo-rivascode-cuadrado-small.png',
   },
@@ -19,13 +35,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
     description:
-      'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
+      'En Altamira nos especializamos en la limpieza, mantención y sanitización de sistemas de ductos en edificios y comunidades.',
     images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
   },
   openGraph: {
     title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
     description:
-      'Portafolio profesional de Altamira Ductos - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
+      'En Altamira nos especializamos en la limpieza, mantención y sanitización de sistemas de ductos en edificios y comunidades.',
     images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
   },
 };

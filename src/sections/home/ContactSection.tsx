@@ -9,9 +9,15 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
+  CircularProgress,
 } from '@mui/material';
 import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { emailSchema, EmailFormValues } from '@/schemas/emailSchema';
+import { useState } from 'react';
+import { sendEmail } from '@/actions/sendEmail';
 
 const DATA_CONTACT = [
   {
@@ -41,9 +47,57 @@ const DATA_CONTACT = [
 ];
 
 export default function ContactSection() {
+  const [alertInfo, setAlertInfo] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
+
   const theme = useTheme();
 
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<EmailFormValues>({
+    resolver: zodResolver(emailSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      comuna: '',
+      message: '',
+      fax: '',
+    },
+  });
+
+  const onSubmit = async (data: EmailFormValues) => {
+    setAlertInfo(null);
+
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    try {
+      const result = await sendEmail(null, formData);
+
+      if (result.success) {
+        setAlertInfo({ type: 'success', message: result.message });
+        reset();
+      } else {
+        setAlertInfo({ type: 'error', message: result.message });
+      }
+    } catch (error) {
+      console.error(error);
+      setAlertInfo({
+        type: 'error',
+        message: 'Ocurrió un error inesperado al enviar el mensaje.',
+      });
+    }
+  };
 
   return (
     <SectionWrapper
@@ -124,6 +178,8 @@ export default function ContactSection() {
           <Grid size={{ xs: 12, md: 7 }}>
             <Box
               component='form'
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
               sx={{
                 bgcolor: 'white',
                 p: { xs: 3, sm: 4, md: 6 },
@@ -137,47 +193,90 @@ export default function ContactSection() {
             >
               <Grid container spacing={3}>
                 <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField fullWidth label='Nombre' variant='outlined' />
+                  <TextField
+                    label='Nombre'
+                    {...register('name')}
+                    error={!!errors.name}
+                    helperText={errors.name?.message}
+                    disabled={isSubmitting}
+                    fullWidth
+                    variant='outlined'
+                  />
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField fullWidth label='Teléfono' variant='outlined' />
+                  <TextField
+                    label='Teléfono'
+                    {...register('phone')}
+                    error={!!errors.phone}
+                    helperText={errors.phone?.message}
+                    disabled={isSubmitting}
+                    fullWidth
+                    variant='outlined'
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
                   <TextField
-                    fullWidth
                     label='Correo Electrónico'
+                    {...register('email')}
+                    error={!!errors.email}
+                    helperText={errors.email?.message}
+                    disabled={isSubmitting}
+                    fullWidth
                     variant='outlined'
                     type='email'
                   />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  <TextField fullWidth label='Comuna' variant='outlined' />
+                  <TextField
+                    label='Comuna'
+                    {...register('comuna')}
+                    error={!!errors.comuna}
+                    helperText={errors.comuna?.message}
+                    disabled={isSubmitting}
+                    fullWidth
+                    variant='outlined'
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
                   <TextField
-                    fullWidth
                     label='Mensaje o requerimiento técnico'
+                    {...register('message')}
+                    error={!!errors.message}
+                    helperText={errors.message?.message}
+                    disabled={isSubmitting}
+                    fullWidth
                     variant='outlined'
                     multiline
                     rows={4}
                   />
+
+                  {/* Honeypot field - hidden from humans */}
+                  <TextField
+                    {...register('fax')}
+                    autoComplete='off'
+                    style={{
+                      display: 'none',
+                      position: 'absolute',
+                      left: '-5000px',
+                    }}
+                    tabIndex={-1}
+                    aria-hidden='true'
+                  />
                 </Grid>
                 <Grid size={{ xs: 12 }}>
-                  {/* <Button
-                    variant='contained'
-                    fullWidth
-                    endIcon={<Send />}
-                    size='large'
-                    sx={{ mt: 2 }}
-                    color='secondary'
-                  >
-                    Solicitar Evaluación
-                  </Button> */}
                   <Button
+                    type='submit'
+                    disabled={isSubmitting}
+                    endIcon={
+                      isSubmitting ? (
+                        <CircularProgress size={18} color='inherit' />
+                      ) : (
+                        <Send size={18} />
+                      )
+                    }
                     variant='outlined'
                     size='large'
                     color='secondary'
-                    endIcon={<Send />}
                     fullWidth
                     sx={{
                       mt: 2,
@@ -193,7 +292,9 @@ export default function ContactSection() {
                       },
                     }}
                   >
-                    Solicitar evaluación técnica
+                    {isSubmitting
+                      ? 'Enviando...'
+                      : 'Solicitar evaluación técnica'}
                   </Button>
                 </Grid>
               </Grid>

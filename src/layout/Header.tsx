@@ -95,7 +95,7 @@ export default function Header() {
             }}
           >
             <Image
-              src='/assets/logos/logo-altamira-limpieza-ductos-small.png'
+              src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
               alt='Altamira Ductos Logo'
               width={854}
               height={285}
@@ -215,7 +215,7 @@ export default function Header() {
               }}
             >
               <Image
-                src='/assets/logos/logo-altamira-limpieza-ductos-small.png'
+                src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
                 alt='Altamira Ductos Logo'
                 width={854}
                 height={285}
