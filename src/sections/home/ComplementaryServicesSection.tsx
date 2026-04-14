@@ -30,7 +30,7 @@ const DATA_COMPLEMENTARY_SERVICES = [
     icon: <Video />,
     title: 'Video inspección',
     description:
-      'Revisión y inspección de ductos para detectar obstrucciones y fugas.',
+      'Revisión e inspección de ductos para detectar obstrucciones y fugas.',
   },
   {
     icon: <BugOff />,

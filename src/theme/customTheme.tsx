@@ -133,7 +133,7 @@ const getTheme = (mode: 'light' | 'dark') =>
       fontFamily: "'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif",
       h1: {
         fontSize: '6rem',
-        fontWeight: 400,
+        fontWeight: 300,
         lineHeight: 1.167,
         letterSpacing: '-0.01562em',
         '@media (max-width:900px)': {
@@ -229,7 +229,7 @@ const getTheme = (mode: 'light' | 'dark') =>
       },
       overline: {
         fontSize: '0.85rem',
-        fontWeight: 500,
+        fontWeight: 700,
         lineHeight: 2.66,
         letterSpacing: '0.3em',
         textTransform: 'uppercase',

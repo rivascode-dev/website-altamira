@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Box,
   Button,
@@ -28,10 +29,13 @@ const DATA_MENU = [
   { label: 'Normativa', target: 'regulations' },
   { label: 'Galería', target: 'gallery' },
   { label: 'Complementarios', target: 'complementary-services' },
+  { label: '+Info', target: '/docs' },
 ];
 
 export default function Header() {
   const theme = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -53,6 +57,12 @@ export default function Header() {
   ) => {
     event.preventDefault();
     setIsMenuOpen(false);
+
+    if (targetId.startsWith('/')) {
+      router.push(targetId);
+      return;
+    }
+
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -155,20 +165,20 @@ export default function Header() {
             </Button>
 
             {isMobile && (
-              <IconButton
+              <Box
                 color='primary'
                 onClick={toggleMenu(true)}
                 aria-label='Abrir menú'
-                sx={{
-                  ml: 1,
-                  bgcolor: alpha(theme.palette.primary.main, 0.05),
-                  '&:hover': {
-                    bgcolor: alpha(theme.palette.primary.main, 0.1),
-                  },
-                }}
+                // sx={{
+                //   ml: 1,
+                //   bgcolor: alpha(theme.palette.primary.main, 0.05),
+                //   '&:hover': {
+                //     bgcolor: alpha(theme.palette.primary.main, 0.1),
+                //   },
+                // }}
               >
-                <Menu size={28} />
-              </IconButton>
+                <Menu color='#D32F2F' size={35} />
+              </Box>
             )}
           </Stack>
         </Stack>
@@ -223,9 +233,11 @@ export default function Header() {
               />
             </Box>
             <IconButton onClick={toggleMenu(false)} color='primary'>
-              <X size={28} />
+              <X size={30} color='#D32F2F' />
             </IconButton>
           </Stack>
+
+          <Divider sx={{ my: 3 }} />
 
           <List sx={{ flexGrow: 1 }}>
             {DATA_MENU.map((item) => (
@@ -241,9 +253,9 @@ export default function Header() {
                   <ListItemText
                     primary={
                       <Typography
-                        variant='h6'
+                        variant='subtitle1'
                         sx={{
-                          fontWeight: 600,
+                          //fontWeight: 600,
                           color: 'primary.main',
                         }}
                       >
@@ -277,7 +289,7 @@ export default function Header() {
               size='large'
               startIcon={<MessageCircle size={20} />}
               component='a'
-              href='https://wa.me/56982811148'
+              href='https://wa.me/56997902704'
               target='_blank'
               rel='noopener noreferrer'
               sx={{

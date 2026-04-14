@@ -1,6 +1,6 @@
 'use client';
-import { Box, Container, Grid, Typography, Stack } from '@mui/material';
-import { CircleCheck } from 'lucide-react';
+import { Box, Container, Grid, Typography, Stack, Button } from '@mui/material';
+import { ArrowRight, CircleCheck } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export default function AboutUsSection() {
                 }}
               >
                 <Typography variant='h3' color='secondary'>
-                  +Años
+                  +4
                 </Typography>
                 <Typography
                   variant='body2'
@@ -63,27 +63,31 @@ export default function AboutUsSection() {
                     color: 'white',
                   }}
                 >
-                  de Experiencia
+                  años de especialización
                 </Typography>
               </Box>
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Image
+            {/* <Image
               src='/assets/logos/logo-altamira-limpieza-ductos-vertical.png'
               alt='Equipo técnico Altamira Ductos'
               width={854}
               height={285}
               style={{ width: '30%', height: 'auto' }}
               priority
-            />
+            /> */}
 
             <Stack>
               <Typography variant='overline' color='secondary'>
                 QUIENES SOMOS
               </Typography>
 
-              <Typography variant='h5' color='primary.main' sx={{ mt: 2 }}>
+              <Typography
+                variant='h4'
+                color='primary.main'
+                sx={{ mt: 2, fontWeight: 600 }}
+              >
                 En Altamira nos especializamos en la limpieza, mantención y
                 sanitización de sistemas de ductos en edificios y comunidades.
               </Typography>
@@ -96,7 +100,7 @@ export default function AboutUsSection() {
                 verticales, horizontales, cámaras de alcantarillado y ductos de
                 basura con sus salas, asegurando resultados eficientes, seguros
                 y duraderos.{'  '}
-                <Box
+                {/* <Box
                   component={Link}
                   href='/docs/nosotros'
                   sx={{
@@ -107,7 +111,7 @@ export default function AboutUsSection() {
                   }}
                 >
                   Leer más...
-                </Box>
+                </Box> */}
               </Typography>
 
               <Grid container spacing={3}>
@@ -123,7 +127,7 @@ export default function AboutUsSection() {
                       spacing={1.5}
                       sx={{ alignItems: 'flex-start' }}
                     >
-                      <CircleCheck color='#D32F2F' />
+                      <CircleCheck color='white' fill='#D32F2F' size={30} />
                       <Typography
                         variant='body1'
                         color='primary.main'
@@ -134,6 +138,30 @@ export default function AboutUsSection() {
                     </Stack>
                   </Grid>
                 ))}
+                <Button
+                  component={Link}
+                  href='/docs/nosotros'
+                  variant='outlined'
+                  size='large'
+                  color='secondary'
+                  endIcon={<ArrowRight />}
+                  sx={{
+                    mt: 4,
+                    borderColor: 'secondary.main',
+                    bgcolor: 'secondary.main',
+                    color: 'white',
+                    border: '1px solid',
+
+                    '&:active': { transform: 'scale(0.95)' },
+                    '&:hover': {
+                      bgcolor: 'white',
+                      color: 'secondary.main',
+                      border: '1px solid',
+                    },
+                  }}
+                >
+                  Leer Más
+                </Button>
               </Grid>
             </Stack>
           </Grid>

@@ -10,7 +10,7 @@ export default function WhatsAppFab() {
       <Zoom in={true} style={{ transitionDelay: '1000ms' }}>
         <Fab
           component='a'
-          href='https://wa.me/56982811148'
+          href='https://wa.me/56997902704'
           target='_blank'
           rel='noopener noreferrer'
           sx={{

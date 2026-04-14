@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowLeft, Menu, X } from 'lucide-react';
+import { ArrowBigLeft, ArrowLeft, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import {
   Box,
@@ -13,6 +13,7 @@ import {
   Drawer,
   useTheme,
   useMediaQuery,
+  Stack,
 } from '@mui/material';
 
 interface Doc {
@@ -26,7 +27,13 @@ interface DocsSidebarProps {
   children?: React.ReactNode;
 }
 
-const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }) => {
+const SidebarContent = ({
+  docs,
+  onClose,
+}: {
+  docs: Doc[];
+  onClose?: () => void;
+}) => {
   const pathname = usePathname();
   const sortedDocs = [...docs].sort((a, b) => a.order - b.order);
 
@@ -65,7 +72,7 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
               color: 'text.secondary',
             }}
           >
-            <X size={24} />
+            <X size={30} color='#D32F2F' />
           </IconButton>
         )}
 
@@ -84,17 +91,25 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
               mb: 4,
             }}
           >
-            <ArrowLeft size={20} />
-            <Typography
+            <ArrowBigLeft size={30} />
+            {/* <Typography
               variant='subtitle2'
-              sx={{ fontWeight: '700', textTransform: 'uppercase', letterSpacing: 1 }}
+              sx={{
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
             >
               Volver al inicio
-            </Typography>
+            </Typography> */}
           </Box>
         </Link>
 
-        <Typography variant='h6' color='primary.main' sx={{ fontWeight: '800' }}>
+        <Typography
+          variant='h6'
+          color='primary.main'
+          sx={{ fontWeight: '800' }}
+        >
           DOCUMENTACIÓN
         </Typography>
       </Box>
@@ -109,7 +124,10 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
           gap: 4,
         }}
       >
-        <Box component='nav' sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        <Box
+          component='nav'
+          sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}
+        >
           {sortedDocs.map((doc) => {
             const href = `/docs/${doc.slug}`;
             const isExactActive = pathname === href || pathname === `${href}/`;
@@ -138,7 +156,7 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
                     color: isActive ? 'primary.main' : 'text.secondary',
                     fontWeight: isActive ? 700 : 500,
                     borderLeft: isActive
-                      ? `4px solid ${theme.palette.primary.main}`
+                      ? `4px solid ${theme.palette.secondary.main}`
                       : '4px solid transparent',
                     '&:hover': {
                       bgcolor: alpha(theme.palette.primary.main, 0.04),
@@ -158,7 +176,7 @@ const SidebarContent = ({ docs, onClose }: { docs: Doc[]; onClose?: () => void }
       <Box sx={{ p: 4, borderTop: '1px solid', borderColor: 'divider' }}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Image
-            src='/assets/logos/logo-altamira-limpieza-ductos-small.png'
+            src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
             alt='Altamira Ductos Logo'
             width={854}
             height={285}
@@ -226,36 +244,66 @@ export function DocsSidebar({ docs, children }: DocsSidebarProps) {
         {isMobile && (
           <Box
             sx={{
-              p: 2,
-              borderBottom: '1px solid',
-              borderColor: 'divider',
               display: 'flex',
-              alignItems: 'center',
-              bgcolor: 'background.default',
-              zIndex: 10,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              p: 2,
             }}
           >
-            <IconButton
+            <Link href='/' style={{ textDecoration: 'none' }}>
+              {/* <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  //gap: 1.5,
+                  color: 'secondary.main',
+                  '&:hover': {
+                    opacity: 0.8,
+                    transform: 'translateX(-4px)',
+                  },
+                  transition: 'all 0.2s ease-in-out',
+                  //mb: 4,
+                }}
+              > */}
+              <ArrowBigLeft color='#D32F2F' size={40} />
+              {/* <Typography
+                  variant='subtitle2'
+                  sx={{
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    letterSpacing: 1,
+                  }}
+                >
+                  inicio
+                </Typography> */}
+              {/* </Box> */}
+            </Link>
+            {/* <Box
+              sx={{
+                p: 2,
+                borderBottom: '1px solid',
+                borderColor: 'divider',
+                display: 'flex',
+                alignItems: 'center',
+                bgcolor: 'background.default',
+                zIndex: 10,
+              }}
+            > */}
+            {/* <IconButton
               onClick={toggleSidebar}
               color='primary'
               sx={{
                 bgcolor: alpha(theme.palette.primary.main, 0.05),
-                '&:hover': { bgcolor: alpha(theme.palette.primary.main, 0.1) },
+                '&:hover': {
+                  bgcolor: alpha(theme.palette.primary.main, 0.1),
+                },
               }}
-            >
-              <Menu size={24} />
-            </IconButton>
-            <Box
-              sx={{
-                ml: 2,
-                fontWeight: 800,
-                color: 'primary.main',
-                fontSize: '0.9rem',
-                letterSpacing: 1,
-              }}
-            >
-              MENÚ DE DOCUMENTACIÓN
+            > */}
+            <Box onClick={toggleSidebar}>
+              <Menu color='#D32F2F' size={35} />
             </Box>
+            {/* </IconButton> */}
+            {/* </Box> */}
           </Box>
         )}
 
