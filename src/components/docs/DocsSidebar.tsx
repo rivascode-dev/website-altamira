@@ -251,59 +251,12 @@ export function DocsSidebar({ docs, children }: DocsSidebarProps) {
             }}
           >
             <Link href='/' style={{ textDecoration: 'none' }}>
-              {/* <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  //gap: 1.5,
-                  color: 'secondary.main',
-                  '&:hover': {
-                    opacity: 0.8,
-                    transform: 'translateX(-4px)',
-                  },
-                  transition: 'all 0.2s ease-in-out',
-                  //mb: 4,
-                }}
-              > */}
               <ArrowBigLeft color='#D32F2F' size={40} />
-              {/* <Typography
-                  variant='subtitle2'
-                  sx={{
-                    fontWeight: '700',
-                    textTransform: 'uppercase',
-                    letterSpacing: 1,
-                  }}
-                >
-                  inicio
-                </Typography> */}
-              {/* </Box> */}
             </Link>
-            {/* <Box
-              sx={{
-                p: 2,
-                borderBottom: '1px solid',
-                borderColor: 'divider',
-                display: 'flex',
-                alignItems: 'center',
-                bgcolor: 'background.default',
-                zIndex: 10,
-              }}
-            > */}
-            {/* <IconButton
-              onClick={toggleSidebar}
-              color='primary'
-              sx={{
-                bgcolor: alpha(theme.palette.primary.main, 0.05),
-                '&:hover': {
-                  bgcolor: alpha(theme.palette.primary.main, 0.1),
-                },
-              }}
-            > */}
+
             <Box onClick={toggleSidebar}>
               <Menu color='#D32F2F' size={35} />
             </Box>
-            {/* </IconButton> */}
-            {/* </Box> */}
           </Box>
         )}
 

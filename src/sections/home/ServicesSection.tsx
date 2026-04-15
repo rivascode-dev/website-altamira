@@ -15,8 +15,11 @@ import {
   CloudRain,
   Trash2,
   TriangleAlert,
+  Building,
+  BrushCleaning,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Link from 'next/link';
 
 const DATA_SERVICES = [
   {
@@ -61,6 +64,17 @@ const DATA_SERVICES = [
   },
 ];
 
+const DATA_SERVICES_EXTRAS = [
+  {
+    icon: <Building />,
+    text: 'Desde los pisos superiores hasta la sala de basura',
+  },
+  {
+    icon: <BrushCleaning />,
+    text: 'Incluye limpieza, mantención y sanitización de las áreas intervenidas',
+  },
+];
+
 export default function ServicesSection() {
   const theme = useTheme();
 
@@ -101,117 +115,51 @@ export default function ServicesSection() {
         <Grid container spacing={4}>
           {DATA_SERVICES.map((service, index) => (
             <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
-              <ServiceCard
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                accent={service.accent}
-                featured={service.featured}
-              />
-            </Grid>
-          ))}
-
-          {/* <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <ServiceCard
-              icon={<ArrowUpDown size={32} />}
-              title='Ductos verticales'
-              description='Limpieza profunda de shafts de ventilación y extracción en edificios de gran altura.'
-              accent='Incluye Sanitización'
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <ServiceCard
-              icon={<MoveHorizontal size={32} />}
-              title='Ductos horizontales'
-              description='Mantenimiento de redes de extracción en estacionamientos y cocinas industriales.'
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <ServiceCard
-              icon={<Droplets size={32} />}
-              title='Alcantarillado'
-              description='Desobstrucción técnica y mantenimiento preventivo de redes de aguas servidas.'
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <ServiceCard
-              icon={<CloudRain size={32} />}
-              title='Aguas lluvias'
-              description='Preparación estacional de ductos para evitar colapsos por lluvias intensas.'
-            />
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <ServiceCard
-              icon={<Trash2 size={32} />}
-              title='Ductos de basura'
-              description='Lavado a presión y desinfección de alta gama para control de olores y plagas.'
-              borderColor='secondary.main'
-              iconColor='secondary.main'
-              iconBgColor='rgba(211, 47, 47, 0.1)'
-            />
-          </Grid> */}
-
-          {/* Emergency Service Featured Card */}
-          {/* <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-            <Box
-              sx={{
-                bgcolor: 'primary.main',
-                p: 4,
-                borderRadius: 3,
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Box>
-                <Box
-                  sx={{
-                    width: 56,
-                    height: 56,
-                    bgcolor: 'secondary.main',
-                    borderRadius: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    mb: 3,
-                  }}
-                >
-                  <TriangleAlert size={32} color='white' />
-                </Box>
-                <Typography
-                  variant='h6'
-                  color='white'
-                  sx={{ fontWeight: 700, mb: 2 }}
-                >
-                  Emergencias sanitarias
-                </Typography>
-                <Typography
-                  variant='body2'
-                  color='rgba(255,255,255,0.7)'
-                  sx={{ mb: 3, lineHeight: 1.8 }}
-                >
-                  Atención inmediata ante colapsos u obstrucciones críticas que
-                  comprometen la salud.
-                </Typography>
-              </Box>
-              <Button
-                component='a'
-                href='tel:+56982811148'
-                variant='contained'
+              <Box
+                component={Link}
+                href='docs/servicios/'
                 sx={{
-                  bgcolor: 'white',
-                  color: 'primary.main',
-                  fontWeight: 700,
-                  py: 1.5,
-                  '&:hover': { bgcolor: 'secondary.main', color: 'white' },
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  display: 'block',
                 }}
               >
-                Llamar Ahora
-              </Button>
-            </Box>
-          </Grid> */}
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  accent={service.accent}
+                  featured={service.featured}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container spacing={4} sx={{ mt: 4 }}>
+          {DATA_SERVICES_EXTRAS.map((item, index) => (
+            <Grid
+              key={index}
+              size={{ xs: 12, sm: 6, lg: 6 }}
+              sx={{
+                p: 2,
+                borderRadius: 3,
+                bgcolor:
+                  theme.palette.mode === 'dark'
+                    ? 'background.paper'
+                    : '#eceeef',
+              }}
+            >
+              <Stack direction='row' spacing={2}>
+                <Box sx={{ color: 'primary.main', display: 'flex' }}>
+                  {item.icon}
+                </Box>
+                <Typography variant='body2' color='primary.main'>
+                  {item.text}
+                </Typography>
+              </Stack>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </SectionWrapper>
@@ -247,10 +195,6 @@ function ServiceCard({
         '&:hover': {
           boxShadow:
             '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-          // '& .MuiBox-root': {
-          //   bgcolor: 'secondary.main',
-          //   color: 'white',
-          // },
         },
       }}
     >

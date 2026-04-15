@@ -52,7 +52,7 @@ export default function AboutUsSection() {
                 }}
               >
                 <Typography variant='h3' color='secondary'>
-                  +4
+                  Confianza
                 </Typography>
                 <Typography
                   variant='body2'
@@ -63,58 +63,42 @@ export default function AboutUsSection() {
                     color: 'white',
                   }}
                 >
-                  años de especialización
+                  y experiencia
                 </Typography>
               </Box>
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            {/* <Image
-              src='/assets/logos/logo-altamira-limpieza-ductos-vertical.png'
-              alt='Equipo técnico Altamira Ductos'
-              width={854}
-              height={285}
-              style={{ width: '30%', height: 'auto' }}
-              priority
-            /> */}
-
             <Stack>
               <Typography variant='overline' color='secondary'>
                 QUIENES SOMOS
               </Typography>
 
               <Typography
-                variant='h4'
-                color='primary.main'
+                variant='h5'
+                color='primary'
                 sx={{ mt: 2, fontWeight: 600 }}
               >
+                EMPRESA DE CONTROL DE PLAGAS SEGÚN REQUERIMIENTO SEREMI PARA LA
+                EJECUCIÓN DE LIMPIEZA DE DUCTOS VERTICALES Y HORIZONTALES.
+              </Typography>
+
+              <Typography variant='body1' color='primary.main' sx={{ mt: 2 }}>
                 En Altamira nos especializamos en la limpieza, mantención y
-                sanitización de sistemas de ductos en edificios y comunidades.
+                sanitización de sistemas de ductos en edificios y condominios.
               </Typography>
               <Typography
                 variant='body1'
                 color='text.secondary'
-                sx={{ mb: 4, lineHeight: 1.8 }}
+                sx={{ mt: 2, lineHeight: 1.8 }}
               >
                 Trabajamos con equipos especializados para intervenir ductos
                 verticales, horizontales, cámaras de alcantarillado y ductos de
                 basura con sus salas, asegurando resultados eficientes, seguros
                 y duraderos.{'  '}
-                {/* <Box
-                  component={Link}
-                  href='/docs/nosotros'
-                  sx={{
-                    color: 'secondary.main',
-                    fontWeight: 800,
-                    fontStyle: 'italic',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Leer más...
-                </Box> */}
               </Typography>
 
-              <Grid container spacing={3}>
+              <Grid container spacing={3} sx={{ mt: 2 }}>
                 {[
                   'Equipo Certificado',
                   'Tecnología de Punta',

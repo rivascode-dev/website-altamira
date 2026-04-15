@@ -1,15 +1,56 @@
 'use client';
 
-import { Box, Typography, alpha } from '@mui/material';
+import { Box, Typography, alpha, Button, Stack } from '@mui/material';
 import { brand } from '@/theme/customTheme';
 import { MDXContent } from '@/components/docs/MdxContent';
 import { docs } from '@/velite';
+import Link from 'next/link';
 
 type Doc = (typeof docs)[number];
 
 interface DocsViewProps {
   doc: Doc;
 }
+
+const mdxComponents = {
+  Box,
+  Stack,
+  Typography,
+  Link,
+  Button: ({ href, sx, ...props }: any) => (
+    <Button
+      {...(href ? { component: Link, href } : {})}
+      {...props}
+      sx={{
+        width: 'fit-content',
+        '& p': { color: 'inherit', m: 0, display: 'inline' },
+        ...sx,
+      }}
+    />
+  ),
+};
+
+// const mdxComponents = {
+//   Box,
+//   Stack,
+//   Typography,
+//   Button: ({ href, sx, ...props }: any) => {
+//     const finalProps = {
+//       ...props,
+//       sx: {
+//         color: '#fff !important',
+//         width: 'fit-content',
+//         display: 'inline-flex',
+//         ...sx,
+//       },
+//     };
+//     if (href) {
+//       return <Button component={Link} href={href} {...finalProps} />;
+//     }
+//     return <Button {...finalProps} />;
+//   },
+//   Link: (props: any) => <Link {...props} />,
+// };
 
 export function DocsView({ doc }: DocsViewProps) {
   return (
@@ -54,6 +95,16 @@ export function DocsView({ doc }: DocsViewProps) {
           lineHeight: 1.8,
           mb: 3,
           color: 'text.secondary',
+        },
+        '& .MuiButton-root': {
+          width: 'fit-content',
+          '& p': {
+            color: 'inherit !important',
+            fontSize: 'inherit !important',
+            lineHeight: 'inherit !important',
+            margin: '0 !important',
+            display: 'inline !important',
+          },
         },
         '& strong': {
           color: 'text.primary',
@@ -152,7 +203,7 @@ export function DocsView({ doc }: DocsViewProps) {
       </Box>
 
       <Box sx={{ position: 'relative' }}>
-        <MDXContent code={doc.content} />
+        <MDXContent code={doc.content} components={mdxComponents} />
       </Box>
     </Box>
   );

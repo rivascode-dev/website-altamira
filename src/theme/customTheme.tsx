@@ -80,10 +80,12 @@ const getTheme = (mode: 'light' | 'dark') =>
         light: secondary[300],
         main: secondary[500],
         dark: secondary[800],
+        contrastText: '#fff',
         ...(mode === 'dark' && {
           light: secondary[400],
           main: secondary[500],
           dark: secondary[900],
+          contrastText: '#fff',
         }),
       },
       warning: {

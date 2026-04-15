@@ -1,6 +1,13 @@
 'use client';
 import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
-import { Ban, Biohazard, Waves, Video, ArrowRight } from 'lucide-react';
+import {
+  Ban,
+  Biohazard,
+  Waves,
+  Video,
+  ArrowRight,
+  NotepadText,
+} from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,6 +24,10 @@ const DATA_PROBLEMS = [
   {
     icon: <Waves />,
     text: 'Filtraciones en departamentos y daños estructurales.',
+  },
+  {
+    icon: <NotepadText />,
+    text: 'Multas, problemas con comités y seguros contratados.',
   },
 ];
 

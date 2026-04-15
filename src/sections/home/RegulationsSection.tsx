@@ -13,21 +13,9 @@ import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
 
 const DATA_REGULATIONS = [
-  {
-    icon: <BadgeCheck />,
-    title: 'Normativa SEC',
-    desc: 'Certificación técnica SEC vigente.',
-  },
-  {
-    icon: <ShieldAlert />,
-    title: 'Decreto Supremo Minsal',
-    desc: 'Cumplimiento DS.594 de condiciones sanitarias.',
-  },
-  {
-    icon: <Landmark />,
-    title: 'Ordenanzas Municipales',
-    desc: 'Validación ante inspecciones de la Dirección de Obras.',
-  },
+  'Multas y sanciones legales',
+  'Responsabilidad civil ante daños a terceros',
+  'Riesgos sanitarios para la comunidad',
 ];
 
 export default function RegulationsSection() {
@@ -74,17 +62,69 @@ export default function RegulationsSection() {
               >
                 CUMPLIMIENTO DE NORMATIVAS Y RESPONSABILIDAD
               </Box>
-              <Typography variant='h3' color='primary' sx={{ mb: 3, mt: 2 }}>
+              <Typography variant='h3' color='primary' sx={{ mt: 2 }}>
                 Ley N° 21.442 de Copropiedad
               </Typography>
+              <Typography variant='h6' color='text.secondary' sx={{ mt: 3 }}>
+                La Ley N° 21.442 sobre Copropiedad Inmobiliaria (Chile, 2022)
+                establece que las comunidades y administraciones tienen la
+                obligación de mantener en correcto estado las instalaciones y
+                bienes comunes del edificio, resguardando la seguridad,
+                salubridad y funcionamiento de la infraestructura.
+              </Typography>
+
+              <Typography variant='h6' color='text.secondary' sx={{ mt: 2 }}>
+                En este contexto, los sistemas de ductos sanitarios y ductos de
+                basura forman parte de estas instalaciones críticas, cuya
+                mantención periódica es fundamental para prevenir riesgos
+                sanitarios, estructurales y legales.
+              </Typography>
+
+              <Typography variant='h6' color='text.secondary' sx={{ mt: 2 }}>
+                No realizar mantenciones obligatorias puede generar:
+              </Typography>
+
+              <Stack spacing={3} sx={{ mt: 2, ml: 2 }}>
+                {DATA_REGULATIONS.map((item, index) => (
+                  <Stack
+                    key={index}
+                    direction='row'
+                    spacing={2}
+                    sx={{ alignItems: 'flex-start' }}
+                  >
+                    <Box>
+                      <BadgeCheck />
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant='subtitle1'
+                        color='primary.main'
+                        sx={{ fontWeight: 700 }}
+                      >
+                        {item}
+                      </Typography>
+                    </Box>
+                  </Stack>
+                ))}
+              </Stack>
+
               <Typography
-                variant='h6'
+                variant='subtitle1'
                 color='text.secondary'
-                //sx={{ mb: 4, lineHeight: 1.8 }}
+                sx={{ mt: 2, fontWeight: 700 }}
               >
-                No realizar mantenciones obligatorias puede generar multas,
-                sanciones legales y responsabilidades directas ante accidentes.
-                Ignorar la normativa no es una opción. Es un riesgo legal.
+                Ignorar la normativa no es una opción. Es un riesgo operativo y
+                legal.
+              </Typography>
+
+              <Typography
+                variant='subtitle1'
+                color='text.secondary'
+                sx={{ mt: 2, fontWeight: 700 }}
+              >
+                Un ducto no mantenido puede transformarse en un foco sanitario
+                crítico, generando colapsos, filtraciones y daños que afectan
+                directamente a residentes y a la administración.
               </Typography>
 
               <Typography
@@ -95,33 +135,6 @@ export default function RegulationsSection() {
                 Prevenir no es opcional. Es una obligación legal. “En caso de
                 accidente, la responsabilidad recae en la administración.”
               </Typography>
-
-              <Stack spacing={3} sx={{ mt: 2 }}>
-                {DATA_REGULATIONS.map((item, index) => (
-                  <Stack
-                    key={index}
-                    direction='row'
-                    spacing={2}
-                    sx={{ alignItems: 'flex-start' }}
-                  >
-                    <Box sx={{ color: 'primary.main', mt: 0.5 }}>
-                      {item.icon}
-                    </Box>
-                    <Box>
-                      <Typography
-                        variant='subtitle1'
-                        color='primary.main'
-                        sx={{ fontWeight: 700 }}
-                      >
-                        {item.title}
-                      </Typography>
-                      <Typography variant='body2' color='text.secondary'>
-                        {item.desc}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                ))}
-              </Stack>
 
               <Button
                 component={Link}
@@ -145,65 +158,10 @@ export default function RegulationsSection() {
                   },
                 }}
               >
-                Leer Más
+                Leer más sobre obligaciones y consecuencias legales
               </Button>
             </Box>
           </Grid>
-
-          {/* <Grid size={{ xs: 12, lg: 6 }}>
-            <Typography
-              variant='body2'
-              color='secondary.main'
-              sx={{
-                fontWeight: 700,
-                letterSpacing: 3,
-                textTransform: 'uppercase',
-                mb: 2,
-              }}
-            >
-              Marco Regulatorio
-            </Typography>
-            <Typography
-              variant='h3'
-              color='primary.main'
-              sx={{ fontWeight: 800, mb: 4 }}
-            >
-              Respaldo Legal para su Edificio
-            </Typography>
-            <Typography
-              variant='h6'
-              color='text.secondary'
-              sx={{ fontWeight: 400, lineHeight: 1.6 }}
-            >
-              No arriesgue la clausura de sus instalaciones. Mantenga su
-              edificio operativo, seguro y dentro del marco legal, protegiendo a
-              los copropietarios y la plusvalía del inmueble.
-            </Typography>
-
-            <Box sx={{ mt: 6, display: 'flex', flexWrap: 'wrap', gap: 3 }}>
-              {[
-                'Resolución Sanitaria',
-                'Firma Ingeniero SEC',
-                'Patente Comercial',
-              ].map((tag, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    px: 3,
-                    py: 1.5,
-                    borderRadius: 8,
-                    bgcolor: 'rgba(0, 62, 84, 0.05)',
-                    color: 'primary.main',
-                    fontWeight: 700,
-                    fontSize: '0.875rem',
-                    border: '1px solid rgba(0, 62, 84, 0.1)',
-                  }}
-                >
-                  {tag}
-                </Box>
-              ))}
-            </Box>
-          </Grid> */}
         </Grid>
       </Container>
     </SectionWrapper>
