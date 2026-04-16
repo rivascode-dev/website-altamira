@@ -40,6 +40,7 @@ export default function EmergencyBannerSection() {
             <Box>
               <Typography
                 variant='h3'
+                component='h2'
                 sx={{
                   color: 'white',
                   fontWeight: 800,

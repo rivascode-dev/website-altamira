@@ -51,8 +51,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Altamira Ductos',
+    image: 'https://altamira-ductos.vercel.app/assets/logos/logo-rivascode-cuadrado-small.png',
+    description:
+      'Empresa con resolución sanitaria especialista en limpieza, mantención y sanitización de sistemas de ductos verticales y horizontales.',
+    url: 'https://altamira-ductos.vercel.app',
+    areaServed: 'CL',
+  };
+
   return (
     <html lang='es'>
+      <head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <MuiRootProvider>{children}</MuiRootProvider>
       </body>

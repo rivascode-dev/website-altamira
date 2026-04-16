@@ -79,7 +79,7 @@ export default function TechnicalReportSection() {
               <ClipboardCheck size={20} />
               Garantía de Calidad
             </Box>
-            <Typography variant='h3' color='primary'>
+            <Typography variant='h3' component='h2' color='primary'>
               Informe Técnico y Resolución Sanitaria.
             </Typography>
             <Typography

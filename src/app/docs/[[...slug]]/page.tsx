@@ -1,7 +1,7 @@
 import { docs } from '@/velite';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { DocsView } from '@/components/docs/DocsView';
+import { ArticleViewer } from '@/sections/docs/ArticleViewer';
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -19,9 +19,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const slug = resolvedParams.slug
-    ? resolvedParams.slug.join('/')
-    : 'nosotros';
+  const slug = resolvedParams.slug ? resolvedParams.slug.join('/') : 'nosotros';
   const doc = docs.find((doc) => doc.slug === slug);
 
   if (!doc) {
@@ -36,14 +34,12 @@ export async function generateMetadata({
 
 export default async function DocPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const slug = resolvedParams.slug
-    ? resolvedParams.slug.join('/')
-    : 'nosotros';
+  const slug = resolvedParams.slug ? resolvedParams.slug.join('/') : 'nosotros';
   const doc = docs.find((doc) => doc.slug === slug);
 
   if (!doc) {
     notFound();
   }
 
-  return <DocsView doc={doc} />;
+  return <ArticleViewer doc={doc} />;
 }

@@ -99,7 +99,7 @@ export default function ServicesSection() {
           >
             Nuestros Servicios
           </Typography>
-          <Typography variant='h3' color='primary'>
+          <Typography variant='h3' component='h2' color='primary'>
             Intervención completa del sistema de ductos
           </Typography>
           <Typography

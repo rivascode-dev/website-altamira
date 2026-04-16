@@ -76,6 +76,7 @@ export default function AboutUsSection() {
 
               <Typography
                 variant='h5'
+                component='h2'
                 color='primary'
                 sx={{ mt: 2, fontWeight: 600 }}
               >
@@ -129,6 +130,7 @@ export default function AboutUsSection() {
                   size='large'
                   color='secondary'
                   endIcon={<ArrowRight />}
+                  aria-label='Leer más sobre nuestra empresa'
                   sx={{
                     mt: 4,
                     borderColor: 'secondary.main',

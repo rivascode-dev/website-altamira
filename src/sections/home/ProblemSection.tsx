@@ -55,7 +55,7 @@ export default function ProblemSection() {
             <Typography variant='overline' color='secondary'>
               Alerta Técnica
             </Typography>
-            <Typography variant='h3' sx={{ color: 'white' }}>
+            <Typography variant='h3' component='h2' sx={{ color: 'white' }}>
               ¿Qué pasa si no se limpian los ductos?
             </Typography>
             <Typography variant='h6' sx={{ color: 'grey.100', mt: 2 }}>

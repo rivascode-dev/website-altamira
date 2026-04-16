@@ -60,7 +60,7 @@ export default function HowWeWorkSection() {
           >
             COMO TRABAJAMOS
           </Typography>
-          <Typography variant='h3' color='primary'>
+          <Typography variant='h3' component='h2' color='primary'>
             Ingeniería en cada paso
           </Typography>
         </Box>

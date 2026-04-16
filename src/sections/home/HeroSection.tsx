@@ -32,6 +32,8 @@ export default function HeroSection() {
           src='/assets/images/altamira-limpieza-ductos-hero.png'
           alt='Technical engineer inspecting ventilation systems'
           fill
+          priority={true}
+          sizes='100vw'
           style={{ objectFit: 'cover' }}
         />
       </Box>
@@ -101,6 +103,7 @@ export default function HeroSection() {
           </Typography>
           <Typography
             variant='h5'
+            component='h3'
             sx={{
               color: 'white',
               maxWidth: 650,
@@ -111,6 +114,7 @@ export default function HeroSection() {
           </Typography>
           <Typography
             variant='h6'
+            component='p'
             sx={{
               color: 'secondary.light',
               mt: 4,
@@ -129,6 +133,7 @@ export default function HeroSection() {
               href='#services'
               variant='outlined'
               size='large'
+              aria-label='Ir a la sección de servicios'
               sx={{
                 mt: 4,
                 borderColor: 'white',
@@ -146,6 +151,7 @@ export default function HeroSection() {
               color='secondary'
               size='large'
               endIcon={<ArrowRight />}
+              aria-label='Ir al formulario de evaluación técnica'
               sx={{
                 '&:hover': {
                   bgcolor: 'white',

@@ -113,7 +113,7 @@ export default function ContactSection() {
             <Typography variant='overline' color='secondary'>
               CONTACTO
             </Typography>
-            <Typography variant='h3' color='primary.main'>
+            <Typography variant='h3' component='h2' color='primary.main'>
               Solicita tu evaluación técnica
             </Typography>
             <Typography

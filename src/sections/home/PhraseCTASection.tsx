@@ -25,7 +25,7 @@ export default function PhraseCTASection() {
         maxWidth='md'
         sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}
       >
-        <Typography variant='h3' color='primary' sx={{ fontWeight: 700 }}>
+        <Typography variant='h3' component='h2' color='primary' sx={{ fontWeight: 700 }}>
           Un ducto limpio no se ve…
         </Typography>
         <Typography variant='h3' color='secondary' sx={{ fontWeight: 700 }}>

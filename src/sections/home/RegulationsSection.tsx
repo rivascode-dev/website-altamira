@@ -62,7 +62,7 @@ export default function RegulationsSection() {
               >
                 CUMPLIMIENTO DE NORMATIVAS Y RESPONSABILIDAD
               </Box>
-              <Typography variant='h3' color='primary' sx={{ mt: 2 }}>
+              <Typography variant='h3' component='h2' color='primary' sx={{ mt: 2 }}>
                 Ley N° 21.442 de Copropiedad
               </Typography>
               <Typography variant='h6' color='text.secondary' sx={{ mt: 3 }}>

@@ -46,7 +46,7 @@ export default function BecauseWeSection() {
           <Typography variant='overline' color='secondary'>
             POR QUÉ ELEGIRNOS
           </Typography>
-          <Typography variant='h3' color='secondary' sx={{ color: 'white' }}>
+          <Typography variant='h3' component='h2' color='secondary' sx={{ color: 'white' }}>
             Por qué nuestros clientes trabajan con nosotros durante años?
           </Typography>
         </Box>

@@ -24,7 +24,7 @@ export default function GallerySection() {
           <Typography variant='overline' color='secondary'>
             GALERÍA
           </Typography>
-          <Typography variant='h3' color='primary'>
+          <Typography variant='h3' component='h2' color='primary'>
             Trabajos reales en terreno
           </Typography>
         </Box>

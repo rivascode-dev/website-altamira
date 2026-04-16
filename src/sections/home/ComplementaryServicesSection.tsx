@@ -57,7 +57,7 @@ export default function ComplementaryServicesSection() {
           <Typography variant='overline' color='secondary'>
             SOLUCIONES INTEGRALES
           </Typography>
-          <Typography variant='h3' color='primary' sx={{ mb: 3 }}>
+          <Typography variant='h3' component='h2' color='primary' sx={{ mb: 3 }}>
             Servicios Complementarios
           </Typography>
           <Typography
