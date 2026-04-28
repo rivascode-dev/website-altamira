@@ -16,7 +16,7 @@ export default function PhraseCTASection() {
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.45 }}>
         <Box
           component='img'
-          src='/assets/images/altamira-ductos-solicitar-evaluacion.jpg'
+          src='/assets/images/altamira-ductos-solicitar-evaluacion-tecnica.jpg'
           alt='Technical background'
           sx={{ width: '100%', height: '100%' }}
         />
