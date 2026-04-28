@@ -46,7 +46,7 @@ export default function ProblemSection() {
           src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
           alt='Qué pasa si no se limpian los ductos'
           fill
-          style={{ filter: 'grayscale(100%)' }}
+          style={{ filter: 'grayscale(100%)', objectFit: 'initial' }}
         />
       </Box>
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>

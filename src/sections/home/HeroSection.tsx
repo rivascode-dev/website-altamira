@@ -29,7 +29,7 @@ export default function HeroSection() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
         <Image
-          src='/assets/images/altamira-limpieza-ductos-hero.jpg'
+          src='/assets/images/altamira-ductos-hero.jpg'
           alt='Technical engineer inspecting ventilation systems'
           fill
           priority={true}
