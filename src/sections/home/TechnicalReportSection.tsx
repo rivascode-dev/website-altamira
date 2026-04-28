@@ -161,7 +161,7 @@ export default function TechnicalReportSection() {
           >
             <Box
               component='img'
-              src='https://lh3.googleusercontent.com/aida-public/AB6AXuB7EfpOfV2BOWuOTAUVv_vvmbHdjnUEVWjI_DJQPU73qDyu-U_Z9Dg24QiEVpRUexOz1Lkg7YfK54UVAwfoBgJKdz1qDjdFXCaITEydw06wIlbgiLAe1wISlze4bAdZDOBFGkXJXKNwvUyXB1vjlbiRjcA17XcnEddR5JHstm-iqzRKQtoixDubjdnh8KWh93CFsL9_a5bJUaeoJV38h48wTtvY7RfACzOB8Zi23oTcUjhhYPen38ezaaaKaiyhxHUurvUExHX3BAZ_'
+              src='/assets/images/altamira-dcutos-informe-tecnico.png'
               alt='Technical maintenance report'
               sx={{
                 borderRadius: 3,
@@ -171,7 +171,7 @@ export default function TechnicalReportSection() {
                 maxWidth: 400,
               }}
             />
-            <Box
+            {/* <Box
               sx={{
                 position: 'absolute',
                 inset: 0,
@@ -179,7 +179,7 @@ export default function TechnicalReportSection() {
                 backdropFilter: 'blur(4px)',
                 pointerEvents: 'none',
               }}
-            />
+            /> */}
           </Box>
         </Box>
       </Container>

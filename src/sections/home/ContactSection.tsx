@@ -23,8 +23,8 @@ const DATA_CONTACT = [
   {
     icon: <Phone />,
     title: 'Teléfono',
-    detail: '+56 9 9790 2704',
-    link: 'tel:+56997902704',
+    detail: '+56 9 9573 9887',
+    link: 'tel:+56995739887',
   },
   {
     icon: <MessageCircle />,
@@ -35,8 +35,14 @@ const DATA_CONTACT = [
   {
     icon: <Mail />,
     title: 'Correo Electrónico',
-    detail: 'marjorie.limpiezadeductos@gmail.com',
-    link: 'mailto:marjorie.limpiezadeductos@gmail.com',
+    detail: 'altamiraductos@gmail.com',
+    link: 'mailto:altamiraductos@gmail.com',
+  },
+  {
+    icon: <Mail />,
+    title: 'Correo Electrónico',
+    detail: 'antonio.limpiezadeductos@gmail.com',
+    link: 'mailto:antonio.limpiezadeductos@gmail.com',
   },
   {
     icon: <MapPin />,

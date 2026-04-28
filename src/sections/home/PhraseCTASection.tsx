@@ -13,19 +13,24 @@ export default function PhraseCTASection() {
         overflow: 'hidden',
       }}
     >
-      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.15 }}>
+      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.45 }}>
         <Box
           component='img'
-          src='/assets/images/altamira-ducts-cta-bg.png'
+          src='/assets/images/altamira-ductos-solicitar-evaluacion.jpg'
           alt='Technical background'
-          sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          sx={{ width: '100%', height: '100%' }}
         />
       </Box>
       <Container
         maxWidth='md'
         sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}
       >
-        <Typography variant='h3' component='h2' color='primary' sx={{ fontWeight: 700 }}>
+        <Typography
+          variant='h3'
+          component='h2'
+          color='primary'
+          sx={{ fontWeight: 700 }}
+        >
           Un ducto limpio no se ve…
         </Typography>
         <Typography variant='h3' color='secondary' sx={{ fontWeight: 700 }}>

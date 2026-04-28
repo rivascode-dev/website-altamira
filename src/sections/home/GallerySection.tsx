@@ -3,10 +3,18 @@ import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
 import SectionWrapper from '@/components/SectionWrapper';
 
 const images = [
-  'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2670&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2574&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2670&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2574&auto=format&fit=crop',
+  '/assets/images/altamira-ductos-galeria-001.jpg',
+  '/assets/images/altamira-ductos-galeria-002.jpg',
+  '/assets/images/altamira-ductos-galeria-003.jpg',
+  '/assets/images/altamira-ductos-galeria-004.jpg',
+  '/assets/images/altamira-ductos-galeria-005.jpg',
+  '/assets/images/altamira-ductos-galeria-006.jpg',
+  '/assets/images/altamira-ductos-galeria-007.jpg',
+  '/assets/images/altamira-ductos-galeria-008.jpg',
+  '/assets/images/altamira-ductos-galeria-009.jpg',
+  '/assets/images/altamira-ductos-galeria-010.jpg',
+  '/assets/images/altamira-ductos-galeria-011.jpg',
+  '/assets/images/altamira-ductos-galeria-012.jpg',
 ];
 
 export default function GallerySection() {
@@ -58,7 +66,7 @@ export default function GallerySection() {
                     transition: 'transform 0.5s ease',
                   }}
                 />
-                <Box
+                {/* <Box
                   className='overlay'
                   sx={{
                     position: 'absolute',
@@ -78,7 +86,7 @@ export default function GallerySection() {
                   >
                     Terreno Altamira
                   </Typography>
-                </Box>
+                </Box> */}
               </Box>
             </Grid>
           ))}

@@ -23,16 +23,19 @@ const DATA_DIFFERENTIATORS = [
     icon: <ShieldCheck />,
     title: 'Experiencia',
     desc: 'Técnicos especializados en puntos críticos, Contamos con técnicos altamente especializados, con experiencia en puntos críticos y de alta exigencia operativa.',
+    active: false,
   },
   {
     icon: <Handshake />,
     title: 'Relación',
     desc: 'Conocemos cada comunidad y su historial, Construimos relaciones de largo plazo basadas en la confianza, la transparencia y la respuesta oportuna.',
+    active: true,
   },
   {
     icon: <HardHat />,
     title: 'Prevención',
     desc: 'Anticipamos problemas antes de que ocurran, Promovemos activamente la mantención preventiva de la red sanitaria, asesorando a comités y administraciones sobre la frecuencia adecuada, conforme a la normativa vigente.',
+    active: false,
   },
 ];
 
@@ -46,7 +49,12 @@ export default function BecauseWeSection() {
           <Typography variant='overline' color='secondary'>
             POR QUÉ ELEGIRNOS
           </Typography>
-          <Typography variant='h3' component='h2' color='secondary' sx={{ color: 'white' }}>
+          <Typography
+            variant='h3'
+            component='h2'
+            color='secondary'
+            sx={{ color: 'white' }}
+          >
             Por qué nuestros clientes trabajan con nosotros durante años?
           </Typography>
         </Box>
@@ -60,7 +68,9 @@ export default function BecauseWeSection() {
                   p: 4,
                   borderRadius: 4,
                   height: '100%',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  border: item.active
+                    ? `1px solid ${theme.palette.secondary.main}`
+                    : 'none',
                   transition: 'transform 0.3s',
                   '&:hover': {
                     transform: 'translateY(-10px)',

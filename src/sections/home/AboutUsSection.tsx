@@ -29,7 +29,7 @@ export default function AboutUsSection() {
                 }}
               />
               <Image
-                src='/assets/images/altamira-limpieza-ductos-nosotros.png'
+                src='/assets/images/altamira-ductos-nosotros.jpg'
                 alt='Equipo técnico Altamira Ductos'
                 width={854}
                 height={285}

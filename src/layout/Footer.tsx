@@ -66,6 +66,20 @@ export default function Footer() {
             <Stack spacing={3}>
               <Typography
                 component='a'
+                href='tel:+56995739887'
+                variant='body2'
+                color='primary'
+                sx={{
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                  textAlign: isMobile ? 'center' : 'left',
+                  '&:hover': { color: 'secondary.main' },
+                }}
+              >
+                +56 9 9573 9887
+              </Typography>
+              <Typography
+                component='a'
                 href='tel:+56982811148'
                 variant='body2'
                 color='primary'
@@ -80,21 +94,7 @@ export default function Footer() {
               </Typography>
               <Typography
                 component='a'
-                href='tel:+56997902704'
-                variant='body2'
-                color='primary'
-                sx={{
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                  textAlign: isMobile ? 'center' : 'left',
-                  '&:hover': { color: 'secondary.main' },
-                }}
-              >
-                +56 9 9790 2704
-              </Typography>
-              <Typography
-                component='a'
-                href='mailto:marjorie.limpiezadeductos@gmail.com'
+                href='mailto:altamiraductos@gmail.com'
                 variant='body2'
                 color='primary'
                 sx={{
@@ -105,7 +105,7 @@ export default function Footer() {
                   wordBreak: 'break-all',
                 }}
               >
-                marjorie.limpiezadeductos@gmail.com
+                altamiraductos@gmail.com
               </Typography>
             </Stack>
           </Grid>

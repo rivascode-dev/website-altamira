@@ -43,10 +43,10 @@ export default function ProblemSection() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
         <Image
-          src='/assets/images/altamira-limpieza-ductos-problema.png'
+          src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
           alt='Qué pasa si no se limpian los ductos'
           fill
-          style={{ objectFit: 'cover', filter: 'grayscale(100%)' }}
+          style={{ filter: 'grayscale(100%)' }}
         />
       </Box>
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>
@@ -130,7 +130,7 @@ export default function ProblemSection() {
               >
                 <Box
                   component='img'
-                  src='https://lh3.googleusercontent.com/aida-public/AB6AXuC7QpohPrL0vRXCWn_E6C0qFDnmU1erBZtDPIrka11cs64nzi-cwdX_TMn9OViLoi-oKo-fuLqWwtGVc62FmjCXN3qhJZp5KbUsyMSxooNrlTjKKBi-ZWfyKacAxG9A35Vhpgeui2T_qYNCQu8urVaT-CTNUXTuAfysYE4zobTaLqDtiNjLpPbIDKliArfvCwMQSQkHTQgVDCyx2DVRPbd5pXbbpcYna_iZUy22dvXHRR_lNanDlAMDOlUQmuEi8ZEXGKbZV0QynQtF'
+                  src='/assets/images/altamira-ductos-alerta-tecnica-inspeccion.jpg'
                   alt='Technical inspection camera'
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -149,7 +149,7 @@ export default function ProblemSection() {
                     color='white'
                     sx={{ color: 'white', fontWeight: 700 }}
                   >
-                    Video Inspección en Tiempo Real
+                    Inspección en Tiempo Real
                   </Typography>
                   <Typography
                     variant='caption'

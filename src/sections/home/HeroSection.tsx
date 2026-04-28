@@ -29,7 +29,7 @@ export default function HeroSection() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
         <Image
-          src='/assets/images/altamira-limpieza-ductos-hero.png'
+          src='/assets/images/altamira-limpieza-ductos-hero.jpg'
           alt='Technical engineer inspecting ventilation systems'
           fill
           priority={true}
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 textTransform: 'uppercase',
               }}
             >
-              Expertos en Mantenimiento Sanitario
+              Empresa dedicada exclusivamente a edificios y condominios
             </Typography>
           </Box>
           <Typography
@@ -122,6 +122,7 @@ export default function HeroSection() {
             }}
           >
             ✔ Empresa con resolución sanitaria
+            <br />✔ Especializada exclusivamente en edificios y condominios
             <br />✔ Entrega de informe técnico por servicio
           </Typography>
           <Stack
