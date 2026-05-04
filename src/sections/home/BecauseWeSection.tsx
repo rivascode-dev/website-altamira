@@ -118,7 +118,7 @@ export default function BecauseWeSection() {
           >
             Ver más
           </Button> */}
-          <Button
+          {/* <Button
             component={Link}
             href='/docs/porque'
             variant='outlined'
@@ -137,7 +137,7 @@ export default function BecauseWeSection() {
             }}
           >
             Leer Más
-          </Button>
+          </Button> */}
         </Box>
       </Container>
     </SectionWrapper>

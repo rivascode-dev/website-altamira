@@ -23,13 +23,11 @@ import { Menu, X, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const DATA_MENU = [
-  { label: 'Nosotros', target: 'about-us' },
-  { label: 'Servicios', target: 'services' },
-  { label: 'Cómo', target: 'how-we-work' },
-  { label: 'Normativa', target: 'regulations' },
-  { label: 'Galería', target: 'gallery' },
-  { label: 'Complementarios', target: 'complementary-services' },
-  { label: '+Info', target: '/docs' },
+  { label: 'Nosotros', target: '/nosotros' },
+  { label: 'Servicios', target: '/servicios' },
+  { label: 'Porqué Limpiar?', target: '/preguntas-frecuentes' },
+  { label: 'Evita Multas', target: '/evita-multas' },
+  { label: 'Galería', target: '/galeria' },
 ];
 
 export default function Header() {
@@ -46,26 +44,34 @@ export default function Header() {
   const handleLogoClick = (event: React.MouseEvent) => {
     event.preventDefault();
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push('/');
+    }
   };
 
   const handleLinkClick = (
     event: React.MouseEvent<
       HTMLAnchorElement | HTMLButtonElement | HTMLDivElement
     >,
-    targetId: string,
+    target: string
   ) => {
     event.preventDefault();
     setIsMenuOpen(false);
 
-    if (targetId.startsWith('/')) {
-      router.push(targetId);
-      return;
-    }
-
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (target.startsWith('/')) {
+      router.push(target);
+    } else {
+      // Es un ancla dentro del home (ej. 'contact')
+      if (pathname === '/') {
+        const element = document.getElementById(target);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        router.push(`/#${target}`);
+      }
     }
   };
 
@@ -121,7 +127,7 @@ export default function Header() {
                   variant='subtitle1'
                   key={item.target}
                   component='a'
-                  href={`#${item.target}`}
+                  href={item.target}
                   onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
                     handleLinkClick(e, item.target)
                   }

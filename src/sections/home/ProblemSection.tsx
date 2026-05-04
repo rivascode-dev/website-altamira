@@ -46,7 +46,12 @@ export default function ProblemSection() {
           src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
           alt='Qué pasa si no se limpian los ductos'
           fill
-          style={{ filter: 'grayscale(100%)', objectFit: 'initial' }}
+          priority
+          sizes='100vw'
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'top',
+          }}
         />
       </Box>
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>
@@ -129,9 +134,12 @@ export default function ProblemSection() {
                 }}
               >
                 <Box
-                  component='img'
-                  src='/assets/images/altamira-ductos-alerta-tecnica-inspeccion.jpg'
-                  alt='Technical inspection camera'
+                  component='video'
+                  src='/assets/videos/altamira-ductos-derrame-dpto.mp4'
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </Box>
@@ -169,7 +177,7 @@ export default function ProblemSection() {
         <Box sx={{ textAlign: 'center' }}>
           <Button
             component={Link}
-            href='/docs/preguntas'
+            href='/preguntas-frecuentes'
             variant='outlined'
             size='large'
             endIcon={<ArrowRight />}

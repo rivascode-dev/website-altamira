@@ -85,7 +85,7 @@ export default function EmergencyBannerSection() {
             </Button>
             <Button
               component={Link}
-              href='/docs/condiciones'
+              href='/condiciones'
               variant='outlined'
               endIcon={<ArrowRight />}
               sx={{

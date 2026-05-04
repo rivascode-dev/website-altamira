@@ -125,7 +125,7 @@ export default function AboutUsSection() {
                 ))}
                 <Button
                   component={Link}
-                  href='/docs/nosotros'
+                  href='/nosotros'
                   variant='outlined'
                   size='large'
                   color='secondary'

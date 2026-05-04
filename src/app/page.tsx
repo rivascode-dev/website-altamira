@@ -18,16 +18,18 @@ export default function Home() {
     <Box>
       <HeroSection />
       <AboutUsSection />
-      <ServicesSection />
-      <EmergencyBannerSection />
-      <ProblemSection />
-      <HowWeWorkSection />
-      <TechnicalReportSection />
-      <RegulationsSection />
       <BecauseWeSection />
+      <ServicesSection />
+      <ComplementaryServicesSection />
+      <EmergencyBannerSection />
+      <HowWeWorkSection />
+      <ProblemSection />
+      <RegulationsSection />
+      <TechnicalReportSection />
+
       <PhraseCTASection />
       <GallerySection />
-      <ComplementaryServicesSection />
+
       <ContactSection />
     </Box>
   );

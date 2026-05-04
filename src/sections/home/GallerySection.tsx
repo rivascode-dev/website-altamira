@@ -1,20 +1,21 @@
 'use client';
-import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import SectionWrapper from '@/components/SectionWrapper';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const images = [
-  '/assets/images/altamira-ductos-galeria-001.jpg',
-  '/assets/images/altamira-ductos-galeria-002.jpg',
-  '/assets/images/altamira-ductos-galeria-003.jpg',
-  '/assets/images/altamira-ductos-galeria-004.jpg',
-  '/assets/images/altamira-ductos-galeria-005.jpg',
-  '/assets/images/altamira-ductos-galeria-006.jpg',
-  '/assets/images/altamira-ductos-galeria-007.jpg',
-  '/assets/images/altamira-ductos-galeria-008.jpg',
-  '/assets/images/altamira-ductos-galeria-009.jpg',
-  '/assets/images/altamira-ductos-galeria-010.jpg',
-  '/assets/images/altamira-ductos-galeria-011.jpg',
-  '/assets/images/altamira-ductos-galeria-012.jpg',
+  '/assets/images/gallery/altamira-ductos-horizontales-1.jpg',
+  '/assets/images/gallery/altamira-ductos-sala-basura-1.jpeg',
+  '/assets/images/gallery/altamira-ductos-verticales-1.jpg',
+  '/assets/images/gallery/altamita-ductos-alcantarillado-1.jpeg',
 ];
 
 export default function GallerySection() {
@@ -24,7 +25,8 @@ export default function GallerySection() {
     <SectionWrapper
       id='gallery'
       sx={{
-        bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
+        bgcolor:
+          theme.palette.mode === 'dark' ? 'background.paper' : '#ffffffff',
       }}
     >
       <Container maxWidth='lg'>
@@ -90,6 +92,31 @@ export default function GallerySection() {
               </Box>
             </Grid>
           ))}
+          <Box sx={{ mx: 'auto' }}>
+            <Button
+              component={Link}
+              href={'/galeria'}
+              variant='outlined'
+              size='large'
+              color='secondary'
+              endIcon={<ArrowRight />}
+              sx={{
+                mt: 4,
+                borderColor: 'secondary.main',
+                bgcolor: 'secondary.main',
+                color: 'white',
+                border: '1px solid',
+                '&:active': { transform: 'scale(0.95)' },
+                '&:hover': {
+                  bgcolor: 'white',
+                  color: 'secondary.main',
+                  border: '1px solid',
+                },
+              }}
+            >
+              Ver Galería Completa
+            </Button>
+          </Box>
         </Grid>
       </Container>
     </SectionWrapper>

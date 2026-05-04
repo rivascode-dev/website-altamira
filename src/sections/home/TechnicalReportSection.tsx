@@ -125,7 +125,7 @@ export default function TechnicalReportSection() {
 
             <Button
               component={Link}
-              href='/docs/informe'
+              href='/informe'
               variant='outlined'
               size='large'
               color='secondary'

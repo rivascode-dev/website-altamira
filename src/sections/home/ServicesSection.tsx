@@ -117,7 +117,7 @@ export default function ServicesSection() {
             <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
               <Box
                 component={Link}
-                href='docs/servicios/'
+                href='servicios/'
                 sx={{
                   cursor: 'pointer',
                   textDecoration: 'none',

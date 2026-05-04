@@ -2,6 +2,7 @@
 import { Box, Button, Container, Typography } from '@mui/material';
 import { ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import Image from 'next/image';
 
 export default function PhraseCTASection() {
   return (
@@ -14,11 +15,16 @@ export default function PhraseCTASection() {
       }}
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.45 }}>
-        <Box
-          component='img'
+        <Image
           src='/assets/images/altamira-ductos-solicitar-evaluacion-tecnica.jpg'
           alt='Technical background'
-          sx={{ width: '100%', height: '100%' }}
+          fill
+          priority
+          sizes='100vw'
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center 25%',
+          }}
         />
       </Box>
       <Container

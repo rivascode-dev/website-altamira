@@ -131,7 +131,7 @@ export default function HeroSection() {
             sx={{ mt: 4 }}
           >
             <Button
-              href='#services'
+              href='/servicios'
               variant='outlined'
               size='large'
               aria-label='Ir a la sección de servicios'
