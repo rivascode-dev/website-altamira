@@ -1,6 +1,6 @@
 'use client';
 import { Stack, Typography, Box } from '@mui/material';
-import ServicesHero from '@/sections/services/ServicesHero';
+import HeroPages from '@/components/HeroPages';
 import ServiceItem from '@/sections/services/ServiceItem';
 import EmergenciesSection from '@/sections/services/EmergenciesSection';
 import ContactSection from '@/sections/home/ContactSection';
@@ -8,7 +8,12 @@ import ContactSection from '@/sections/home/ContactSection';
 export default function ServiciosPage() {
   return (
     <main>
-      <ServicesHero />
+      <HeroPages
+        title="Servicios"
+        subtitle="Detalle técnico de nuestras soluciones en limpieza, mantención y sanitización de infraestructuras sanitarias."
+        backgroundImage="/assets/images/altamira-ductos-hero-servicios.jpg"
+        breadcrumbs="Servicios"
+      />
 
       <ServiceItem
         id='limpieza-mantenimiento'

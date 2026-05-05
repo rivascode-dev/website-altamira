@@ -1,4 +1,4 @@
-import FAQHero from '@/sections/faq/FAQHero';
+import HeroPages from '@/components/HeroPages';
 import FAQContent from '@/sections/faq/FAQContent';
 
 export const metadata = {
@@ -9,7 +9,12 @@ export const metadata = {
 export default function FAQPage() {
   return (
     <main>
-      <FAQHero />
+      <HeroPages
+        title="Preguntas Frecuentes"
+        subtitle="Resolvemos tus dudas sobre mantenimiento, normativas y nuestros servicios especializados."
+        backgroundImage="/assets/images/altamira-ductos-hero-porque-limpiar.jpg"
+        breadcrumbs="Preguntas Frecuentes"
+      />
       <FAQContent />
     </main>
   );

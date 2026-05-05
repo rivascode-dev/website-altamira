@@ -1,4 +1,4 @@
-import GalleryHero from '@/sections/gallery/GalleryHero';
+import HeroPages from '@/components/HeroPages';
 import GalleryContent from '@/sections/gallery/GalleryContent';
 
 export const metadata = {
@@ -9,7 +9,13 @@ export const metadata = {
 export default function GalleryPage() {
   return (
     <main>
-      <GalleryHero />
+      <HeroPages
+        title="Nuestra Galería"
+        subtitle="Evidencia visual de nuestra excelencia técnica en terreno."
+        backgroundImage="/assets/images/altamira-ductos-hero-galeria.jpg"
+        breadcrumbs="Galería"
+        objectPosition="center 1%"
+      />
       <GalleryContent />
     </main>
   );

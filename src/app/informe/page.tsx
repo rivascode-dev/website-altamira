@@ -1,4 +1,4 @@
-import ReportHero from '@/sections/report/ReportHero';
+import HeroPages from '@/components/HeroPages';
 import ReportContent from '@/sections/report/ReportContent';
 
 export const metadata = {
@@ -9,7 +9,12 @@ export const metadata = {
 export default function ReportPage() {
   return (
     <main>
-      <ReportHero />
+      <HeroPages
+        title="Informe Técnico"
+        subtitle="Respaldo documental y trazabilidad profesional tras cada intervención sanitaria."
+        backgroundImage="/assets/images/altamira-ductos-hero-pages.jpg"
+        breadcrumbs="Informe"
+      />
       <ReportContent />
     </main>
   );

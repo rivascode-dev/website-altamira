@@ -8,11 +8,18 @@ import {
   alpha,
   useTheme,
   Paper,
+  Button,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
-import { AlertCircle, ShieldCheck, TrendingDown } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowRight,
+  ShieldCheck,
+  TrendingDown,
+} from 'lucide-react';
+import Link from 'next/link';
 
 export default function EmergenciesSection() {
   const theme = useTheme();
@@ -292,6 +299,31 @@ export default function EmergenciesSection() {
             Nuestro mejor servicio es evitar que llegue a necesitarnos de
             urgencia. Consulte por nuestros planes de mantención anual.
           </Typography>
+        </Box>
+
+        <Box sx={{ textAlign: 'center' }}>
+          <Button
+            component={Link}
+            href='/condiciones'
+            variant='outlined'
+            endIcon={<ArrowRight />}
+            sx={{
+              mt: 6,
+              borderColor: 'secondary.main',
+              bgcolor: 'secondary.main',
+              color: 'white',
+              border: '1px solid',
+
+              '&:active': { transform: 'scale(0.95)' },
+              '&:hover': {
+                bgcolor: 'white',
+                color: 'secondary.main',
+                border: '1px solid',
+              },
+            }}
+          >
+            Leer Condiciones Servicio
+          </Button>
         </Box>
       </Container>
     </SectionWrapper>

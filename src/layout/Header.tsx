@@ -28,6 +28,7 @@ const DATA_MENU = [
   { label: 'Porqué Limpiar?', target: '/preguntas-frecuentes' },
   { label: 'Evita Multas', target: '/evita-multas' },
   { label: 'Galería', target: '/galeria' },
+  { label: 'Promociones', target: '/promociones' },
 ];
 
 export default function Header() {

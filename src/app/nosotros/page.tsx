@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import AboutUsHero from '@/sections/about-us/AboutUsHero';
+import HeroPages from '@/components/HeroPages';
 import AboutUsIntro from '@/sections/about-us/AboutUsIntro';
 import ValueProposition from '@/sections/about-us/ValueProposition';
 import WhyAltamira from '@/sections/about-us/WhyAltamira';
@@ -14,7 +14,12 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   return (
     <main>
-      <AboutUsHero />
+      <HeroPages
+        title="Nosotros"
+        subtitle="Limpieza y Mantención de Ductos Sanitarios para Edificios y Condominios"
+        backgroundImage="/assets/images/altamira-ductos-hero-nosotros.jpg"
+        breadcrumbs="Nosotros"
+      />
       <AboutUsIntro />
       <ValueProposition />
       <WhyAltamira />
