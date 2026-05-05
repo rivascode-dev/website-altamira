@@ -22,8 +22,8 @@ export default function ServicesHero() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
         <Image
-          src='/assets/images/altamira-ductos-hero-pages.jpg'
-          alt='Fondo Nosotros Altamira'
+          src='/assets/images/altamira-ductos-hero-servicios.jpg'
+          alt='Servicios Altamira'
           fill
           priority
           sizes='100vw'

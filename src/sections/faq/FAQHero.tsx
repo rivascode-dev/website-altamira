@@ -22,7 +22,7 @@ export default function FAQHero() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.25 }}>
         <Image
-          src='/assets/images/altamira-ductos-hero-pages.jpg'
+          src='/assets/images/altamira-ductos-hero-porque-limpiar.jpg'
           alt='Fondo Nosotros Altamira'
           fill
           priority

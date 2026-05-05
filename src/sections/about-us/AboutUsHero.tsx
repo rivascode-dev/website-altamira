@@ -22,7 +22,7 @@ export default function AboutUsHero() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
         <Image
-          src='/assets/images/altamira-ductos-hero-pages.jpg'
+          src='/assets/images/altamira-ductos-hero-nosotros.jpg'
           alt='Fondo Nosotros Altamira'
           fill
           priority

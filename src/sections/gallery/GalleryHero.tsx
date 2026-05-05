@@ -22,14 +22,14 @@ export default function GalleryHero() {
     >
       <Box sx={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
         <Image
-          src='/assets/images/altamira-ductos-hero-pages.jpg'
+          src='/assets/images/altamira-ductos-hero-galeria.jpg'
           alt='Fondo Nosotros Altamira'
           fill
           priority
           sizes='100vw'
           style={{
             objectFit: 'cover',
-            objectPosition: 'center 25%',
+            objectPosition: 'center 1%',
           }}
         />
       </Box>

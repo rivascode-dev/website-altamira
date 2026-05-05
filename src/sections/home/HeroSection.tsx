@@ -122,7 +122,6 @@ export default function HeroSection() {
             }}
           >
             ✔ Empresa con resolución sanitaria
-            <br />✔ Especializada exclusivamente en edificios y condominios
             <br />✔ Entrega de informe técnico por servicio
           </Typography>
           <Stack
