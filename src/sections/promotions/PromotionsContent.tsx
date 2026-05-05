@@ -47,7 +47,10 @@ export default function PromotionsContent() {
               sx={{
                 position: 'relative',
                 width: '100%',
-                height: 1400,
+                height: 'auto',
+                aspectRatio: { xs: '9/14', md: '9/14' },
+                maxHeight: { xs: '80vh', md: '1400px' },
+                bgcolor: '#f1f5f9', // Background color for gaps if any
               }}
             >
               <Image
@@ -57,7 +60,7 @@ export default function PromotionsContent() {
                 sizes='(max-width: 900px) 100vw, 900px'
                 priority
                 style={{
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   display: 'block',
                 }}
               />
