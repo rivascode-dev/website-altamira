@@ -5,9 +5,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://altamiraductos.cl'),
   alternates: {
     canonical: '/',
-    languages: {
-      'es-CL': '/es-CL',
-    },
   },
   title: 'Altamira Ductos | Soluciones en Limpieza de Ductos',
   description:

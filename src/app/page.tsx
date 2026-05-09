@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { Box } from '@mui/material';
 import HeroSection from '@/sections/home/HeroSection';
 import AboutUsSection from '@/sections/home/AboutUsSection';
@@ -12,6 +13,15 @@ import GallerySection from '@/sections/home/GallerySection';
 import ComplementaryServicesSection from '@/sections/home/ComplementaryServicesSection';
 import ContactSection from '@/sections/home/ContactSection';
 import PhraseCTASection from '@/sections/home/PhraseCTASection';
+
+export const metadata: Metadata = {
+  title: 'Altamira Ductos | Limpieza y Mantención de Ductos en Chile',
+  description:
+    'Especialistas en limpieza de ductos de basura, ductos verticales, horizontales y alcantarillado. Resolución sanitaria y atención a edificios en Santiago y regiones.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (
