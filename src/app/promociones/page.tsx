@@ -1,10 +1,14 @@
+import { Metadata } from 'next';
 import HeroPages from '@/components/HeroPages';
 import PromotionsContent from '@/sections/promotions/PromotionsContent';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Promociones | Altamira',
   description:
     'Aprovecha nuestras promociones especiales en servicios de mantenimiento de ductos.',
+  alternates: {
+    canonical: '/promociones',
+  },
 };
 
 export default function PromotionsPage() {

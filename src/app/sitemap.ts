@@ -1,27 +1,24 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://altamira-ductos.vercel.app';
+  const baseUrl = 'https://altamiraductos.cl/';
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/docs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/docs/nosotros`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    // Añadir rutas adicionales del blog o manuales en el futuro si se construyen dinámicamente
+  const routes = [
+    '',
+    '/servicios',
+    '/nosotros',
+    '/galeria',
+    '/promociones',
+    '/preguntas-frecuentes',
+    '/evita-multas',
+    '/informe',
+    '/condiciones',
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'weekly' : 'monthly',
+    priority: route === '' ? 1 : 0.8,
+  }));
 }

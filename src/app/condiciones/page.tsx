@@ -1,5 +1,14 @@
+import { Metadata } from 'next';
 import HeroPages from '@/components/HeroPages';
 import PaymentConditions from '@/sections/conditions/PaymentConditions';
+
+export const metadata: Metadata = {
+  title: 'Condiciones del Servicio | Altamira',
+  description: 'Conozca los términos y condiciones de nuestros servicios de mantenimiento y atención de emergencias sanitarias.',
+  alternates: {
+    canonical: '/condiciones',
+  },
+};
 
 export default function CondicionesPage() {
   return (

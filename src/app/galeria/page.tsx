@@ -1,9 +1,14 @@
+import { Metadata } from 'next';
 import HeroPages from '@/components/HeroPages';
 import GalleryContent from '@/sections/gallery/GalleryContent';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Galería de Trabajos | Altamira',
-  description: 'Explore nuestra galería de videos y fotografías de trabajos reales en terreno, incluyendo limpieza de ductos, alcantarillados y salas de basura.',
+  description:
+    'Explore nuestra galería de videos y fotografías de trabajos reales en terreno, incluyendo limpieza de ductos, alcantarillados y salas de basura.',
+  alternates: {
+    canonical: '/galeria',
+  },
 };
 
 export default function GalleryPage() {

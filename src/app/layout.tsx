@@ -2,7 +2,7 @@ import MuiRootProvider from '@/providers/MuiRootProvider';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://altamira-ductos.vercel.app'),
+  metadataBase: new URL('https://altamiraductos.cl'),
   alternates: {
     canonical: '/',
     languages: {
@@ -55,10 +55,10 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Altamira Ductos',
-    image: 'https://altamira-ductos.vercel.app/assets/logos/logo-rivascode-cuadrado-small.png',
+    image: 'https://altamiraductos.cl/assets/logos/logo-rivascode-cuadrado-small.png',
     description:
       'Empresa con resolución sanitaria especialista en limpieza, mantención y sanitización de sistemas de ductos verticales y horizontales.',
-    url: 'https://altamira-ductos.vercel.app',
+    url: 'https://altamiraductos.cl',
     areaServed: 'CL',
   };
 
