@@ -3,8 +3,16 @@
 import React from 'react';
 import { Fab, Tooltip, Zoom } from '@mui/material';
 import { MessageCircle } from 'lucide-react';
+import { trackEvent, TRACKING_EVENTS } from '@/utils/gtm';
 
 export default function WhatsAppFab() {
+  const handleClick = () => {
+    trackEvent(TRACKING_EVENTS.WHATSAPP_CLICK, {
+      event_category: 'engagement',
+      event_label: 'floating_button',
+    });
+  };
+
   return (
     <Tooltip title='Contactar por WhatsApp' placement='left'>
       <Zoom in={true} style={{ transitionDelay: '1000ms' }}>
@@ -13,6 +21,7 @@ export default function WhatsAppFab() {
           href='https://wa.me/56982811148'
           target='_blank'
           rel='noopener noreferrer'
+          onClick={handleClick}
           sx={{
             position: 'fixed',
             bottom: { xs: 24, md: 32 },
