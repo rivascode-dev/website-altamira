@@ -139,6 +139,8 @@ export default function ProblemSection() {
                   loop
                   playsInline
                   autoPlay
+                  preload='none'
+                  poster='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </Box>
