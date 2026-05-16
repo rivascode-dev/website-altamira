@@ -33,5 +33,10 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ]
 }

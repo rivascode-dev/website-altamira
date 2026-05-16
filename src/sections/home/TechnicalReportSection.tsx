@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const DATA_TECHNICAL_REPORT = [
   {
@@ -159,16 +160,18 @@ export default function TechnicalReportSection() {
               p: { xs: 6, lg: 8 },
             }}
           >
-            <Box
-              component='img'
+            <Image
               src='/assets/images/altamira-dcutos-informe-tecnico.png'
               alt='Technical maintenance report'
-              sx={{
-                borderRadius: 3,
+              width={400}
+              height={560}
+              style={{
+                borderRadius: '12px',
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
                 transform: 'rotate(2deg)',
                 width: '100%',
-                maxWidth: 400,
+                maxWidth: '400px',
+                height: 'auto',
               }}
             />
             {/* <Box

@@ -42,7 +42,6 @@ export default function Footer() {
                 width={100}
                 height={100}
                 style={{ width: isMobile ? '120px' : '55%', height: 'auto' }}
-                priority
               />
             </Stack>
           </Grid>

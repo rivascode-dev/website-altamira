@@ -10,6 +10,7 @@ import {
 import SectionWrapper from '@/components/SectionWrapper';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const images = [
   '/assets/images/gallery/altamira-ductos-horizontales-1.jpg',
@@ -56,17 +57,19 @@ export default function GallerySection() {
                   },
                 }}
               >
-                <Box
-                  className='image'
-                  component='img'
+                <Image
                   src={src}
                   alt={`Trabajo técnico ${index + 1}`}
-                  sx={{
+                  width={400}
+                  height={400}
+                  className='image'
+                  style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
                     transition: 'transform 0.5s ease',
                   }}
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
                 />
                 {/* <Box
                   className='overlay'

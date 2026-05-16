@@ -114,8 +114,8 @@ export default function Header() {
             <Image
               src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
               alt='Altamira Ductos Logo'
-              width={854}
-              height={285}
+              width={250}
+              height={84}
               style={{ width: '100%', height: 'auto' }}
               priority
             />
@@ -234,8 +234,8 @@ export default function Header() {
               <Image
                 src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
                 alt='Altamira Ductos Logo'
-                width={854}
-                height={285}
+                width={200}
+                height={67}
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>

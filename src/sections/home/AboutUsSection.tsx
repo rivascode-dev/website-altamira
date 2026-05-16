@@ -31,8 +31,8 @@ export default function AboutUsSection() {
               <Image
                 src='/assets/images/altamira-ductos-nosotros.jpg'
                 alt='Equipo técnico Altamira Ductos'
-                width={854}
-                height={285}
+                width={600}
+                height={400}
                 style={{ width: '100%', height: 'auto' }}
               />
 

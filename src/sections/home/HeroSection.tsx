@@ -33,7 +33,8 @@ export default function HeroSection() {
           src='/assets/images/altamira-ductos-hero.jpg'
           alt='Technical engineer inspecting ventilation systems'
           fill
-          priority={true}
+          priority
+          fetchPriority='high'
           sizes='100vw'
           style={{ objectFit: 'cover' }}
         />
