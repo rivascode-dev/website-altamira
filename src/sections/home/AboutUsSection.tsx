@@ -34,7 +34,6 @@ export default function AboutUsSection() {
                 width={854}
                 height={285}
                 style={{ width: '100%', height: 'auto' }}
-                priority
               />
 
               <Box

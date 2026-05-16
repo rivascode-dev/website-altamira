@@ -15,8 +15,9 @@ import Image from 'next/image';
 export default function HeroSection() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-    <SectionWrapper
+    <Box
       id='hero'
+      component='section'
       sx={{
         p: 0,
         position: 'relative',
@@ -165,6 +166,6 @@ export default function HeroSection() {
           </Stack>
         </Box>
       </Container>
-    </SectionWrapper>
+    </Box>
   );
 }

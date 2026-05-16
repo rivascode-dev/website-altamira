@@ -1,6 +1,14 @@
 import MuiRootProvider from '@/providers/MuiRootProvider';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Inter } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
 // ... (rest of metadata stays same)
@@ -62,7 +70,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang='es'>
+    <html lang='es' className={inter.variable}>
       <head>
         <Script
           id="gtm-script"
@@ -89,7 +97,10 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <MuiRootProvider>{children}</MuiRootProvider>
+        <MuiRootProvider>
+          {children}
+          <SpeedInsights />
+        </MuiRootProvider>
       </body>
     </html>
   );

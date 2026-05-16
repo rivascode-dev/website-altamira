@@ -46,7 +46,6 @@ export default function ProblemSection() {
           src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
           alt='Qué pasa si no se limpian los ductos'
           fill
-          priority
           sizes='100vw'
           style={{
             objectFit: 'cover',

@@ -19,7 +19,6 @@ export default function PhraseCTASection() {
           src='/assets/images/altamira-ductos-solicitar-evaluacion-tecnica.jpg'
           alt='Technical background'
           fill
-          priority
           sizes='100vw'
           style={{
             objectFit: 'cover',

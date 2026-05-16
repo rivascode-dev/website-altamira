@@ -132,7 +132,7 @@ const getTheme = (mode: 'light' | 'dark') =>
       },
     },
     typography: {
-      fontFamily: "'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+      fontFamily: "var(--font-inter), 'Roboto', 'Helvetica', 'Arial', sans-serif",
       h1: {
         fontSize: '6rem',
         fontWeight: 300,
