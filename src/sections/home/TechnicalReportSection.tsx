@@ -82,13 +82,13 @@ export default function TechnicalReportSection() {
           </div>
 
           <div className="w-full lg:w-1/2 bg-primary flex items-center justify-center p-12 lg:p-16 relative">
-            <div className="relative w-full max-w-[400px]">
+            <div className="relative w-full max-w-[400px] aspect-[400/560]">
               <Image
                 src="/assets/images/altamira-dcutos-informe-tecnico.png"
                 alt="Technical maintenance report"
-                width={400}
-                height={560}
-                className="rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] rotate-2 w-full h-auto"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] rotate-2"
               />
             </div>
           </div>

@@ -18,6 +18,7 @@ export default function EmergenciesSection() {
               src="/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg"
               alt="Emergencias"
               fill
+              sizes="100vw"
               className="object-cover"
             />
           </div>
@@ -54,6 +55,7 @@ export default function EmergenciesSection() {
                   src="/assets/images/gallery/altamira-ductos-sala-basura-2.jpeg"
                   alt="Inspección de emergencia"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

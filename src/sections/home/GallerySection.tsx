@@ -40,6 +40,7 @@ export default function GallerySection() {
                 alt={`Trabajo técnico ${index + 1}`}
                 width={400}
                 height={400}
+                priority
                 className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
               />
