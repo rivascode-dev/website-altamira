@@ -19,6 +19,7 @@ export default function AboutUsSection() {
               alt="Equipo técnico Altamira Ductos"
               width={600}
               height={400}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-auto rounded-2xl shadow-lg relative z-10"
             />
             

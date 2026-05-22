@@ -69,6 +69,7 @@ export default function Header() {
               alt="Altamira Ductos Logo"
               width={250}
               height={84}
+              sizes="(max-width: 768px) 150px, 250px"
               style={{ width: '100%', height: 'auto' }}
               priority
             />
@@ -132,6 +133,7 @@ export default function Header() {
                 alt="Altamira Ductos Logo"
                 width={200}
                 height={67}
+                sizes="200px"
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>

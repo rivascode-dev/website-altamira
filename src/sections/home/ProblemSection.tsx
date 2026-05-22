@@ -32,7 +32,14 @@ const DATA_PROBLEMS = [
   },
 ];
 
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+
+// ... inside component ...
 export default function ProblemSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isInView = useInView(videoRef, { once: true, margin: "200px" });
+
   return (
     <SectionWrapper
       id="el-problema"
@@ -86,15 +93,17 @@ export default function ProblemSection() {
             <div className="bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-white/10 shadow-xl">
               <div className="aspect-video rounded-2xl overflow-hidden mb-6 relative bg-black/20">
                 <video
-                  src="/assets/videos/altamira-ductos-derrame-dpto.mp4"
+                  ref={videoRef}
                   muted
                   loop
                   playsInline
-                  autoPlay
+                  autoPlay={isInView}
                   preload="none"
                   poster="/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg"
                   className="w-full h-full object-cover"
-                />
+                >
+                  {isInView && <source src="/assets/videos/altamira-ductos-derrame-dpto.mp4" type="video/mp4" />}
+                </video>
               </div>
               
               <div className="flex items-center space-x-4">
