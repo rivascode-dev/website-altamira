@@ -1,6 +1,7 @@
 'use client';
-import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
+
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/lib/utils';
 
 const DATA_HOW_WE_WORK = [
   {
@@ -37,109 +38,50 @@ const DATA_HOW_WE_WORK = [
 ];
 
 export default function HowWeWorkSection() {
-  const theme = useTheme();
-
   return (
     <SectionWrapper
-      id='how-we-work'
-      sx={{
-        bgcolor: theme.palette.mode === 'dark' ? 'background.default' : '#fff',
-      }}
+      id="how-we-work"
+      className="bg-white dark:bg-background"
     >
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 10 }}>
-          <Typography
-            variant='overline'
-            color='secondary'
-            // sx={{
-            //   fontWeight: 700,
-            //   letterSpacing: 3,
-            //   textTransform: 'uppercase',
-            //   mb: 2,
-            // }}
-          >
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-4">
             COMO TRABAJAMOS
-          </Typography>
-          <Typography variant='h3' component='h2' color='primary'>
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary">
             Ingeniería en cada paso
-          </Typography>
-        </Box>
+          </h2>
+        </div>
 
-        <Grid container spacing={4}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative">
           {DATA_HOW_WE_WORK.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, md: 2.4 }}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                }}
-              >
-                <Box
-                  sx={{
-                    width: 80,
-                    height: 80,
-                    bgcolor: item.active ? 'secondary.main' : 'primary.main',
-                    color: 'white',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.5rem',
-                    fontWeight: 700,
-                    mb: 3,
-                    border: '4px solid',
-                    borderColor:
-                      theme.palette.mode === 'dark'
-                        ? 'background.paper'
-                        : '#f2f4f5',
-                    boxShadow:
-                      '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                >
-                  {item.step}
-                </Box>
-                <Typography
-                  variant='h6'
-                  color='primary.main'
-                  sx={{ fontWeight: 700, mb: 1 }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  variant='caption'
-                  color='text.secondary'
-                  sx={{ lineHeight: 1.6, display: 'block' }}
-                >
-                  {item.desc}
-                </Typography>
-
-                {!item.last && (
-                  <Box
-                    sx={{
-                      display: { xs: 'none', md: 'block' },
-                      position: 'absolute',
-                      top: 40,
-                      left: '60%',
-                      width: '100%',
-                      height: 2,
-                      bgcolor:
-                        theme.palette.mode === 'dark'
-                          ? 'rgba(255,255,255,0.1)'
-                          : 'rgba(0,0,0,0.1)',
-                      zIndex: 1,
-                    }}
-                  />
+            <div
+              key={index}
+              className="relative flex flex-col items-center text-center group"
+            >
+              <div
+                className={cn(
+                  "w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold mb-6 border-4 border-white dark:border-background shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] relative z-10 transition-colors duration-300",
+                  item.active ? "bg-secondary text-white" : "bg-primary text-white group-hover:bg-primary/90"
                 )}
-              </Box>
-            </Grid>
+              >
+                {item.step}
+              </div>
+              <h3 className="text-lg font-bold text-primary mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px]">
+                {item.desc}
+              </p>
+
+              {/* Conector Lineal Desktop */}
+              {!item.last && (
+                <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-border -z-0" />
+              )}
+            </div>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

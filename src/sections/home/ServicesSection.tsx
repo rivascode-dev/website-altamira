@@ -1,13 +1,5 @@
 'use client';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
+
 import {
   ArrowUpDown,
   MoveHorizontal,
@@ -20,6 +12,7 @@ import {
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const DATA_SERVICES = [
   {
@@ -53,7 +46,6 @@ const DATA_SERVICES = [
     title: 'Ductos de basura',
     description:
       'Limpieza, sanitización y desinfección de ductos de basura para eliminar olores, bacterias y focos infecciosos.',
-
     featured: true,
   },
   {
@@ -76,92 +68,51 @@ const DATA_SERVICES_EXTRAS = [
 ];
 
 export default function ServicesSection() {
-  const theme = useTheme();
-
   return (
-    <SectionWrapper
-      id='services'
-      sx={{
-        bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
-      }}
-    >
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography
-            variant='overline'
-            color='secondary'
-            sx={{
-              //fontWeight: 700,
-              //letterSpacing: 3,
-              //textTransform: 'uppercase',
-              mb: 2,
-            }}
-          >
+    <SectionWrapper id='services' className='bg-[#f3f4f6] py-16 md:py-24'>
+      <div className='container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl'>
+        <div className='text-center mb-16'>
+          <span className='block text-secondary font-bold tracking-widest text-sm uppercase mb-4'>
             Nuestros Servicios
-          </Typography>
-          <Typography variant='h3' component='h2' color='primary'>
+          </span>
+          <h2 className='text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6'>
             Intervención completa del sistema de ductos
-          </Typography>
-          <Typography
-            variant='body1'
-            sx={{ mt: 2, fontWeight: 400, maxWidth: 800, mx: 'auto' }}
-          >
+          </h2>
+          <p className='text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed'>
             Disponemos de servicios específicos y eficientes, garantizando un
             impacto de tiempo y dinero adaptado a su necesidad en estos tiempos
             difíciles y empatizamos con su gestión financiera.
-          </Typography>
-        </Box>
+          </p>
+        </div>
 
-        <Grid container spacing={4}>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
           {DATA_SERVICES.map((service, index) => (
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={index}>
-              <Box
-                component={Link}
-                href='servicios/'
-                sx={{
-                  cursor: 'pointer',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  display: 'block',
-                }}
-              >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  accent={service.accent}
-                  featured={service.featured}
-                />
-              </Box>
-            </Grid>
+            <Link href='servicios/' key={index} className='block group'>
+              <ServiceCard
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                accent={service.accent}
+                featured={service.featured}
+              />
+            </Link>
           ))}
-        </Grid>
-        <Grid container spacing={4} sx={{ mt: 4 }}>
+        </div>
+
+        <div className='flex flex-col md:flex-row justify-center gap-4 mt-10 max-w-4xl mx-auto'>
           {DATA_SERVICES_EXTRAS.map((item, index) => (
-            <Grid
+            <div
               key={index}
-              size={{ xs: 12, sm: 6, lg: 6 }}
-              sx={{
-                p: 2,
-                borderRadius: 3,
-                bgcolor:
-                  theme.palette.mode === 'dark'
-                    ? 'background.paper'
-                    : '#eceeef',
-              }}
+              className='px-6 py-4 rounded-xl bg-gray-200/60 flex items-center justify-center space-x-3 w-full md:w-auto'
             >
-              <Stack direction='row' spacing={2}>
-                <Box sx={{ color: 'primary.main', display: 'flex' }}>
-                  {item.icon}
-                </Box>
-                <Typography variant='body2' color='primary.main'>
-                  {item.text}
-                </Typography>
-              </Stack>
-            </Grid>
+              <div className='text-primary flex-shrink-0 w-5 h-5 flex items-center justify-center'>
+                {item.icon}
+              </div>
+              <p className='text-primary font-medium text-sm'>{item.text}</p>
+            </div>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }
@@ -179,64 +130,32 @@ function ServiceCard({
   accent?: string;
   featured?: boolean;
 }) {
-  const theme = useTheme();
-
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.default',
-        p: 4,
-        borderRadius: 3,
-        border: featured
-          ? '2px solid rgba(211, 47, 47, 0.4)'
-          : '2px solid #e0e0e0',
-        height: '100%',
-        transition: 'all 0.3s ease-in-out',
-        '&:hover': {
-          boxShadow:
-            '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        },
-      }}
+    <div
+      className={cn(
+        'bg-card p-8 rounded-3xl h-full flex flex-col transition-all duration-300 ease-in-out group-hover:-translate-y-1 group-hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]',
+        featured
+          ? 'border-2 border-secondary shadow-sm'
+          : 'border border-gray-200 shadow-sm',
+      )}
     >
-      <Box
-        sx={{
-          width: 56,
-          height: 56,
-          bgcolor: featured ? 'secondary.main' : 'grey.50',
-          color: featured ? 'white' : 'inherit',
-          borderRadius: 2,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          mb: 3,
-          transition: 'colors 0.3s',
-        }}
+      <div
+        className={cn(
+          'w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300',
+          featured ? 'bg-secondary text-white' : 'bg-[#f5f5f5] text-primary',
+        )}
       >
         {icon}
-      </Box>
-      <Typography
-        variant='h6'
-        color='primary.main'
-        sx={{ fontWeight: 700, mb: 2 }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        variant='body2'
-        color='text.secondary'
-        sx={{ mb: 3, lineHeight: 1.8 }}
-      >
+      </div>
+      <h3 className='text-xl font-bold text-primary mb-3'>{title}</h3>
+      <p className='text-muted-foreground text-sm leading-relaxed mb-6 flex-grow'>
         {description}
-      </Typography>
+      </p>
       {accent && (
-        <Typography
-          variant='caption'
-          color='secondary.main'
-          sx={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}
-        >
+        <span className='text-secondary font-bold text-xs uppercase tracking-wider'>
           {accent}
-        </Typography>
+        </span>
       )}
-    </Box>
+    </div>
   );
 }

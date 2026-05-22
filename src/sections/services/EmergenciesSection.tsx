@@ -1,331 +1,192 @@
 'use client';
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  Stack,
-  alpha,
-  useTheme,
-  Paper,
-  Button,
-} from '@mui/material';
-import { motion } from 'framer-motion';
-import SectionWrapper from '@/components/SectionWrapper';
+
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import Image from 'next/image';
-import {
-  AlertCircle,
-  ArrowRight,
-  ShieldCheck,
-  TrendingDown,
-} from 'lucide-react';
 import Link from 'next/link';
+import SectionWrapper from '@/components/SectionWrapper';
+import { ArrowRight, ShieldCheck, TrendingDown } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function EmergenciesSection() {
-  const theme = useTheme();
-
   return (
-    <SectionWrapper
-      id='emergencies'
-      sx={{ py: { xs: 8, md: 12 }, bgcolor: '#f8fafc' }}
-    >
-      <Container maxWidth='lg'>
-        <Box
-          sx={{
-            position: 'relative',
-            borderRadius: 6,
-            overflow: 'hidden',
-            bgcolor: 'primary.main',
-            color: 'white',
-            mb: 10,
-          }}
-        >
-          <Box sx={{ position: 'absolute', inset: 0, opacity: 0.15 }}>
+    <SectionWrapper id="emergencies" className="py-16 md:py-24 bg-gray-50 dark:bg-background">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        {/* Banner principal */}
+        <div className="relative rounded-[2rem] overflow-hidden bg-primary text-white mb-16 shadow-2xl">
+          <div className="absolute inset-0 opacity-20">
             <Image
-              src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
-              alt='Emergencias'
+              src="/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg"
+              alt="Emergencias"
               fill
-              style={{ objectFit: 'cover' }}
+              className="object-cover"
             />
-          </Box>
+          </div>
 
-          <Grid container sx={{ position: 'relative', zIndex: 1 }}>
-            <Grid size={{ xs: 12, md: 7 }} sx={{ p: { xs: 4, sm: 6, md: 8 } }}>
-              <Stack spacing={3}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  {/* <AlertCircle color={theme.palette.secondary.light} size={32} /> */}
-                  <Typography variant='h3' sx={{ fontWeight: 800 }}>
-                    Emergencias
-                  </Typography>
-                </Box>
-                <Typography
-                  variant='h5'
-                  sx={{ color: 'secondary.light', fontWeight: 600 }}
-                >
-                  Gestión de crisis y la importancia de la prevención para
-                  evitar colapsos operativos en la comunidad.
-                </Typography>
-                <Typography variant='h6' sx={{ opacity: 0.9, fontWeight: 400 }}>
-                  Evita daños, costos y conflictos en tu comunidad
-                </Typography>
-                <Typography
-                  variant='body1'
-                  sx={{ opacity: 0.8, lineHeight: 1.8 }}
-                >
-                  Nuestro objetivo principal es ser una empresa de reacción
-                  rápida y acción preventiva, evitando que las obstrucciones en
-                  la red sanitaria deriven en emergencias críticas, situaciones
-                  de estrés para los residentes y, en los casos más graves, el
-                  colapso operativo del edificio.
-                </Typography>
-              </Stack>
-            </Grid>
-            <Grid
-              size={{ xs: 12, md: 5 }}
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                alignItems: 'center',
-                justifyContent: 'center',
-                p: 8,
-              }}
-            >
-              <Box
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  minHeight: 300,
-                  position: 'relative',
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                }}
-              >
+          <div className="relative z-10 flex flex-col md:flex-row">
+            <div className="p-8 md:p-12 lg:p-16 md:w-7/12 space-y-6">
+              <div className="flex items-center gap-4">
+                <h3 className="text-4xl md:text-5xl font-extrabold text-white">
+                  Emergencias
+                </h3>
+              </div>
+              
+              <h4 className="text-xl md:text-2xl text-secondary font-bold leading-tight">
+                Gestión de crisis y la importancia de la prevención para evitar
+                colapsos operativos en la comunidad.
+              </h4>
+              
+              <h5 className="text-lg md:text-xl text-white/90 font-medium">
+                Evita daños, costos y conflictos en tu comunidad
+              </h5>
+              
+              <p className="text-white/80 leading-relaxed text-lg">
+                Nuestro objetivo principal es ser una empresa de reacción rápida y
+                acción preventiva, evitando que las obstrucciones en la red
+                sanitaria deriven en emergencias críticas, situaciones de estrés
+                para los residentes y, en los casos más graves, el colapso
+                operativo del edificio.
+              </p>
+            </div>
+            
+            <div className="hidden md:flex md:w-5/12 p-8 items-center justify-center">
+              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <Image
-                  src='/assets/images/gallery/altamira-ductos-sala-basura-2.jpeg'
-                  alt='Inspección de emergencia'
+                  src="/assets/images/gallery/altamira-ductos-sala-basura-2.jpeg"
+                  alt="Inspección de emergencia"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  className="object-cover"
                 />
-              </Box>
-            </Grid>
-          </Grid>
-        </Box>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Stack spacing={4}>
-              <Box>
-                <Typography
-                  variant='h4'
-                  color='primary'
-                  sx={{ fontWeight: 800, mb: 3 }}
-                >
-                  El Impacto de una Emergencia Sanitaria
-                </Typography>
-                <Typography
-                  variant='body1'
-                  color='text.secondary'
-                  sx={{ lineHeight: 1.8, mb: 3 }}
-                >
-                  Una emergencia en una comunidad puede compararse con un evento
-                  de alto impacto: ocurre de forma inesperada, afecta a
-                  múltiples residentes de manera simultánea y genera costos
-                  económicos, operativos y reputacionales significativos para la
-                  administración.
-                </Typography>
-                <Typography
-                  variant='body1'
-                  color='text.secondary'
-                  sx={{ lineHeight: 1.8 }}
-                >
-                  La experiencia nos demuestra que este tipo de situaciones no
-                  se originan de un día para otro, sino que son consecuencia
-                  directa del descuido prolongado de la red sanitaria y la falta
-                  de mantención preventiva oportuna.
-                </Typography>
-              </Box>
+        {/* Dos columnas de información */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          
+          {/* Impacto */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h4 className="text-3xl font-extrabold text-primary">
+                El Impacto de una Emergencia Sanitaria
+              </h4>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Una emergencia en una comunidad puede compararse con un evento de
+                alto impacto: ocurre de forma inesperada, afecta a múltiples
+                residentes de manera simultánea y genera costos económicos,
+                operativos y reputacionales significativos para la administración.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                La experiencia nos demuestra que este tipo de situaciones no se
+                originan de un día para otro, sino que son consecuencia directa
+                del descuido prolongado de la red sanitaria y la falta de
+                mantención preventiva oportuna.
+              </p>
+            </div>
 
-              <Paper
-                elevation={0}
-                sx={{
-                  p: 4,
-                  bgcolor: alpha(theme.palette.secondary.main, 0.05),
-                  borderLeft: '6px solid',
-                  borderColor: 'secondary.main',
-                  borderRadius: 2,
-                }}
-              >
-                <Typography
-                  variant='h6'
-                  color='secondary'
-                  sx={{ fontWeight: 700, mb: 2 }}
-                >
-                  Consecuencias Críticas:
-                </Typography>
-                <Stack spacing={2}>
-                  {[
-                    'Cortes prolongados de agua potable.',
-                    'Interrupción del suministro eléctrico por filtraciones.',
-                    'Daños en la plusvalía de la propiedad.',
-                  ].map((text, i) => (
-                    <Box
-                      key={i}
-                      sx={{ display: 'flex', gap: 2, alignItems: 'center' }}
-                    >
-                      <TrendingDown
-                        size={20}
-                        color={theme.palette.secondary.main}
-                      />
-                      <Typography variant='body1' sx={{ fontWeight: 500 }}>
-                        {text}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Stack>
-              </Paper>
-            </Stack>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Stack spacing={4}>
-              <Box>
-                <Typography
-                  variant='h4'
-                  color='primary'
-                  sx={{ fontWeight: 800, mb: 3 }}
-                >
-                  Gestión Responsable y Planificada
-                </Typography>
-                <Typography
-                  variant='body1'
-                  color='text.secondary'
-                  sx={{ lineHeight: 1.8, mb: 3 }}
-                >
-                  Una gestión profesional de la infraestructura no solo protege
-                  al edificio y a sus residentes, sino que también respalda la
-                  labor de la administración ante el Comité de Copropietarios.
-                </Typography>
-              </Box>
-
-              <Grid container spacing={2}>
+            <div className="bg-secondary/5 p-6 md:p-8 border-l-4 border-secondary rounded-r-2xl">
+              <h5 className="text-xl font-bold text-secondary mb-6">
+                Consecuencias Críticas:
+              </h5>
+              <div className="space-y-4">
                 {[
-                  {
-                    title: 'Minimización de riesgos',
-                    desc: 'Reduce la probabilidad de colapsos inesperados.',
-                    icon: <ShieldCheck />,
-                  },
-                  {
-                    title: 'Reducción de responsabilidades',
-                    desc: 'Asegura que la administración cumpla con su deber de cuidado.',
-                    icon: <ShieldCheck />,
-                  },
-                  {
-                    title: 'Evita conflictos futuros',
-                    desc: 'Mantiene la armonía en la comunidad al evitar servicios higiénicos inoperantes.',
-                    icon: <ShieldCheck />,
-                  },
-                ].map((item, i) => (
-                  <Grid size={{ xs: 12 }} key={i}>
-                    <Paper
-                      elevation={0}
-                      sx={{
-                        p: 3,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                        borderRadius: 3,
-                        display: 'flex',
-                        gap: 3,
-                        alignItems: 'center',
-                        '&:hover': {
-                          borderColor: 'primary.main',
-                          bgcolor: 'white',
-                        },
-                      }}
-                    >
-                      <Box sx={{ color: 'primary.main' }}>{item.icon}</Box>
-                      <Box>
-                        <Typography
-                          variant='subtitle1'
-                          sx={{ fontWeight: 700 }}
-                        >
-                          {item.title}
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                          {item.desc}
-                        </Typography>
-                      </Box>
-                    </Paper>
-                  </Grid>
+                  'Cortes prolongados de agua potable.',
+                  'Interrupción del suministro eléctrico por filtraciones.',
+                  'Daños en la plusvalía de la propiedad.',
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <TrendingDown className="text-secondary w-6 h-6 flex-shrink-0" />
+                    <span className="font-medium text-lg text-foreground">
+                      {text}
+                    </span>
+                  </div>
                 ))}
-              </Grid>
+              </div>
+            </div>
+          </div>
 
-              <Typography
-                variant='body1'
-                sx={{
-                  fontWeight: 600,
-                  color: 'primary.main',
-                  bgcolor: 'rgba(0,51,69,0.05)',
-                  p: 3,
-                  borderRadius: 2,
-                  border: '1px dashed',
-                  borderColor: 'primary.main',
-                }}
-              >
+          {/* Gestión */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h4 className="text-3xl font-extrabold text-primary">
+                Gestión Responsable y Planificada
+              </h4>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Una gestión profesional de la infraestructura no solo protege al
+                edificio y a sus residentes, sino que también respalda la labor de
+                la administración ante el Comité de Copropietarios.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  title: 'Minimización de riesgos',
+                  desc: 'Reduce la probabilidad de colapsos inesperados.',
+                },
+                {
+                  title: 'Reducción de responsabilidades',
+                  desc: 'Asegura que la administración cumpla con su deber de cuidado.',
+                },
+                {
+                  title: 'Evita conflictos futuros',
+                  desc: 'Mantiene la armonía en la comunidad al evitar servicios higiénicos inoperantes.',
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white dark:bg-card p-6 border border-border rounded-2xl flex items-center gap-6 transition-all hover:border-primary hover:shadow-md"
+                >
+                  <ShieldCheck className="text-primary w-8 h-8 flex-shrink-0" />
+                  <div>
+                    <h5 className="font-bold text-lg text-primary mb-1">
+                      {item.title}
+                    </h5>
+                    <p className="text-muted-foreground">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-primary/5 p-6 rounded-2xl border border-dashed border-primary">
+              <p className="font-semibold text-primary leading-relaxed text-lg">
                 Mantener la red al día es la mejor herramienta para proteger la
                 infraestructura y cumplir con los requisitos exigidos por las
                 compañías de seguros ante eventuales daños colaterales.
-              </Typography>
-            </Stack>
-          </Grid>
-        </Grid>
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <Box
-          sx={{
-            mt: 10,
-            textAlign: 'center',
-            p: 6,
-            borderRadius: 4,
-            bgcolor: 'secondary.main',
-            color: 'white',
-          }}
-        >
-          <Typography variant='h4' sx={{ fontWeight: 800, mb: 2 }}>
-            Contamos con una unidad de respuesta rápida
-          </Typography>
-          <Typography
-            variant='h6'
-            sx={{ opacity: 0.9, fontWeight: 400, maxWidth: 800, mx: 'auto' }}
-          >
-            Nuestro mejor servicio es evitar que llegue a necesitarnos de
-            urgencia. Consulte por nuestros planes de mantención anual.
-          </Typography>
-        </Box>
+        {/* Call to action */}
+        <div className="mt-20">
+          <div className="bg-secondary text-white p-8 md:p-12 rounded-[2rem] text-center shadow-lg">
+            <h4 className="text-3xl md:text-4xl font-extrabold mb-4">
+              Contamos con una unidad de respuesta rápida
+            </h4>
+            <p className="text-xl text-white/90 font-medium max-w-3xl mx-auto leading-relaxed">
+              Nuestro mejor servicio es evitar que llegue a necesitarnos de
+              urgencia. Consulte por nuestros planes de mantención anual.
+            </p>
+          </div>
 
-        <Box sx={{ textAlign: 'center' }}>
-          <Button
-            component={Link}
-            href='/condiciones'
-            variant='outlined'
-            endIcon={<ArrowRight />}
-            sx={{
-              mt: 6,
-              borderColor: 'secondary.main',
-              bgcolor: 'secondary.main',
-              color: 'white',
-              border: '1px solid',
-
-              '&:active': { transform: 'scale(0.95)' },
-              '&:hover': {
-                bgcolor: 'white',
-                color: 'secondary.main',
-                border: '1px solid',
-              },
-            }}
-          >
-            Leer Condiciones Servicio
-          </Button>
-        </Box>
-      </Container>
+          <div className="mt-10 text-center">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-secondary text-secondary hover:bg-secondary hover:text-white group transition-all duration-300"
+            >
+              <Link href="/condiciones">
+                <span className="font-bold mr-2">Leer Condiciones Servicio</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

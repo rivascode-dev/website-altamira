@@ -1,16 +1,6 @@
 'use client';
-import {
-  Box,
-  Container,
-  Typography,
-  Stack,
-  Grid,
-  Paper,
-  alpha,
-  useTheme,
-  Divider,
-} from '@mui/material';
-import { motion } from 'framer-motion';
+
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import {
   Gavel,
@@ -21,269 +11,177 @@ import {
 } from 'lucide-react';
 
 export default function PenaltyContent() {
-  const theme = useTheme();
-
   return (
-    <SectionWrapper id='normativa-legal' sx={{ py: { xs: 8, md: 12 } }}>
-      <Container maxWidth='lg'>
-        <Stack spacing={10}>
+    <SectionWrapper id="normativa-legal" className="py-16 md:py-24 bg-white dark:bg-background">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="space-y-24">
           {/* Marco Normativo */}
-          <Grid container spacing={6} sx={{ alignItems: 'center' }}>
-            <Grid size={{ xs: 12, md: 7 }}>
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <Stack spacing={3}>
-                  <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                    {/* <Scale color={theme.palette.primary.main} size={32} /> */}
-                    <Typography
-                      variant='h3'
-                      color='primary'
-                      sx={{ fontWeight: 800 }}
-                    >
-                      Marco Normativo y Responsabilidad Legal
-                    </Typography>
-                  </Box>
-                  <Typography
-                    variant='body1'
-                    color='text.secondary'
-                    sx={{ fontSize: '1.2rem', lineHeight: 1.8 }}
-                  >
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div className="md:col-span-7">
+              <LazyMotion features={domAnimation}>
+                <m.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="space-y-6"
+                >
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
+                    Marco Normativo y Responsabilidad Legal
+                  </h2>
+                  <p className="text-xl text-muted-foreground leading-relaxed">
                     El mantenimiento de las instalaciones sanitarias no es solo
                     una cuestión de operatividad y limpieza; es una{' '}
-                    <strong>obligación legal</strong> que recae sobre las
+                    <strong className="text-primary font-bold">obligación legal</strong> que recae sobre las
                     administraciones y comunidades de copropietarios.
-                  </Typography>
-                  <Divider sx={{ my: 2 }} />
-                  <Box
-                    sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}
-                  >
+                  </p>
+                  
+                  <hr className="border-border my-6" />
+                  
+                  <div className="flex gap-6 items-start">
                     <Gavel
-                      color={theme.palette.secondary.main}
-                      size={28}
-                      style={{ flexShrink: 0 }}
+                      className="text-secondary w-8 h-8 flex-shrink-0 mt-1"
                     />
-                    <Box>
-                      <Typography variant='h5' sx={{ fontWeight: 700, mb: 1 }}>
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-3">
                         Ley N° 21.442 sobre Copropiedad Inmobiliaria
-                      </Typography>
-                      <Typography
-                        variant='body1'
-                        color='text.secondary'
-                        sx={{ lineHeight: 1.7 }}
-                      >
-                        Según la <strong>Ley N° 21.442</strong>, las comunidades
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Según la <strong className="text-primary font-bold">Ley N° 21.442</strong>, las comunidades
                         y administradores están obligados a mantener en correcto
                         estado las instalaciones del edificio mediante
                         mantenciones periódicas que garanticen la seguridad y
                         salud de los residentes.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Stack>
-              </motion.div>
-            </Grid>
+                      </p>
+                    </div>
+                  </div>
+                </m.div>
+              </LazyMotion>
+            </div>
 
-            <Grid size={{ xs: 12, md: 5 }}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <Paper
-                  elevation={0}
-                  sx={{
-                    p: 4,
-                    borderRadius: 4,
-                    bgcolor: alpha(theme.palette.primary.main, 0.03),
-                    border: '1px solid',
-                    borderColor: 'divider',
-                  }}
+            <div className="md:col-span-5">
+              <LazyMotion features={domAnimation}>
+                <m.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
                 >
-                  <Typography variant='h6' sx={{ fontWeight: 700, mb: 3 }}>
-                    El cumplimiento de esta normativa asegura:
-                  </Typography>
-                  <Stack spacing={2}>
-                    {[
-                      'La integridad física de los habitantes.',
-                      'El correcto funcionamiento de las áreas comunes.',
-                      'El respaldo legal ante eventuales fiscalizaciones o siniestros.',
-                    ].map((item, i) => (
-                      <Box
-                        key={i}
-                        sx={{ display: 'flex', gap: 2, alignItems: 'center' }}
-                      >
-                        <ShieldCheck
-                          size={20}
-                          color={theme.palette.primary.main}
-                        />
-                        <Typography variant='body1' sx={{ fontWeight: 500 }}>
-                          {item}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Stack>
-                </Paper>
-              </motion.div>
-            </Grid>
-          </Grid>
+                  <div className="bg-primary/5 p-8 rounded-3xl border border-border h-full">
+                    <h4 className="text-xl font-bold text-primary mb-6">
+                      El cumplimiento de esta normativa asegura:
+                    </h4>
+                    <div className="space-y-4">
+                      {[
+                        'La integridad física de los habitantes.',
+                        'El correcto funcionamiento de las áreas comunes.',
+                        'El respaldo legal ante eventuales fiscalizaciones o siniestros.',
+                      ].map((item, i) => (
+                        <div
+                          key={i}
+                          className="flex gap-4 items-center"
+                        >
+                          <ShieldCheck
+                            className="w-6 h-6 text-primary flex-shrink-0"
+                          />
+                          <p className="font-medium text-lg text-primary">
+                            {item}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </m.div>
+              </LazyMotion>
+            </div>
+          </div>
 
           {/* Consecuencias del Incumplimiento */}
-          <Box>
-            <Typography
-              variant='h3'
-              color='primary'
-              sx={{ fontWeight: 800, mb: 6, textAlign: 'center' }}
-            >
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-12 text-center">
               Consecuencias del Incumplimiento
-            </Typography>
-            <Grid container spacing={4}>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   title: 'Multas y Sanciones',
                   desc: 'Penalizaciones económicas por parte de juzgados de policía local o autoridades sanitarias.',
-                  icon: <AlertTriangle size={32} />,
+                  icon: <AlertTriangle className="w-10 h-10" />,
                 },
                 {
                   title: 'Responsabilidad Civil',
                   desc: 'Obligación de indemnizar daños causados a departamentos particulares o bienes comunes por negligencia en el mantenimiento (ej. filtraciones o rebalses).',
-                  icon: <Scale size={32} />,
+                  icon: <Scale className="w-10 h-10" />,
                 },
                 {
                   title: 'Responsabilidad Penal',
                   desc: 'En los casos más graves, consecuencias legales ante accidentes personales derivados de instalaciones en mal estado.',
-                  icon: <Gavel size={32} />,
+                  icon: <Gavel className="w-10 h-10" />,
                 },
               ].map((item, i) => (
-                <Grid size={{ xs: 12, md: 4 }} key={i}>
-                  <motion.div
+                <LazyMotion features={domAnimation} key={i}>
+                  <m.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="h-full"
                   >
-                    <Paper
-                      elevation={0}
-                      sx={{
-                        p: 4,
-                        height: '100%',
-                        borderRadius: 4,
-                        bgcolor: 'white',
-                        border: '1px solid',
-                        borderColor: 'divider',
-                        transition: 'all 0.3s ease',
-                        minHeight: { xs: 'auto', md: 320 },
-                        '&:hover': {
-                          borderColor: 'secondary.main',
-                          boxShadow: '0 10px 30px rgba(211,47,47,0.1)',
-                          transform: 'translateY(-5px)',
-                        },
-                      }}
-                    >
-                      <Box sx={{ color: 'secondary.main', mb: 3 }}>
+                    <div className="bg-white dark:bg-card p-8 rounded-3xl border border-border transition-all duration-300 hover:border-secondary hover:shadow-[0_10px_30px_rgba(211,47,47,0.1)] hover:-translate-y-2 flex flex-col h-full min-h-[320px]">
+                      <div className="text-secondary mb-6">
                         {item.icon}
-                      </Box>
-                      <Typography variant='h5' sx={{ fontWeight: 800, mb: 2 }}>
+                      </div>
+                      <h3 className="text-2xl font-extrabold text-primary mb-4">
                         {item.title}
-                      </Typography>
-                      <Typography
-                        variant='body1'
-                        color='text.secondary'
-                        sx={{ lineHeight: 1.7 }}
-                      >
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
                         {item.desc}
-                      </Typography>
-                    </Paper>
-                  </motion.div>
-                </Grid>
+                      </p>
+                    </div>
+                  </m.div>
+                </LazyMotion>
               ))}
-            </Grid>
-          </Box>
+            </div>
+          </div>
 
           {/* Riesgo de Omisión y Cierre */}
-          <Paper
-            elevation={0}
-            sx={{
-              p: { xs: 4, md: 8 },
-              borderRadius: 6,
-              bgcolor: 'primary.main',
-              color: 'white',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <Grid container spacing={6} sx={{ alignItems: 'center' }}>
-              <Grid size={{ xs: 12, md: 8 }}>
-                <Stack spacing={3}>
-                  <Typography variant='h3' sx={{ fontWeight: 800 }}>
-                    El Riesgo de la Omisión
-                  </Typography>
-                  <Typography
-                    variant='h5'
-                    sx={{
-                      opacity: 0.9,
-                      fontWeight: 400,
-                      lineHeight: 1.6,
-                      color: 'secondary.light',
-                    }}
-                  >
-                    No realizar mantenciones preventivas no solo deteriora
-                    aceleradamente las instalaciones y la plusvalía del
-                    edificio: también{' '}
-                    <strong>expone directamente a la administración</strong>{' '}
-                    frente a posibles demandas y consecuencias legales.
-                  </Typography>
-                  <Typography
-                    variant='body1'
-                    sx={{ opacity: 0.8, fontSize: '1.1rem' }}
-                  >
-                    La mantención planificada con <strong>Altamira</strong> es
-                    la herramienta más efectiva para mitigar estos riesgos,
-                    asegurando que el edificio opere siempre bajo el marco legal
-                    vigente y con los estándares de seguridad exigidos por el
-                    mercado y las compañías de seguros.
-                  </Typography>
-                </Stack>
-              </Grid>
-              <Grid size={{ xs: 12, md: 4 }}>
-                <Paper
-                  elevation={0}
-                  sx={{
-                    p: 4,
-                    borderRadius: 4,
-                    bgcolor: alpha('#fff', 0.1),
-                    border: '1px solid',
-                    borderColor: alpha('#fff', 0.2),
-                    textAlign: 'center',
-                  }}
-                >
+          <div className="bg-primary text-white p-8 md:p-16 rounded-[3rem] relative overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+              <div className="md:col-span-8 space-y-6">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+                  El Riesgo de la Omisión
+                </h2>
+                <p className="text-xl text-secondary font-medium leading-relaxed">
+                  No realizar mantenciones preventivas no solo deteriora
+                  aceleradamente las instalaciones y la plusvalía del
+                  edificio: también{' '}
+                  <strong className="text-white font-bold">expone directamente a la administración</strong>{' '}
+                  frente a posibles demandas y consecuencias legales.
+                </p>
+                <p className="text-lg text-white/80 leading-relaxed font-normal">
+                  La mantención planificada con <strong className="text-white font-bold">Altamira</strong> es
+                  la herramienta más efectiva para mitigar estos riesgos,
+                  asegurando que el edificio opere siempre bajo el marco legal
+                  vigente y con los estándares de seguridad exigidos por el
+                  mercado y las compañías de seguros.
+                </p>
+              </div>
+              <div className="md:col-span-4">
+                <div className="bg-white/10 p-8 rounded-3xl border border-white/20 text-center flex flex-col items-center">
                   <FileText
-                    size={48}
-                    color={theme.palette.secondary.light}
-                    style={{ marginBottom: '16px' }}
+                    className="text-secondary w-12 h-12 mb-4"
                   />
-                  <Typography
-                    variant='body2'
-                    sx={{
-                      fontStyle: 'italic',
-                      opacity: 0.9,
-                      color: 'secondary.light',
-                    }}
-                  >
+                  <p className="text-secondary text-sm italic leading-relaxed">
                     Para certificaciones específicas o asesoría sobre el
                     cumplimiento del DS.594, no dude en contactar a nuestro
                     equipo legal-técnico.
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Stack>
-      </Container>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

@@ -1,16 +1,9 @@
 'use client';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Stack,
-  alpha,
-  useTheme,
-} from '@mui/material';
-import { motion } from 'framer-motion';
+
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import { Trophy, HeartHandshake, ShieldAlert } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/lib/utils';
 
 const PILARES = [
   {
@@ -52,134 +45,73 @@ const PILARES = [
 ];
 
 export default function WhyAltamira() {
-  const theme = useTheme();
-
   return (
-    <SectionWrapper id='why-altamira' sx={{ py: { xs: 8, md: 12 } }}>
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography
-            variant='overline'
-            color='secondary'
-            sx={{ fontWeight: 700, letterSpacing: 2 }}
-          >
+    <SectionWrapper id="why-altamira" className="py-16 md:py-24 bg-white dark:bg-background">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="block text-secondary font-bold tracking-[0.2em] text-sm uppercase mb-3">
             ¿POR QUÉ ALTAMIRA?
-          </Typography>
-          <Typography
-            variant='h3'
-            color='primary'
-            sx={{ mt: 1, fontWeight: 800 }}
-          >
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-6">
             Los 3 Pilares de Nuestro Servicio
-          </Typography>
-          <Typography
-            variant='body1'
-            color='text.secondary'
-            sx={{ mt: 2, maxWidth: 800, mx: 'auto' }}
-          >
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Nuestra permanencia en el mercado y la fidelidad de nuestros
             clientes se sustentan en un modelo de trabajo basado en la
             excelencia técnica y la confianza mutua.
-          </Typography>
-        </Box>
+          </p>
+        </div>
 
-        <Stack spacing={6}>
-          {PILARES.map((pilar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: {
-                    xs: 'column',
-                    md: index % 2 === 0 ? 'row' : 'row-reverse',
-                  },
-                  alignItems: 'center',
-                  gap: { xs: 4, md: 8 },
-                  p: { xs: 3, md: 6 },
-                  borderRadius: 6,
-                  bgcolor:
-                    index % 2 === 0
-                      ? alpha(theme.palette.primary.main, 0.03)
-                      : 'transparent',
-                  border: index % 2 !== 0 ? '1px solid' : 'none',
-                  borderColor: 'divider',
-                }}
+        <div className="space-y-8 md:space-y-12">
+          <LazyMotion features={domAnimation}>
+            {PILARES.map((pilar, index) => (
+              <m.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
               >
-                <Box
-                  sx={{
-                    bgcolor: 'primary.main',
-                    color: 'white',
-                    p: 4,
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: `0 10px 30px ${alpha(theme.palette.primary.main, 0.3)}`,
-                  }}
+                <div
+                  className={cn(
+                    "flex flex-col items-center gap-8 md:gap-12 p-6 md:p-10 rounded-[3rem]",
+                    index % 2 === 0
+                      ? "md:flex-row bg-primary/5 border border-transparent"
+                      : "md:flex-row-reverse bg-transparent border border-border"
+                  )}
                 >
-                  {pilar.icon}
-                </Box>
+                  <div className="bg-primary text-white p-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_10px_30px_rgba(0,62,84,0.3)]">
+                    {pilar.icon}
+                  </div>
 
-                <Box sx={{ flex: 1 }}>
-                  <Typography
-                    variant='h4'
-                    color='primary'
-                    sx={{ fontWeight: 800, mb: 1 }}
-                  >
-                    {pilar.title}
-                  </Typography>
-                  <Typography
-                    variant='h6'
-                    color='secondary'
-                    sx={{ fontWeight: 600, mb: 3 }}
-                  >
-                    {pilar.subtitle}
-                  </Typography>
-                  <Typography
-                    variant='subtitle1'
-                    color='text.secondary'
-                    sx={{ fontWeight: 400, mb: 2 }}
-                  >
-                    {pilar.description}
-                  </Typography>
-                  <Stack spacing={1.5}>
-                    {pilar.content.map((item, i) => (
-                      <Box
-                        key={i}
-                        sx={{
-                          display: 'flex',
-                          gap: 2,
-                          alignItems: 'flex-start',
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            width: 8,
-                            height: 8,
-                            bgcolor: 'secondary.main',
-                            borderRadius: '50%',
-                            mt: 1,
-                            flexShrink: 0,
-                          }}
-                        />
-                        <Typography variant='body1' color='text.secondary'>
-                          {item}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Stack>
-                </Box>
-              </Box>
-            </motion.div>
-          ))}
-        </Stack>
-      </Container>
+                  <div className="flex-1">
+                    <h3 className="text-3xl md:text-4xl font-extrabold text-primary mb-3">
+                      {pilar.title}
+                    </h3>
+                    <h4 className="text-xl font-semibold text-secondary mb-6">
+                      {pilar.subtitle}
+                    </h4>
+                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                      {pilar.description}
+                    </p>
+                    
+                    <ul className="space-y-4">
+                      {pilar.content.map((item, i) => (
+                        <li key={i} className="flex items-start gap-4">
+                          <div className="w-2.5 h-2.5 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-muted-foreground text-lg leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </m.div>
+            ))}
+          </LazyMotion>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

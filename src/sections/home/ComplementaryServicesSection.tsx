@@ -1,16 +1,6 @@
 'use client';
+
 import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import {
-  Wrench,
-  Brush,
-  Home,
   BrushCleaning,
   Video,
   BugOff,
@@ -18,6 +8,7 @@ import {
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 const DATA_COMPLEMENTARY_SERVICES = [
   {
@@ -43,118 +34,60 @@ const DATA_COMPLEMENTARY_SERVICES = [
 ];
 
 export default function ComplementaryServicesSection() {
-  const theme = useTheme();
-
   return (
     <SectionWrapper
-      id='complementary-services'
-      sx={{
-        bgcolor: theme.palette.mode === 'dark' ? 'background.default' : '#fff',
-      }}
+      id="complementary-services"
+      className="bg-white dark:bg-background"
     >
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant='overline' color='secondary'>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-4">
             SOLUCIONES INTEGRALES
-          </Typography>
-          <Typography variant='h3' component='h2' color='primary' sx={{ mb: 3 }}>
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6">
             Servicios Complementarios
-          </Typography>
-          <Typography
-            variant='body1'
-            color='text.secondary'
-            sx={{ maxWidth: 600, mx: 'auto' }}
-          >
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Atendemos todas las necesidades de mantención que garanticen la
             operatividad y seguridad de su edificio, ofreciendo soluciones
             integrales en un solo lugar.
-          </Typography>
-        </Box>
+          </p>
+        </div>
 
-        <Grid container spacing={4}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {DATA_COMPLEMENTARY_SERVICES.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, md: 4 }}>
-              <Box
-                sx={{
-                  bgcolor:
-                    theme.palette.mode === 'dark'
-                      ? 'background.paper'
-                      : '#f8fafb',
-                  p: 5,
-                  borderRadius: 4,
-                  height: '100%',
-                  border: `1px solid ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)'}`,
-                  transition: 'all 0.3s',
-                  '&:hover': {
-                    boxShadow:
-                      '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    borderColor: 'primary.main',
-                  },
-                }}
-              >
-                <Box
-                  sx={{
-                    width: 70,
-                    height: 70,
-                    bgcolor: 'secondary.main',
-                    color: 'white',
-                    borderRadius: 3,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    mb: 3,
-                    '& svg': { fontSize: 32 },
-                  }}
-                >
-                  {item.icon}
-                </Box>
-                <Typography
-                  variant='h5'
-                  color='primary.main'
-                  sx={{ fontWeight: 700, mb: 2 }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  variant='body1'
-                  color='text.secondary'
-                  sx={{ lineHeight: 1.7 }}
-                >
-                  {item.description}
-                </Typography>
+            <div
+              key={index}
+              className="bg-[#f9fafb] p-8 rounded-3xl h-full border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-primary flex flex-col"
+            >
+              <div className="w-[70px] h-[70px] bg-secondary text-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-4">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed flex-grow">
+                {item.description}
+              </p>
 
-                {item.cta && (
-                  <Box sx={{ textAlign: 'center' }}>
-                    <Button
-                      component={Link}
-                      href={item.cta_link}
-                      variant='outlined'
-                      size='large'
-                      color='secondary'
-                      endIcon={<ArrowRight />}
-                      sx={{
-                        mt: 4,
-                        borderColor: 'secondary.main',
-                        bgcolor: 'secondary.main',
-                        color: 'white',
-                        border: '1px solid',
-                        '&:active': { transform: 'scale(0.95)' },
-                        '&:hover': {
-                          bgcolor: 'white',
-                          color: 'secondary.main',
-                          border: '1px solid',
-                        },
-                      }}
-                    >
-                      Ir a Boca Ratón
-                    </Button>
-                  </Box>
-                )}
-              </Box>
-            </Grid>
+              {item.cta && (
+                <div className="text-center mt-8">
+                  <Button
+                    asChild
+                    variant="secondary"
+                    className="group w-full sm:w-auto font-bold px-6 py-2 h-auto"
+                  >
+                    <Link href={item.cta_link!}>
+                      {item.cta_text}
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </div>
+              )}
+            </div>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

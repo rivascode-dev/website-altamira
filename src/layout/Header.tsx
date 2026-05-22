@@ -2,25 +2,10 @@
 
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  Typography,
-  useTheme,
-  useMediaQuery,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Divider,
-  alpha,
-} from '@mui/material';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/utils';
 
 const DATA_MENU = [
   { label: 'Nosotros', target: '/nosotros' },
@@ -32,10 +17,8 @@ const DATA_MENU = [
 ];
 
 export default function Header() {
-  const theme = useTheme();
   const pathname = usePathname();
   const router = useRouter();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = (open: boolean) => () => {
@@ -53,9 +36,7 @@ export default function Header() {
   };
 
   const handleLinkClick = (
-    event: React.MouseEvent<
-      HTMLAnchorElement | HTMLButtonElement | HTMLDivElement
-    >,
+    event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>,
     target: string
   ) => {
     event.preventDefault();
@@ -64,7 +45,6 @@ export default function Header() {
     if (target.startsWith('/')) {
       router.push(target);
     } else {
-      // Es un ancla dentro del home (ej. 'contact')
       if (pathname === '/') {
         const element = document.getElementById(target);
         if (element) {
@@ -77,242 +57,130 @@ export default function Header() {
   };
 
   return (
-    <Box
-      component='nav'
-      sx={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        width: '100%',
-        bgcolor:
-          theme.palette.mode === 'dark'
-            ? 'rgba(15, 23, 42, 0.8)'
-            : 'rgba(255, 255, 255, 0.8)',
-        backdropFilter: 'blur(12px)',
-        boxShadow:
-          theme.palette.mode === 'dark'
-            ? 'none'
-            : '0 10px 15px -3px rgba(15, 23, 42, 0.05)',
-        py: 2,
-      }}
-    >
-      <Container maxWidth='lg'>
-        <Stack
-          direction='row'
-          sx={{ justifyContent: 'space-between', alignItems: 'center' }}
-        >
-          <Box
+    <nav className="sticky top-0 z-50 w-full bg-white shadow-sm py-4 border-b border-border/50">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between">
+          <div
             onClick={handleLogoClick}
-            sx={{
-              width: { xs: 120, sm: 140, md: 180 },
-              display: 'flex',
-              cursor: 'pointer',
-              '&:active': { transform: 'scale(0.98)' },
-              transition: 'transform 0.2s',
-            }}
+            className="w-[120px] sm:w-[140px] md:w-[180px] cursor-pointer transition-transform duration-200 active:scale-95"
           >
             <Image
-              src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
-              alt='Altamira Ductos Logo'
+              src="/assets/logos/logo-altamira-limpieza-ductos-chile.png"
+              alt="Altamira Ductos Logo"
               width={250}
               height={84}
               style={{ width: '100%', height: 'auto' }}
               priority
             />
-          </Box>
+          </div>
 
-          {!isMobile && (
-            <Stack direction='row' spacing={4} sx={{ alignItems: 'center' }}>
-              {DATA_MENU.map((item) => (
-                <Typography
-                  variant='subtitle1'
-                  key={item.target}
-                  component='a'
-                  href={item.target}
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                    handleLinkClick(e, item.target)
-                  }
-                  sx={{
-                    fontWeight: 600,
-                    color: 'primary.main',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                    '&:hover': { color: 'secondary.main' },
-                  }}
-                >
-                  {item.label}
-                </Typography>
-              ))}
-            </Stack>
-          )}
+          <div className="hidden lg:flex items-center space-x-6">
+            {DATA_MENU.map((item) => (
+              <a
+                key={item.target}
+                href={item.target}
+                onClick={(e) => handleLinkClick(e, item.target)}
+                className="font-semibold text-primary hover:text-secondary transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
 
-          <Stack direction='row' spacing={2} sx={{ alignItems: 'center' }}>
+          <div className="flex items-center space-x-4">
             <Button
-              variant='outlined'
-              size='large'
-              color='secondary'
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                handleLinkClick(e, 'contact')
-              }
-              sx={{
-                borderColor: 'secondary.main',
-                bgcolor: 'secondary.main',
-                color: 'white',
-                border: '1px solid secondary.main',
-                display: { xs: 'none', md: 'inline-flex' },
-                '&:active': { transform: 'scale(0.95)' },
-                '&:hover': {
-                  bgcolor: 'white',
-                  color: 'secondary.main',
-                  border: '1px solid',
-                },
-              }}
+              variant="secondary"
+              size="lg"
+              className="hidden lg:inline-flex"
+              onClick={(e) => handleLinkClick(e, 'contact')}
             >
               Solicitar evaluación técnica
             </Button>
 
-            {isMobile && (
-              <Box
-                color='primary'
-                onClick={toggleMenu(true)}
-                aria-label='Abrir menú'
-                // sx={{
-                //   ml: 1,
-                //   bgcolor: alpha(theme.palette.primary.main, 0.05),
-                //   '&:hover': {
-                //     bgcolor: alpha(theme.palette.primary.main, 0.1),
-                //   },
-                // }}
-              >
-                <Menu color='#D32F2F' size={35} />
-              </Box>
-            )}
-          </Stack>
-        </Stack>
-      </Container>
+            <button
+              className="lg:hidden p-2 text-secondary hover:bg-secondary/10 rounded-lg transition-colors"
+              onClick={toggleMenu(true)}
+              aria-label="Abrir menú"
+            >
+              <Menu size={32} />
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Menú Móvil */}
-      <Drawer
-        anchor='right'
-        open={isMenuOpen}
-        onClose={toggleMenu(false)}
-        sx={{
-          '& .MuiDrawer-paper': {
-            width: 320,
-            bgcolor: 'background.default',
-            backgroundImage: 'none',
-            borderRight: 'none',
-            boxSizing: 'border-box',
-          },
-        }}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+          onClick={toggleMenu(false)}
+        />
+      )}
+      <div
+        className={cn(
+          "fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-in-out flex flex-col",
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        )}
       >
-        <Box
-          sx={{
-            p: 2,
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <Stack
-            direction='row'
-            sx={{
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            <Box
+        <div className="p-6 flex flex-col h-full">
+          <div className="flex items-center justify-between mb-6">
+            <div
               onClick={handleLogoClick}
-              sx={{
-                width: 140,
-                mt: 1,
-                cursor: 'pointer',
-                '&:active': { transform: 'scale(0.98)' },
-                transition: 'transform 0.2s',
-              }}
+              className="w-[140px] cursor-pointer transition-transform duration-200 active:scale-95"
             >
               <Image
-                src='/assets/logos/logo-altamira-limpieza-ductos-chile.png'
-                alt='Altamira Ductos Logo'
+                src="/assets/logos/logo-altamira-limpieza-ductos-chile.png"
+                alt="Altamira Ductos Logo"
                 width={200}
                 height={67}
                 style={{ width: '100%', height: 'auto' }}
               />
-            </Box>
-            <IconButton onClick={toggleMenu(false)} color='primary'>
-              <X size={30} color='#D32F2F' />
-            </IconButton>
-          </Stack>
+            </div>
+            <button onClick={toggleMenu(false)} className="p-2 text-secondary hover:bg-secondary/10 rounded-full transition-colors">
+              <X size={28} />
+            </button>
+          </div>
 
-          <Divider sx={{ my: 3 }} />
+          <div className="h-px bg-border my-2" />
 
-          <List sx={{ flexGrow: 1 }}>
-            {DATA_MENU.map((item) => (
-              <ListItem key={item.target} disablePadding>
-                <ListItemButton
-                  onClick={(e) => handleLinkClick(e, item.target)}
-                  sx={{
-                    py: 2,
-                    borderRadius: 2,
-                    mb: 1,
-                  }}
-                >
-                  <ListItemText
-                    primary={
-                      <Typography
-                        variant='subtitle1'
-                        sx={{
-                          //fontWeight: 600,
-                          color: 'primary.main',
-                        }}
-                      >
-                        {item.label}
-                      </Typography>
-                    }
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+          <div className="flex-1 overflow-y-auto py-8">
+            <ul className="space-y-8">
+              {DATA_MENU.map((item) => (
+                <li key={item.target}>
+                  <button
+                    onClick={(e) => handleLinkClick(e, item.target)}
+                    className="w-full text-left text-lg text-primary hover:text-secondary transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <Divider sx={{ my: 3 }} />
+          <div className="h-px bg-border my-4" />
 
-          <Stack spacing={2} sx={{ mt: 'auto', pb: 2 }}>
+          <div className="space-y-4 pb-4">
             <Button
-              variant='contained'
-              color='secondary'
-              fullWidth
-              size='large'
+              variant="secondary"
+              className="w-full font-bold"
+              size="lg"
               onClick={(e) => handleLinkClick(e, 'contact')}
-              sx={{ fontWeight: 700, py: 1.5 }}
             >
               Solicitar evaluación técnica
             </Button>
 
-            <Button
-              variant='contained'
-              color='success'
-              fullWidth
-              size='large'
-              startIcon={<MessageCircle size={20} />}
-              component='a'
-              href='https://wa.me/56997902704'
-              target='_blank'
-              rel='noopener noreferrer'
-              sx={{
-                fontWeight: 700,
-                py: 1.5,
-                bgcolor: 'success.main',
-                '&:hover': {
-                  bgcolor: 'success.dark',
-                },
-              }}
+            <a
+              href="https://wa.me/56997902704"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full bg-[#16a34a] hover:bg-[#15803d] text-white font-bold h-12 px-8 rounded-md transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg"
             >
+              <MessageCircle size={20} className="mr-2" />
               WhatsApp Urgencias
-            </Button>
-          </Stack>
-        </Box>
-      </Drawer>
-    </Box>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }

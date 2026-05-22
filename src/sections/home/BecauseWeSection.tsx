@@ -1,22 +1,11 @@
 'use client';
+
 import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import {
-  Zap,
   HardHat,
   Handshake,
-  Clock,
-  ArrowRight,
   ShieldCheck,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
-import Link from 'next/link';
 
 const DATA_DIFFERENTIATORS = [
   {
@@ -40,106 +29,39 @@ const DATA_DIFFERENTIATORS = [
 ];
 
 export default function BecauseWeSection() {
-  const theme = useTheme();
-
   return (
-    <SectionWrapper id='diferenciadores' sx={{ bgcolor: 'primary.main' }}>
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant='overline' color='secondary'>
+    <SectionWrapper id="diferenciadores" className="bg-primary">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-4">
             POR QUÉ ELEGIRNOS
-          </Typography>
-          <Typography
-            variant='h3'
-            component='h2'
-            color='secondary'
-            sx={{ color: 'white' }}
-          >
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
             Por qué nuestros clientes trabajan con nosotros durante años?
-          </Typography>
-        </Box>
+          </h2>
+        </div>
 
-        <Grid container spacing={4}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {DATA_DIFFERENTIATORS.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <Box
-                sx={{
-                  bgcolor: 'rgba(255,255,255,0.05)',
-                  p: 4,
-                  borderRadius: 4,
-                  height: '100%',
-                  border: item.active
-                    ? `1px solid ${theme.palette.secondary.main}`
-                    : 'none',
-                  transition: 'transform 0.3s',
-                  '&:hover': {
-                    transform: 'translateY(-10px)',
-                    bgcolor: 'rgba(255,255,255,0.1)',
-                  },
-                }}
-              >
-                <Box
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    bgcolor: 'secondary.main',
-                    borderRadius: 3,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    mb: 3,
-                  }}
-                >
-                  {item.icon}
-                </Box>
-                <Typography
-                  variant='h6'
-                  sx={{ color: 'white', fontWeight: 700, mb: 2, maxWidth: 100 }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography variant='body2' sx={{ color: 'grey.100' }}>
-                  {item.desc}
-                </Typography>
-              </Box>
-            </Grid>
+            <div
+              key={index}
+              className={`bg-white/5 p-8 rounded-3xl h-full transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 ${
+                item.active ? 'border border-secondary' : 'border border-transparent'
+              }`}
+            >
+              <div className="w-[60px] h-[60px] bg-secondary rounded-2xl flex items-center justify-center text-white mb-6 shadow-sm">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4 max-w-[100px]">
+                {item.title}
+              </h3>
+              <p className="text-gray-200 leading-relaxed text-sm">
+                {item.desc}
+              </p>
+            </div>
           ))}
-        </Grid>
-        <Box sx={{ textAlign: 'center' }}>
-          {/* <Button
-            component={Link}
-            href='/docs/porque'
-            variant='contained'
-            color='secondary'
-            size='large'
-            endIcon={<ArrowRight />}
-            sx={{ mt: 4, maxWidth: 200 }}
-          >
-            Ver más
-          </Button> */}
-          {/* <Button
-            component={Link}
-            href='/docs/porque'
-            variant='outlined'
-            size='large'
-            endIcon={<ArrowRight />}
-            sx={{
-              mt: 4,
-              color: 'white',
-              borderColor: 'white',
-
-              '&:hover': {
-                bgcolor: 'white',
-                color: 'primary.main',
-              },
-              '&:active': { transform: 'scale(0.95)' },
-            }}
-          >
-            Leer Más
-          </Button> */}
-        </Box>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

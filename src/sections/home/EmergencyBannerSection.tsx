@@ -1,109 +1,61 @@
 'use client';
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
+
 import {
   ArrowRight,
   MessageCircle,
-  MessageCircleCheck,
   TriangleAlert,
 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 export default function EmergencyBannerSection() {
   return (
-    <SectionWrapper id='emergencias' sx={{ py: 8, bgcolor: 'secondary.main' }}>
-      <Container maxWidth='lg'>
-        <Stack
-          direction={{ xs: 'column', md: 'row' }}
-          spacing={5}
-          sx={{ alignItems: 'center', justifyContent: 'space-between' }}
-        >
-          <Stack direction='row' spacing={3} sx={{ alignItems: 'center' }}>
-            <Box
-              sx={{
-                display: { xs: 'none', lg: 'flex' },
-                width: 80,
-                height: 80,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '50%',
-                border: '4px solid rgba(255,255,255,0.2)',
-                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                '@keyframes pulse': {
-                  '0%, 100%': { opacity: 1 },
-                  '50%': { opacity: 0.5 },
-                },
-              }}
-            >
-              <TriangleAlert size={40} color='white' />
-            </Box>
-            <Box>
-              <Typography
-                variant='h3'
-                component='h2'
-                sx={{
-                  color: 'white',
-                  fontWeight: 800,
-                  mb: 1,
-                  fontSize: { xs: '1.875rem', md: '2.25rem' },
-                }}
-              >
+    <SectionWrapper id="emergencias" className="py-12 md:py-16 bg-secondary">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <div className="flex items-center space-x-6">
+            <div className="hidden lg:flex w-20 h-20 items-center justify-center rounded-full border-4 border-white/20 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+              <TriangleAlert size={40} className="text-white" />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
                 Servicio Emergencia Sanitaria 24/7
-              </Typography>
-              <Typography
-                variant='body1'
-                sx={{ color: 'white', fontWeight: 500, maxWidth: 650 }}
-              >
+              </h2>
+              <p className="text-white font-medium max-w-2xl text-lg">
                 Atendemos situaciones críticas de forma inmediata. Este servicio
                 requiere pago inmediato para su ejecución.
-              </Typography>
-            </Box>
-          </Stack>
+              </p>
+            </div>
+          </div>
 
-          <Stack
-            direction='column'
-            spacing={2}
-            sx={{ width: { xs: '100%', md: 'auto' } }}
-          >
-            <Button
-              component='a'
-              href='https://wa.me/56982811148'
-              variant='outlined'
-              endIcon={<MessageCircle />}
-              sx={{
-                bgcolor: '#25D366',
-                color: 'white',
-                border: '1px solid #25D366',
-
-                '&:hover': {
-                  bgcolor: '#128C7E',
-                },
-                '&:active': { transform: 'scale(0.95)' },
-              }}
+          <div className="flex flex-col w-full md:w-auto space-y-4">
+            <a
+              href="https://wa.me/56982811148"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-12 px-6 rounded-xl transition-all duration-300 active:scale-95 shadow-sm"
             >
               WhatsApp Urgencias
-            </Button>
-            <Button
-              component={Link}
-              href='/condiciones'
-              variant='outlined'
-              endIcon={<ArrowRight />}
-              sx={{
-                color: 'white',
-                borderColor: 'white',
+              <MessageCircle className="ml-2 w-5 h-5" />
+            </a>
 
-                '&:hover': {
-                  bgcolor: 'white',
-                  color: 'secondary.main',
-                },
-                '&:active': { transform: 'scale(0.95)' },
-              }}
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-secondary font-bold"
             >
-              Leer Condiciones Servicio
+              <Link href="/condiciones">
+                Leer Condiciones Servicio
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
-          </Stack>
-        </Stack>
-      </Container>
+          </div>
+          
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

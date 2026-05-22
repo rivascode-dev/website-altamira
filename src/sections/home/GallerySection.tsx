@@ -1,16 +1,10 @@
 'use client';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useTheme,
-} from '@mui/material';
+
 import SectionWrapper from '@/components/SectionWrapper';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 const images = [
   '/assets/images/gallery/altamira-ductos-horizontales-1.jpg',
@@ -20,108 +14,53 @@ const images = [
 ];
 
 export default function GallerySection() {
-  const theme = useTheme();
-
   return (
     <SectionWrapper
-      id='gallery'
-      sx={{
-        bgcolor:
-          theme.palette.mode === 'dark' ? 'background.paper' : '#ffffffff',
-      }}
+      id="gallery"
+      className="bg-white dark:bg-background"
     >
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant='overline' color='secondary'>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-4">
             GALERÍA
-          </Typography>
-          <Typography variant='h3' component='h2' color='primary'>
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary">
             Trabajos reales en terreno
-          </Typography>
-        </Box>
+          </h2>
+        </div>
 
-        <Grid container spacing={2}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {images.map((src, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
-              <Box
-                sx={{
-                  aspectRatio: '1/1',
-                  borderRadius: 3,
-                  overflow: 'hidden',
-                  position: 'relative',
-                  '&:hover .overlay': {
-                    opacity: 1,
-                  },
-                  '&:hover .image': {
-                    transform: 'scale(1.1)',
-                  },
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`Trabajo técnico ${index + 1}`}
-                  width={400}
-                  height={400}
-                  className='image'
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.5s ease',
-                  }}
-                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
-                />
-                {/* <Box
-                  className='overlay'
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    bgcolor: 'rgba(0, 62, 84, 0.7)',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Typography
-                    variant='h6'
-                    color='white'
-                    sx={{ fontWeight: 700 }}
-                  >
-                    Terreno Altamira
-                  </Typography>
-                </Box> */}
-              </Box>
-            </Grid>
-          ))}
-          <Box sx={{ mx: 'auto' }}>
-            <Button
-              component={Link}
-              href={'/galeria'}
-              variant='outlined'
-              size='large'
-              color='secondary'
-              endIcon={<ArrowRight />}
-              sx={{
-                mt: 4,
-                borderColor: 'secondary.main',
-                bgcolor: 'secondary.main',
-                color: 'white',
-                border: '1px solid',
-                '&:active': { transform: 'scale(0.95)' },
-                '&:hover': {
-                  bgcolor: 'white',
-                  color: 'secondary.main',
-                  border: '1px solid',
-                },
-              }}
+            <div
+              key={index}
+              className="aspect-square rounded-2xl overflow-hidden relative group"
             >
+              <Image
+                src={src}
+                alt={`Trabajo técnico ${index + 1}`}
+                width={400}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+              />
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-secondary text-secondary hover:bg-secondary hover:text-white group transition-colors duration-300"
+          >
+            <Link href="/galeria">
               Ver Galería Completa
-            </Button>
-          </Box>
-        </Grid>
-      </Container>
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

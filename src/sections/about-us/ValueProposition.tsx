@@ -1,6 +1,6 @@
 'use client';
-import { Box, Container, Typography, Paper, Stack, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
+
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import { ShieldCheck, Zap, Users, FileBarChart } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 
@@ -9,121 +9,83 @@ const VALUE_PROPS = [
     icon: <ShieldCheck size={32} />,
     title: 'Resolución Sanitaria',
     desc: 'Cumplimos con la vigencia de todas las normativas del MINSAL.',
-    color: '#D32F2F',
+    colorClass: 'text-[#D32F2F]',
+    bgClass: 'bg-[#D32F2F]/10',
+    borderClass: 'hover:border-[#D32F2F]',
   },
   {
     icon: <Zap size={32} />,
     title: 'Tecnología de Punta',
     desc: 'Equipos alta presión y herramientas de inspección avanzada.',
-    color: '#1976D2',
+    colorClass: 'text-[#1976D2]',
+    bgClass: 'bg-[#1976D2]/10',
+    borderClass: 'hover:border-[#1976D2]',
   },
   {
     icon: <Users size={32} />,
     title: 'Equipo Certificado',
     desc: 'Nuestro Personal altamente capacitado y con cobertura nacional.',
-    color: '#388E3C',
+    colorClass: 'text-[#388E3C]',
+    bgClass: 'bg-[#388E3C]/10',
+    borderClass: 'hover:border-[#388E3C]',
   },
   {
     icon: <FileBarChart size={32} />,
     title: 'Informes Técnicos',
     desc: 'Entrega de toda la documentación detallada tras cada servicio',
-    color: '#FBC02D',
+    colorClass: 'text-[#FBC02D]',
+    bgClass: 'bg-[#FBC02D]/10',
+    borderClass: 'hover:border-[#FBC02D]',
   },
 ];
 
 export default function ValueProposition() {
   return (
     <SectionWrapper
-      id='value-proposition'
-      sx={{ bgcolor: 'grey.50', py: { xs: 8, md: 10 } }}
+      id="value-proposition"
+      className="bg-gray-50 dark:bg-background py-16 md:py-24"
     >
-      <Container maxWidth='lg'>
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant='h3' color='primary' sx={{ fontWeight: 800 }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-6">
             Nuestra Propuesta de Valor
-          </Typography>
-          <Typography
-            variant='h6'
-            color='text.secondary'
-            sx={{ mt: 2, maxWidth: 800, mx: 'auto', fontWeight: 400 }}
-          >
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-normal">
             Operamos bajo el concepto de "Prevención hoy, tranquilidad mañana".
             Entendemos que el mantenimiento no es un gasto, sino una inversión
             obligatoria para evitar colapsos sanitarios y multas legales.
-          </Typography>
-        </Box>
+          </p>
+        </div>
 
-        <Grid container spacing={4}>
-          {VALUE_PROPS.map((prop, index) => (
-            <Grid
-              key={index}
-              size={{ xs: 12, sm: 6, md: 3 }}
-              sx={{ display: 'flex' }}
-            >
-              <Box
-                component={motion.div}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <LazyMotion features={domAnimation}>
+            {VALUE_PROPS.map((prop, index) => (
+              <m.div
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                sx={{ display: 'flex', flex: 1, width: '100%' }}
+                className="flex flex-col"
               >
-                <Paper
-                  elevation={0}
-                  sx={{
-                    p: 4,
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    borderRadius: 4,
-                    border: '1px solid',
-                    borderColor: 'divider',
-                    transition: 'all 0.3s ease',
-                    minHeight: 300,
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
-                      borderColor: prop.color,
-                    },
-                  }}
+                <div
+                  className={`bg-white dark:bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col justify-center items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] flex-grow min-h-[300px] ${prop.borderClass}`}
                 >
-                  <Stack
-                    spacing={2}
-                    sx={{ alignItems: 'center', textAlign: 'center' }}
-                  >
-                    <Box
-                      sx={{
-                        color: prop.color,
-                        bgcolor: `${prop.color}15`,
-                        p: 2,
-                        borderRadius: 3,
-                      }}
-                    >
-                      {prop.icon}
-                    </Box>
-                    <Typography
-                      variant='h6'
-                      color='primary'
-                      sx={{ fontWeight: 700, maxWidth: '80%' }}
-                    >
-                      {prop.title}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      color='text.secondary'
-                      sx={{ lineHeight: 1.6 }}
-                    >
-                      {prop.desc}
-                    </Typography>
-                  </Stack>
-                </Paper>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                  <div className={`p-4 rounded-2xl mb-6 ${prop.colorClass} ${prop.bgClass}`}>
+                    {prop.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-4 w-[80%] mx-auto leading-snug">
+                    {prop.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {prop.desc}
+                  </p>
+                </div>
+              </m.div>
+            ))}
+          </LazyMotion>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

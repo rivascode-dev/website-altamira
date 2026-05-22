@@ -1,8 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-
-import { Box } from '@mui/material';
 import Footer from './Footer';
 
 export function ConditionalFooter() {
@@ -16,12 +14,6 @@ export function ConditionalFooter() {
   );
 
   if (shouldExclude) return null;
-
-  const isHome = pathname === '/';
-
-  if (isHome) {
-    return <Footer />;
-  }
 
   return <Footer />;
 }

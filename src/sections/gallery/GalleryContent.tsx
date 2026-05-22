@@ -1,17 +1,9 @@
 'use client';
 import { useState } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Tabs,
-  Tab,
-  Stack,
-  Grid,
-} from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import { Play } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const categories = [
   { id: 'all', label: 'Todo' },
@@ -167,131 +159,84 @@ export default function GalleryContent() {
       : galleryItems.filter((item) => item.category === activeTab);
 
   return (
-    <SectionWrapper id='gallery-content'>
-      <Container maxWidth='lg'>
-        <Box sx={{ mb: 6 }}>
-          <Tabs
-            value={activeTab}
-            onChange={(_, newValue) => setActiveTab(newValue)}
-            variant='scrollable'
-            scrollButtons='auto'
-            sx={{
-              '& .MuiTabs-indicator': {
-                height: 4,
-                borderRadius: '4px 4px 0 0',
-                bgcolor: 'secondary.main',
-              },
-              '& .MuiTab-root': {
-                fontSize: '1rem',
-                fontWeight: 600,
-                color: 'text.secondary',
-                '&.Mui-selected': {
-                  color: 'primary.main',
-                },
-              },
-            }}
-          >
-            {categories.map((cat) => (
-              <Tab key={cat.id} label={cat.label} value={cat.id} />
-            ))}
-          </Tabs>
-        </Box>
+    <SectionWrapper id="gallery-content" className="py-12 md:py-20 bg-white dark:bg-background">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="mb-8">
+          <div className="flex overflow-x-auto scrollbar-hide border-b border-border mb-6">
+            <div className="flex space-x-2 pb-[-1px]">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveTab(cat.id)}
+                  className={cn(
+                    "px-4 py-3 text-base font-semibold whitespace-nowrap transition-colors duration-300 relative",
+                    activeTab === cat.id
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  )}
+                >
+                  {cat.label}
+                  {activeTab === cat.id && (
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t-md" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
 
-        <Grid container spacing={3}>
-          {filteredItems.map((item) => (
-            <Grid key={item.id} size={{ xs: 12, sm: 6, md: 3 }}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  aspectRatio: '1/1',
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  boxShadow: 2,
-                  '&:hover .overlay': { opacity: 1 },
-                  '&:hover img, &:hover video': { transform: 'scale(1.1)' },
-                }}
+        <LazyMotion features={domAnimation}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredItems.map((item) => (
+              <m.div
+                key={item.id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                layout
+                className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md group"
               >
                 {item.isVideo ? (
-                  <Box
-                    component='video'
+                  <video
                     src={item.src}
                     muted
                     loop
                     playsInline
                     autoPlay
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.5s ease',
-                    }}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
-                  <Box
-                    component='img'
+                  <img
                     src={item.src}
                     alt={item.title}
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.5s ease',
-                    }}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 )}
 
                 {item.isVideo && (
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: 16,
-                      right: 16,
-                      bgcolor: 'rgba(211, 47, 47, 0.9)',
-                      color: 'white',
-                      p: 1,
-                      borderRadius: 2,
-                      display: 'flex',
-                      zIndex: 2,
-                    }}
-                  >
-                    <Play size={16} fill='white' />
-                  </Box>
+                  <div className="absolute top-4 right-4 bg-secondary/90 text-white p-2 rounded-xl z-10 flex">
+                    <Play size={16} className="fill-white text-white" />
+                  </div>
                 )}
 
-                <Box
-                  className='overlay'
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    bgcolor: 'rgba(0, 51, 69, 0.7)',
-                    display: 'flex',
-                    alignItems: 'flex-end',
-                    p: 3,
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    zIndex: 1,
-                  }}
-                >
-                  <Typography
-                    variant='subtitle1'
-                    sx={{ fontWeight: 600, color: 'white' }}
-                  >
+                <div className="absolute inset-0 bg-black/60 flex items-end p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
+                  <h4 className="text-white font-semibold text-lg">
                     {item.title}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+                  </h4>
+                </div>
+              </m.div>
+            ))}
+          </div>
+        </LazyMotion>
 
-        <Box sx={{ mt: 8, textAlign: 'center' }}>
-          <Typography variant='body2' color='text.secondary'>
+        <div className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
             * Todas las imágenes corresponden a trabajos reales realizados por
             Altamira Ltda.
-          </Typography>
-        </Box>
-      </Container>
+          </p>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

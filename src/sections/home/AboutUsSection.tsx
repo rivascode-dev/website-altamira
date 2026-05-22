@@ -1,157 +1,90 @@
 'use client';
-import { Box, Container, Grid, Typography, Stack, Button } from '@mui/material';
+
 import { ArrowRight, CircleCheck } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 export default function AboutUsSection() {
   return (
-    <SectionWrapper
-      id='about-us'
-      sx={{ py: 12, bgcolor: 'background.default' }}
-    >
-      <Container maxWidth='lg'>
-        <Grid container spacing={8} sx={{ alignItems: 'center' }}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box sx={{ position: 'relative' }}>
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: -16,
-                  left: -16,
-                  width: 96,
-                  height: 96,
-                  bgcolor: 'secondary.main',
-                  opacity: 0.1,
-                  borderRadius: '50%',
-                  filter: 'blur(24px)',
-                }}
-              />
-              <Image
-                src='/assets/images/altamira-ductos-nosotros.jpg'
-                alt='Equipo técnico Altamira Ductos'
-                width={600}
-                height={400}
-                style={{ width: '100%', height: 'auto' }}
-              />
+    <SectionWrapper id="about-us" className="bg-background">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <div className="relative order-2 md:order-1">
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl" />
+            <Image
+              src="/assets/images/altamira-ductos-nosotros.jpg"
+              alt="Equipo técnico Altamira Ductos"
+              width={600}
+              height={400}
+              className="w-full h-auto rounded-2xl shadow-lg relative z-10"
+            />
+            
+            <div className="hidden lg:block absolute -bottom-6 -right-6 bg-primary p-6 rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] z-20">
+              <span className="block text-4xl font-light text-secondary mb-1">
+                Confianza
+              </span>
+              <span className="block font-medium uppercase tracking-tight text-white text-sm">
+                y experiencia
+              </span>
+            </div>
+          </div>
 
-              <Box
-                sx={{
-                  display: { xs: 'none', lg: 'block' },
-                  position: 'absolute',
-                  bottom: -24,
-                  right: -24,
-                  bgcolor: 'primary.main',
-                  p: 4,
-                  borderRadius: 3,
-                  boxShadow:
-                    '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                  zIndex: 20,
-                }}
-              >
-                <Typography variant='h3' color='secondary'>
-                  Confianza
-                </Typography>
-                <Typography
-                  variant='body2'
-                  sx={{
-                    fontWeight: 500,
-                    textTransform: 'uppercase',
-                    letterSpacing: -0.5,
-                    color: 'white',
-                  }}
-                >
-                  y experiencia
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Stack>
-              <Typography variant='overline' color='secondary'>
-                QUIENES SOMOS
-              </Typography>
+          <div className="flex flex-col order-1 md:order-2">
+            <span className="text-secondary font-bold tracking-widest text-sm uppercase mb-2">
+              QUIENES SOMOS
+            </span>
 
-              <Typography
-                variant='h5'
-                component='h2'
-                color='primary'
-                sx={{ mt: 2, fontWeight: 600 }}
-              >
-                EMPRESA DE CONTROL DE PLAGAS SEGÚN REQUERIMIENTO SEREMI PARA LA
-                EJECUCIÓN DE LIMPIEZA DE DUCTOS VERTICALES Y HORIZONTALES.
-              </Typography>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary leading-tight mt-2">
+              EMPRESA DE CONTROL DE PLAGAS SEGÚN REQUERIMIENTO SEREMI PARA LA
+              EJECUCIÓN DE LIMPIEZA DE DUCTOS VERTICALES Y HORIZONTALES.
+            </h2>
 
-              <Typography variant='body1' color='primary.main' sx={{ mt: 2 }}>
-                En Altamira nos especializamos en la limpieza, mantención y
-                sanitización de sistemas de ductos en edificios y condominios.
-              </Typography>
-              <Typography
-                variant='body1'
-                color='text.secondary'
-                sx={{ mt: 2, lineHeight: 1.8 }}
-              >
-                Trabajamos con equipos especializados para intervenir ductos
-                verticales, horizontales, cámaras de alcantarillado y ductos de
-                basura con sus salas, asegurando resultados eficientes, seguros
-                y duraderos.{'  '}
-              </Typography>
+            <p className="text-primary text-lg mt-4 leading-relaxed">
+              En Altamira nos especializamos en la limpieza, mantención y
+              sanitización de sistemas de ductos en edificios y condominios.
+            </p>
 
-              <Grid container spacing={3} sx={{ mt: 2 }}>
-                {[
-                  'Equipo Certificado',
-                  'Tecnología de Punta',
-                  'Resolución Sanitaria',
-                  'Cobertura Nacional',
-                ].map((text) => (
-                  <Grid size={{ xs: 12, sm: 6 }} key={text}>
-                    <Stack
-                      direction='row'
-                      spacing={1.5}
-                      sx={{ alignItems: 'flex-start' }}
-                    >
-                      <CircleCheck color='white' fill='#D32F2F' size={30} />
-                      <Typography
-                        variant='body1'
-                        color='primary.main'
-                        sx={{ fontWeight: 700 }}
-                      >
-                        {text}
-                      </Typography>
-                    </Stack>
-                  </Grid>
-                ))}
-                <Button
-                  component={Link}
-                  href='/nosotros'
-                  variant='outlined'
-                  size='large'
-                  color='secondary'
-                  endIcon={<ArrowRight />}
-                  aria-label='Leer más sobre nuestra empresa'
-                  sx={{
-                    mt: 4,
-                    borderColor: 'secondary.main',
-                    bgcolor: 'secondary.main',
-                    color: 'white',
-                    border: '1px solid',
+            <p className="text-muted-foreground mt-4 leading-[1.8]">
+              Trabajamos con equipos especializados para intervenir ductos
+              verticales, horizontales, cámaras de alcantarillado y ductos de
+              basura con sus salas, asegurando resultados eficientes, seguros
+              y duraderos.
+            </p>
 
-                    '&:active': { transform: 'scale(0.95)' },
-                    '&:hover': {
-                      bgcolor: 'white',
-                      color: 'secondary.main',
-                      border: '1px solid',
-                    },
-                  }}
-                >
-                  Leer Más
-                </Button>
-              </Grid>
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              {[
+                'Equipo Certificado',
+                'Tecnología de Punta',
+                'Resolución Sanitaria',
+                'Cobertura Nacional',
+              ].map((text) => (
+                <div key={text} className="flex items-start space-x-3">
+                  <CircleCheck className="text-secondary fill-white w-6 h-6 flex-shrink-0" />
+                  <span className="font-bold text-primary">
+                    {text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="mt-10 self-start group border-secondary text-secondary hover:bg-secondary hover:text-white"
+            >
+              <Link href="/nosotros" aria-label="Leer más sobre nuestra empresa">
+                Leer Más
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+          
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

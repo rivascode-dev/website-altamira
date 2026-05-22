@@ -1,125 +1,60 @@
 'use client';
 
-import { Box, Button, Container, Typography, Stack, alpha } from '@mui/material';
 import { Home, Search } from 'lucide-react';
 import Link from 'next/link';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 export default function NotFound() {
   return (
     <SectionWrapper
       id="not-found"
-      sx={{
-        minHeight: '80vh',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        bgcolor: 'primary.main',
-      }}
+      className="min-h-[80vh] flex items-center relative overflow-hidden bg-primary py-24"
     >
       {/* Fondo con imagen y overlay */}
-      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.2 }}>
+      <div className="absolute inset-0 opacity-20">
         <Image
           src="/assets/images/altamira-ductos-galeria-1.jpg"
           alt="Altamira 404"
           fill
-          style={{ objectFit: 'cover' }}
+          className="object-cover"
         />
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to bottom, transparent, #003E54)',
-          }}
-        />
-      </Box>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#003E54]" />
+      </div>
 
-      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, py: 10 }}>
-        <Stack spacing={4} sx={{ alignItems: 'center', textAlign: 'center' }}>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col items-center text-center space-y-8">
           {/* Círculo con Icono */}
-          <Box
-            sx={{
-              width: 120,
-              height: 120,
-              borderRadius: '50%',
-              bgcolor: alpha('#fff', 0.1),
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid',
-              borderColor: alpha('#fff', 0.2),
-              mb: 2,
-            }}
-          >
-            <Search size={60} color="#fff" strokeWidth={1.5} />
-          </Box>
+          <div className="w-[120px] h-[120px] rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/20 mb-4">
+            <Search size={60} className="text-white" strokeWidth={1.5} />
+          </div>
 
-          <Box sx={{ textAlign: 'center' }}>
-            <Typography
-              variant="h1"
-              sx={{
-                color: 'white',
-                fontWeight: 800,
-                fontSize: { xs: '5rem', md: '8rem' },
-                lineHeight: 1,
-                mb: 2,
-                opacity: 0.9,
-              }}
-            >
+          <div className="text-center">
+            <h1 className="text-white font-extrabold text-[5rem] md:text-[8rem] leading-none mb-4 opacity-90">
               404
-            </Typography>
-            <Typography
-              variant="h3"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                mb: 2,
-                fontSize: { xs: '1.5rem', md: '2.5rem' },
-              }}
-            >
+            </h1>
+            <h3 className="text-white font-semibold mb-4 text-2xl md:text-4xl">
               Parece que te has perdido
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: alpha('#fff', 0.8),
-                maxWidth: 500,
-                mx: 'auto',
-                fontSize: '1.1rem',
-              }}
-            >
+            </h3>
+            <p className="text-white/80 max-w-[500px] mx-auto text-lg leading-relaxed">
               La página que buscas no existe o ha sido movida. Te invitamos a volver al inicio para conocer más sobre nuestras soluciones en limpieza y mantención de ductos.
-            </Typography>
-          </Box>
+            </p>
+          </div>
 
           <Button
-            component={Link}
-            href="/"
-            variant="contained"
-            size="large"
-            startIcon={<Home size={20} />}
-            sx={{
-              bgcolor: 'white',
-              color: 'primary.main',
-              px: 4,
-              py: 1.5,
-              fontSize: '1.1rem',
-              fontWeight: 700,
-              '&:hover': {
-                bgcolor: alpha('#fff', 0.9),
-                transform: 'translateY(-2px)',
-                boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-              },
-              transition: 'all 0.3s ease',
-            }}
+            asChild
+            size="lg"
+            variant="default"
+            className="bg-white text-primary hover:bg-white/90 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_20px_rgba(0,0,0,0.2)] font-bold text-lg px-8 py-6"
           >
-            Volver al Inicio
+            <Link href="/">
+              <Home size={20} className="mr-2" />
+              Volver al Inicio
+            </Link>
           </Button>
-        </Stack>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

@@ -1,13 +1,5 @@
 'use client';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
+
 import {
   ClipboardCheck,
   Camera,
@@ -18,6 +10,7 @@ import {
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 const DATA_TECHNICAL_REPORT = [
   {
@@ -35,157 +28,73 @@ const DATA_TECHNICAL_REPORT = [
 ];
 
 export default function TechnicalReportSection() {
-  const theme = useTheme();
-
   return (
     <SectionWrapper
-      id='informe-tecnico'
-      sx={{
-        bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
-      }}
+      id="informe-tecnico"
+      className="bg-gray-50 dark:bg-card"
     >
-      <Container maxWidth='lg'>
-        <Box
-          sx={{
-            bgcolor: 'background.default',
-            borderRadius: 4,
-            overflow: 'hidden',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            display: 'flex',
-            flexDirection: { xs: 'column', lg: 'row' },
-          }}
-        >
-          <Box
-            sx={{
-              width: { xs: '100%', lg: '50%' },
-              p: { xs: 3, sm: 6, lg: 8 },
-            }}
-          >
-            <Box
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1,
-                bgcolor: 'rgba(211, 47, 47, 0.1)',
-                color: 'secondary.main',
-                px: 2,
-                py: 0.5,
-                borderRadius: 4,
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                mb: 4,
-              }}
-            >
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="bg-background rounded-3xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col lg:flex-row border border-border">
+          
+          <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16">
+            <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-sm font-bold uppercase mb-8">
               <ClipboardCheck size={20} />
               Garantía de Calidad
-            </Box>
-            <Typography variant='h3' component='h2' color='primary'>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
               Informe Técnico y Resolución Sanitaria.
-            </Typography>
-            <Typography
-              variant='h6'
-              color='text.secondary'
-              sx={{ fontWeight: 400, mt: 2 }}
-            >
+            </h2>
+            
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Al finalizar cada servicio, entregamos un dossier técnico completo
               que avala la limpieza y cumple con los requerimientos de los
               organismos fiscalizadores.
-            </Typography>
+            </p>
 
-            <Stack spacing={2} sx={{ mt: 4 }}>
+            <div className="space-y-4">
               {DATA_TECHNICAL_REPORT.map((item, index) => (
-                <Stack
+                <div
                   key={index}
-                  direction='row'
-                  spacing={2}
-                  sx={{
-                    alignItems: 'center',
-                    p: 2,
-                    borderRadius: 3,
-
-                    bgcolor:
-                      theme.palette.mode === 'dark'
-                        ? 'background.paper'
-                        : '#eceeef',
-                  }}
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gray-100 dark:bg-card border border-transparent dark:border-border"
                 >
-                  <Box sx={{ color: 'primary.main', display: 'flex' }}>
+                  <div className="text-primary flex-shrink-0">
                     {item.icon}
-                  </Box>
-                  <Typography
-                    variant='body1'
-                    color='primary.main'
-                    sx={{ fontWeight: 700 }}
-                  >
+                  </div>
+                  <span className="font-bold text-primary">
                     {item.text}
-                  </Typography>
-                </Stack>
+                  </span>
+                </div>
               ))}
-            </Stack>
+            </div>
 
             <Button
-              component={Link}
-              href='/informe'
-              variant='outlined'
-              size='large'
-              color='secondary'
-              endIcon={<ArrowRight />}
-              sx={{
-                mt: 4,
-                borderColor: 'secondary.main',
-                bgcolor: 'secondary.main',
-                color: 'white',
-                border: '1px solid',
-
-                '&:active': { transform: 'scale(0.95)' },
-                '&:hover': {
-                  bgcolor: 'white',
-                  color: 'secondary.main',
-                  border: '1px solid',
-                },
-              }}
+              asChild
+              variant="outline"
+              size="lg"
+              className="mt-10 border-secondary text-secondary hover:bg-secondary hover:text-white group transition-colors duration-300"
             >
-              Leer Más
+              <Link href="/informe">
+                Leer Más
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
-          </Box>
-          <Box
-            sx={{
-              width: { xs: '100%', lg: '50%' },
-              position: 'relative',
-              bgcolor: 'primary.main',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              p: { xs: 6, lg: 8 },
-            }}
-          >
-            <Image
-              src='/assets/images/altamira-dcutos-informe-tecnico.png'
-              alt='Technical maintenance report'
-              width={400}
-              height={560}
-              style={{
-                borderRadius: '12px',
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                transform: 'rotate(2deg)',
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-              }}
-            />
-            {/* <Box
-              sx={{
-                position: 'absolute',
-                inset: 0,
-                bgcolor: 'rgba(0, 51, 69, 0.2)',
-                backdropFilter: 'blur(4px)',
-                pointerEvents: 'none',
-              }}
-            /> */}
-          </Box>
-        </Box>
-      </Container>
+          </div>
+
+          <div className="w-full lg:w-1/2 bg-primary flex items-center justify-center p-12 lg:p-16 relative">
+            <div className="relative w-full max-w-[400px]">
+              <Image
+                src="/assets/images/altamira-dcutos-informe-tecnico.png"
+                alt="Technical maintenance report"
+                width={400}
+                height={560}
+                className="rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] rotate-2 w-full h-auto"
+              />
+            </div>
+          </div>
+          
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

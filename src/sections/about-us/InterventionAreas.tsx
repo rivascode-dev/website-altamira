@@ -1,6 +1,6 @@
 'use client';
-import { Box, Container, Grid, Typography, Stack, Paper } from '@mui/material';
-import { motion } from 'framer-motion';
+
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import {
   Pipette,
   Droplets,
@@ -65,97 +65,64 @@ const AREAS = [
 export default function InterventionAreas() {
   return (
     <SectionWrapper
-      id='intervention-areas'
-      sx={{ py: { xs: 8, md: 12 }, bgcolor: 'primary.main', color: 'white' }}
+      id="intervention-areas"
+      className="py-16 md:py-24 bg-primary text-white"
     >
-      <Container maxWidth='lg'>
-        <Box sx={{ mb: 8 }}>
-          <Typography variant='h3' sx={{ fontWeight: 800, mb: 2 }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="mb-12 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
             Intervención completa en sistemas de ductos sanitarios
-          </Typography>
-          <Typography
-            variant='h6'
-            sx={{ opacity: 0.8, maxWidth: 800, fontWeight: 400 }}
-          >
+          </h2>
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed font-normal">
             Intervenimos de forma completa los sistemas críticos del edificio:
             ductos verticales, horizontales, alcantarillado, aguas lluvias y
             ductos de basura, asegurando su correcto funcionamiento, higiene y
             continuidad operativa de acuerdo a las normas vigentes.
-          </Typography>
-        </Box>
+          </p>
+        </div>
 
-        <Grid container spacing={4}>
-          {AREAS.map((area, index) => (
-            <Grid size={{ xs: 12, md: 4 }} key={index}>
-              <motion.div
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <LazyMotion features={domAnimation}>
+            {AREAS.map((area, index) => (
+              <m.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col h-full"
               >
-                <Stack spacing={3}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 2,
-                      pb: 2,
-                      borderBottom: '1px solid rgba(255,255,255,0.1)',
-                    }}
-                  >
-                    <Box sx={{ color: 'secondary.light' }}>{area.icon}</Box>
-                    <Typography
-                      variant='h6'
-                      sx={{ fontWeight: 700, color: 'secondary.light' }}
-                    >
+                <div className="space-y-6 flex-grow">
+                  <div className="flex items-center gap-4 pb-4 border-b border-white/10">
+                    <div className="text-secondary">{area.icon}</div>
+                    <h3 className="text-xl font-bold text-secondary">
                       {area.category}
-                    </Typography>
-                  </Box>
+                    </h3>
+                  </div>
 
-                  {area.items.map((item, i) => (
-                    <Paper
-                      key={i}
-                      elevation={0}
-                      sx={{
-                        p: 3,
-                        bgcolor: 'rgba(255,255,255,0.05)',
-                        borderRadius: 3,
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        transition: 'all 0.3s ease',
-                        '&:hover': {
-                          bgcolor: 'rgba(255,255,255,0.1)',
-                          transform: 'scale(1.02)',
-                        },
-                      }}
-                    >
-                      <Stack spacing={1.5}>
-                        <Typography
-                          variant='subtitle1'
-                          sx={{
-                            fontWeight: 700,
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 1,
-                            color: 'white',
-                          }}
-                        >
-                          {item.title}
-                        </Typography>
-                        <Typography
-                          variant='body2'
-                          sx={{ opacity: 0.7, lineHeight: 1.6, color: 'white' }}
-                        >
-                          {item.desc}
-                        </Typography>
-                      </Stack>
-                    </Paper>
-                  ))}
-                </Stack>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                  <div className="space-y-4">
+                    {area.items.map((item, i) => (
+                      <div
+                        key={i}
+                        className="p-6 bg-white/5 rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
+                      >
+                        <div className="flex flex-col space-y-3">
+                          <h4 className="text-lg font-bold flex items-center gap-3 text-white">
+                            {item.title}
+                          </h4>
+                          <p className="text-white/70 leading-relaxed text-sm">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </m.div>
+            ))}
+          </LazyMotion>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

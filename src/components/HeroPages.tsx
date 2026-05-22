@@ -1,7 +1,6 @@
 'use client';
 
-import { Box, Container, Typography, Stack, Breadcrumbs } from '@mui/material';
-import { motion } from 'framer-motion';
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
@@ -32,91 +31,70 @@ export default function HeroPages({
 
   return (
     <SectionWrapper
-      id='hero-page'
-      sx={{
-        p: 0,
-        position: 'relative',
-        height: { xs: '50vh', md: 450 },
-        display: 'flex',
-        alignItems: 'center',
-        overflow: 'hidden',
-        bgcolor: 'primary.main',
-      }}
+      id="hero-page"
+      className="p-0 relative h-[50vh] md:h-[450px] flex items-center overflow-hidden bg-primary"
     >
-      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
+      <div className="absolute inset-0 opacity-30">
         <Image
           src={backgroundImage}
           alt={title}
           fill
           priority
-          sizes='100vw'
-          style={{
-            objectFit: 'cover',
-            objectPosition,
-          }}
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition }}
         />
-      </Box>
+      </div>
 
-      <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>
-        <Stack spacing={2}>
-          <Breadcrumbs
-            separator={<ChevronRight size={16} color='white' />}
-            sx={{ color: 'white', opacity: 0.8, mb: 2 }}
-          >
-            <Link href='/' style={{ color: 'inherit', textDecoration: 'none' }}>
-              Inicio
-            </Link>
-            {items.map((item, index) => (
-              <Box key={index}>
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    style={{ color: 'inherit', textDecoration: 'none' }}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <Typography color='secondary.light' sx={{ fontWeight: 600 }}>
-                    {item.label}
-                  </Typography>
-                )}
-              </Box>
-            ))}
-          </Breadcrumbs>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="space-y-4">
+          <nav className="flex text-white/80 text-sm md:text-base mb-4" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+              <li className="inline-flex items-center">
+                <Link href="/" className="hover:text-white transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              {items.map((item, index) => (
+                <li key={index}>
+                  <div className="flex items-center">
+                    <ChevronRight size={16} className="text-white mx-1" />
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span className="text-secondary font-semibold">
+                        {item.label}
+                      </span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </nav>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Typography
-              variant='h1'
-              sx={{
-                color: 'white',
-                fontSize: { xs: '2.5rem', md: '4.5rem' },
-                fontWeight: 600,
-                lineHeight: 1.1,
-              }}
+          <LazyMotion features={domAnimation}>
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              {title}
-            </Typography>
-            {subtitle && (
-              <Typography
-                variant='h4'
-                sx={{
-                  color: 'secondary.light',
-                  mt: 2,
-                  maxWidth: 800,
-                  fontWeight: 400,
-                  fontStyle: 'italic',
-                }}
-              >
-                {subtitle}
-              </Typography>
-            )}
-          </motion.div>
-        </Stack>
-      </Container>
+              <h1 className="text-white text-4xl md:text-7xl font-semibold leading-tight">
+                {title}
+              </h1>
+              {subtitle && (
+                <h2 className="text-secondary mt-4 max-w-3xl text-xl md:text-2xl font-normal italic">
+                  {subtitle}
+                </h2>
+              )}
+            </m.div>
+          </LazyMotion>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

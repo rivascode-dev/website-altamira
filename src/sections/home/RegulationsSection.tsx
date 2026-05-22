@@ -1,16 +1,9 @@
 'use client';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import { BadgeCheck, ShieldAlert, Landmark, ArrowRight } from 'lucide-react';
+
+import { BadgeCheck, ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 const DATA_REGULATIONS = [
   'Multas y sanciones legales',
@@ -19,156 +12,84 @@ const DATA_REGULATIONS = [
 ];
 
 export default function RegulationsSection() {
-  const theme = useTheme();
-
   return (
     <SectionWrapper
-      id='regulations'
-      sx={{
-        bgcolor:
-          theme.palette.mode === 'dark' ? 'background.default' : '#f8fafb',
-      }}
+      id="regulations"
+      className="bg-gray-50 dark:bg-background"
     >
-      <Container maxWidth='lg'>
-        <Grid container spacing={8} sx={{ alignItems: 'center' }}>
-          <Grid size={{ xs: 12, lg: 12 }}>
-            <Box
-              sx={{
-                bgcolor: 'white',
-                p: { xs: 4, sm: 6 },
-                borderRadius: 4,
-                boxShadow:
-                  '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                position: 'relative',
-                mt: { xs: 4, sm: 0 },
-              }}
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 gap-8 items-center">
+          <div className="bg-white dark:bg-card p-6 sm:p-10 md:p-12 rounded-3xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] relative mt-8 sm:mt-0 border border-border/50">
+            
+            <div className="absolute -top-4 left-4 sm:-top-6 sm:left-12 bg-secondary text-white px-4 py-1.5 sm:px-6 sm:py-2 rounded-xl text-xs sm:text-sm font-bold text-center shadow-[0_10px_15px_-3px_rgba(211,47,47,0.3)]">
+              CUMPLIMIENTO DE NORMATIVAS Y RESPONSABILIDAD
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-semibold text-primary mt-6">
+              Ley N° 21.442 de Copropiedad
+            </h2>
+            
+            <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
+              La Ley N° 21.442 sobre Copropiedad Inmobiliaria (Chile, 2022)
+              establece que las comunidades y administraciones tienen la
+              obligación de mantener en correcto estado las instalaciones y
+              bienes comunes del edificio, resguardando la seguridad,
+              salubridad y funcionamiento de la infraestructura.
+            </p>
+
+            <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
+              En este contexto, los sistemas de ductos sanitarios y ductos de
+              basura forman parte de estas instalaciones críticas, cuya
+              mantención periódica es fundamental para prevenir riesgos
+              sanitarios, estructurales y legales.
+            </p>
+
+            <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
+              No realizar mantenciones obligatorias puede generar:
+            </p>
+
+            <div className="space-y-4 mt-6 ml-2 sm:ml-4">
+              {DATA_REGULATIONS.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <BadgeCheck className="text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-bold text-primary">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-lg text-muted-foreground mt-8 font-bold">
+              Ignorar la normativa no es una opción. Es un riesgo operativo y
+              legal.
+            </p>
+
+            <p className="text-lg text-muted-foreground mt-4 font-bold">
+              Un ducto no mantenido puede transformarse en un foco sanitario
+              crítico, generando colapsos, filtraciones y daños que afectan
+              directamente a residentes y a la administración.
+            </p>
+
+            <p className="text-lg text-muted-foreground mt-4 italic">
+              Prevenir no es opcional. Es una obligación legal. “En caso de
+              accidente, la responsabilidad recae en la administración.”
+            </p>
+
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="mt-10 group border-secondary text-secondary hover:bg-secondary hover:text-white"
             >
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: { xs: -16, sm: -24 },
-                  left: { xs: 16, sm: 48 },
-                  right: { xs: 16, sm: 'auto' },
-                  bgcolor: 'secondary.main',
-                  color: 'white',
-                  px: 3,
-                  py: 1,
-                  borderRadius: 2,
-                  //fontWeight: 800,
-                  fontSize: { xs: '0.7rem', sm: '1rem' },
-                  textAlign: 'center',
-                  boxShadow: '0 10px 15px -3px rgba(211, 47, 47, 0.3)',
-                }}
-              >
-                CUMPLIMIENTO DE NORMATIVAS Y RESPONSABILIDAD
-              </Box>
-              <Typography
-                variant='h3'
-                component='h2'
-                color='primary'
-                sx={{ mt: 2 }}
-              >
-                Ley N° 21.442 de Copropiedad
-              </Typography>
-              <Typography variant='h6' color='text.secondary' sx={{ mt: 3 }}>
-                La Ley N° 21.442 sobre Copropiedad Inmobiliaria (Chile, 2022)
-                establece que las comunidades y administraciones tienen la
-                obligación de mantener en correcto estado las instalaciones y
-                bienes comunes del edificio, resguardando la seguridad,
-                salubridad y funcionamiento de la infraestructura.
-              </Typography>
-
-              <Typography variant='h6' color='text.secondary' sx={{ mt: 2 }}>
-                En este contexto, los sistemas de ductos sanitarios y ductos de
-                basura forman parte de estas instalaciones críticas, cuya
-                mantención periódica es fundamental para prevenir riesgos
-                sanitarios, estructurales y legales.
-              </Typography>
-
-              <Typography variant='h6' color='text.secondary' sx={{ mt: 2 }}>
-                No realizar mantenciones obligatorias puede generar:
-              </Typography>
-
-              <Stack spacing={3} sx={{ mt: 2, ml: 2 }}>
-                {DATA_REGULATIONS.map((item, index) => (
-                  <Stack
-                    key={index}
-                    direction='row'
-                    spacing={2}
-                    sx={{ alignItems: 'flex-start' }}
-                  >
-                    <Box>
-                      <BadgeCheck />
-                    </Box>
-                    <Box>
-                      <Typography
-                        variant='subtitle1'
-                        color='primary.main'
-                        sx={{ fontWeight: 700 }}
-                      >
-                        {item}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                ))}
-              </Stack>
-
-              <Typography
-                variant='subtitle1'
-                color='text.secondary'
-                sx={{ mt: 2, fontWeight: 700 }}
-              >
-                Ignorar la normativa no es una opción. Es un riesgo operativo y
-                legal.
-              </Typography>
-
-              <Typography
-                variant='subtitle1'
-                color='text.secondary'
-                sx={{ mt: 2, fontWeight: 700 }}
-              >
-                Un ducto no mantenido puede transformarse en un foco sanitario
-                crítico, generando colapsos, filtraciones y daños que afectan
-                directamente a residentes y a la administración.
-              </Typography>
-
-              <Typography
-                variant='h6'
-                color='text.secondary'
-                sx={{ mt: 2, fontStyle: 'italic' }}
-              >
-                Prevenir no es opcional. Es una obligación legal. “En caso de
-                accidente, la responsabilidad recae en la administración.”
-              </Typography>
-
-              <Button
-                component={Link}
-                href='/evita-multas'
-                variant='outlined'
-                size='large'
-                color='secondary'
-                endIcon={<ArrowRight />}
-                sx={{
-                  mt: 4,
-                  borderColor: 'secondary.main',
-                  bgcolor: 'secondary.main',
-                  color: 'white',
-                  border: '1px solid',
-
-                  '&:active': { transform: 'scale(0.95)' },
-                  '&:hover': {
-                    bgcolor: 'white',
-                    color: 'secondary.main',
-                    border: '1px solid',
-                  },
-                }}
-              >
+              <Link href="/evita-multas">
                 Leer más sobre obligaciones y consecuencias legales
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            
+          </div>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

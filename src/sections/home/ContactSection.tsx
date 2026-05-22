@@ -1,23 +1,14 @@
 'use client';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-  useTheme,
-  useMediaQuery,
-  CircularProgress,
-} from '@mui/material';
-import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
+
+import { Phone, Mail, MapPin, MessageCircle, Send, Loader2 } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { emailSchema, EmailFormValues } from '@/schemas/emailSchema';
 import { useState } from 'react';
 import { sendEmail } from '@/actions/sendEmail';
+import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/utils';
 
 const DATA_CONTACT = [
   {
@@ -57,10 +48,6 @@ export default function ContactSection() {
     type: 'success' | 'error';
     message: string;
   } | null>(null);
-
-  const theme = useTheme();
-
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const {
     register,
@@ -105,209 +92,142 @@ export default function ContactSection() {
     }
   };
 
+  const inputClasses = "flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50";
+
   return (
     <SectionWrapper
-      id='contact'
-      sx={{
-        py: 12,
-        bgcolor: theme.palette.mode === 'dark' ? 'background.paper' : '#f2f4f5',
-      }}
+      id="contact"
+      className="bg-gray-50 dark:bg-card"
     >
-      <Container maxWidth='lg'>
-        <Grid container spacing={8}>
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Typography variant='overline' color='secondary'>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
+          
+          <div className="md:col-span-5">
+            <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-4">
               CONTACTO
-            </Typography>
-            <Typography variant='h3' component='h2' color='primary.main'>
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4">
               Solicita tu evaluación técnica
-            </Typography>
-            <Typography
-              variant='body1'
-              color='text.secondary'
-              sx={{ mt: 2, lineHeight: 1.8 }}
-            >
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Diagnóstico claro + solución concreta
-            </Typography>
+            </p>
 
-            <Stack spacing={3} sx={{ mt: 4 }}>
+            <div className="space-y-6">
               {DATA_CONTACT.map((item, index) => (
-                <Stack
-                  key={index}
-                  direction='row'
-                  sx={{ alignItems: 'center' }}
-                  spacing={3}
-                >
-                  <Box
-                    sx={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: 3,
-                      bgcolor: 'secondary.main',
-                      color: 'white',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
+                <div key={index} className="flex items-center space-x-6">
+                  <div className="w-14 h-14 rounded-2xl bg-secondary text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                     {item.icon}
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant='subtitle2'
-                      color='text.secondary'
-                      sx={{ mb: 0.5 }}
-                    >
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-muted-foreground mb-1">
                       {item.title}
-                    </Typography>
-                    <Typography
-                      component={item.link !== '#' ? 'a' : 'p'}
-                      href={item.link !== '#' ? item.link : undefined}
-                      //variant='h6'
-                      color='primary'
-                      sx={{
-                        textDecoration: 'none',
-                        fontSize: isMobile ? '0.8rem' : '1rem',
-
-                        '&:hover':
-                          item.link !== '#' ? { color: 'secondary.main' } : {},
-                      }}
-                    >
-                      {item.detail}
-                    </Typography>
-                  </Box>
-                </Stack>
+                    </h3>
+                    {item.link !== '#' ? (
+                      <a
+                        href={item.link}
+                        className="text-base sm:text-lg font-medium text-primary hover:text-secondary transition-colors"
+                      >
+                        {item.detail}
+                      </a>
+                    ) : (
+                      <p className="text-base sm:text-lg font-medium text-primary">
+                        {item.detail}
+                      </p>
+                    )}
+                  </div>
+                </div>
               ))}
-            </Stack>
-          </Grid>
+            </div>
+          </div>
 
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Box
-              component='form'
-              onSubmit={handleSubmit(onSubmit)}
-              noValidate
-              sx={{
-                bgcolor: 'white',
-                p: { xs: 3, sm: 4, md: 6 },
-                borderRadius: 4,
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)',
-                border:
-                  theme.palette.mode === 'dark'
-                    ? '1px solid rgba(255,255,255,0.1)'
-                    : 'none',
-              }}
-            >
-              <Grid container spacing={3}>
-                <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField
-                    label='Nombre'
-                    {...register('name')}
-                    error={!!errors.name}
-                    helperText={errors.name?.message}
-                    disabled={isSubmitting}
-                    fullWidth
-                    variant='outlined'
-                  />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6 }}>
-                  <TextField
-                    label='Teléfono'
-                    {...register('phone')}
-                    error={!!errors.phone}
-                    helperText={errors.phone?.message}
-                    disabled={isSubmitting}
-                    fullWidth
-                    variant='outlined'
-                  />
-                </Grid>
-                <Grid size={{ xs: 12 }}>
-                  <TextField
-                    label='Correo Electrónico'
+          <div className="md:col-span-7">
+            <div className="bg-white dark:bg-background p-6 sm:p-8 md:p-10 rounded-3xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] border border-black/5 dark:border-white/5">
+              
+              {alertInfo && (
+                <div className={cn("p-4 mb-6 rounded-md text-sm font-medium", alertInfo.type === 'success' ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")}>
+                  {alertInfo.message}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre</label>
+                    <input
+                      {...register('name')}
+                      disabled={isSubmitting}
+                      className={inputClasses}
+                    />
+                    {errors.name && <p className="text-[0.8rem] font-medium text-destructive text-red-500">{errors.name.message}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Teléfono</label>
+                    <input
+                      {...register('phone')}
+                      disabled={isSubmitting}
+                      className={inputClasses}
+                    />
+                    {errors.phone && <p className="text-[0.8rem] font-medium text-destructive text-red-500">{errors.phone.message}</p>}
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Correo Electrónico</label>
+                  <input
+                    type="email"
                     {...register('email')}
-                    error={!!errors.email}
-                    helperText={errors.email?.message}
                     disabled={isSubmitting}
-                    fullWidth
-                    variant='outlined'
-                    type='email'
+                    className={inputClasses}
                   />
-                </Grid>
-                <Grid size={{ xs: 12 }}>
-                  <TextField
-                    label='Comuna'
-                    {...register('comuna')}
-                    error={!!errors.comuna}
-                    helperText={errors.comuna?.message}
-                    disabled={isSubmitting}
-                    fullWidth
-                    variant='outlined'
-                  />
-                </Grid>
-                <Grid size={{ xs: 12 }}>
-                  <TextField
-                    label='Mensaje o requerimiento técnico'
-                    {...register('message')}
-                    error={!!errors.message}
-                    helperText={errors.message?.message}
-                    disabled={isSubmitting}
-                    fullWidth
-                    variant='outlined'
-                    multiline
-                    rows={4}
-                  />
+                  {errors.email && <p className="text-[0.8rem] font-medium text-destructive text-red-500">{errors.email.message}</p>}
+                </div>
 
-                  {/* Honeypot field - hidden from humans */}
-                  <TextField
-                    {...register('fax')}
-                    autoComplete='off'
-                    style={{
-                      display: 'none',
-                      position: 'absolute',
-                      left: '-5000px',
-                    }}
-                    tabIndex={-1}
-                    aria-hidden='true'
-                  />
-                </Grid>
-                <Grid size={{ xs: 12 }}>
-                  <Button
-                    type='submit'
+                <div className="space-y-2">
+                  <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Comuna</label>
+                  <input
+                    {...register('comuna')}
                     disabled={isSubmitting}
-                    endIcon={
-                      isSubmitting ? (
-                        <CircularProgress size={18} color='inherit' />
-                      ) : (
-                        <Send size={18} />
-                      )
-                    }
-                    variant='outlined'
-                    size='large'
-                    color='secondary'
-                    fullWidth
-                    sx={{
-                      mt: 2,
-                      borderColor: 'secondary.main',
-                      bgcolor: 'secondary.main',
-                      color: 'white',
-                      border: '1px solid',
-                      '&:active': { transform: 'scale(0.95)' },
-                      '&:hover': {
-                        bgcolor: 'white',
-                        color: 'secondary.main',
-                        border: '1px solid',
-                      },
-                    }}
-                  >
-                    {isSubmitting
-                      ? 'Enviando...'
-                      : 'Solicitar evaluación técnica'}
-                  </Button>
-                </Grid>
-              </Grid>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+                    className={inputClasses}
+                  />
+                  {errors.comuna && <p className="text-[0.8rem] font-medium text-destructive text-red-500">{errors.comuna.message}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Mensaje o requerimiento técnico</label>
+                  <textarea
+                    {...register('message')}
+                    disabled={isSubmitting}
+                    className={cn(inputClasses, "min-h-[120px] resize-y py-3")}
+                  />
+                  {errors.message && <p className="text-[0.8rem] font-medium text-destructive text-red-500">{errors.message.message}</p>}
+                </div>
+
+                <input
+                  {...register('fax')}
+                  autoComplete="off"
+                  className="hidden absolute -left-[5000px]"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                />
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="outline"
+                  size="lg"
+                  className="w-full border-secondary text-secondary bg-secondary hover:bg-white hover:text-secondary group transition-all duration-300"
+                >
+                  <span className="text-white group-hover:text-secondary font-bold mr-2">
+                    {isSubmitting ? 'Enviando...' : 'Solicitar evaluación técnica'}
+                  </span>
+                  {isSubmitting ? <Loader2 className="animate-spin text-white group-hover:text-secondary w-5 h-5" /> : <Send className="text-white group-hover:text-secondary w-5 h-5" />}
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

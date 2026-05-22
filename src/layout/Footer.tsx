@@ -1,210 +1,87 @@
 'use client';
 
-import {
-  Box,
-  Container,
-  Stack,
-  Typography,
-  Grid,
-  Divider,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
 import { BadgeCheck, ShieldCheck, HardHat } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 export default function Footer() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
   return (
-    <Box
-      component='footer'
-      sx={{
-        bgcolor: theme.palette.mode === 'dark' ? '#0f172a' : 'white',
-        py: 6,
-      }}
-    >
-      <Container maxWidth='lg'>
-        <Grid container spacing={2}>
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Stack
-              direction='row'
-              spacing={1}
-              sx={{
-                justifyContent: { xs: 'center', md: 'flex-start' },
-                mb: { xs: 4, md: 0 },
-              }}
-            >
-              <Image
-                src='/assets/logos/logo-altamira-limpieza-ductos-vertical.png'
-                alt='Altamira Ductos Logo'
-                width={100}
-                height={100}
-                style={{ width: isMobile ? '120px' : '55%', height: 'auto' }}
-              />
-            </Stack>
-          </Grid>
+    <footer className="bg-background py-12 border-t border-border/50">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4">
+          
+          <div className="md:col-span-3 flex justify-center md:justify-start mb-4 md:mb-0">
+            <Image
+              src="/assets/logos/logo-altamira-limpieza-ductos-vertical.png"
+              alt="Altamira Ductos Logo"
+              width={100}
+              height={100}
+              className="w-[120px] md:w-[55%] h-auto"
+            />
+          </div>
 
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Typography
-              variant='caption'
-              color='primary.main'
-              sx={{
-                textTransform: 'uppercase',
-                letterSpacing: 1,
-                fontWeight: 700,
-                display: 'block',
-                mb: 2,
-                mt: { xs: 2, md: 0 },
-                textAlign: isMobile ? 'center' : 'left',
-              }}
-            >
+          <div className="md:col-span-5 text-center md:text-left">
+            <span className="block text-primary uppercase tracking-widest font-bold text-xs mb-4">
               Contacto
-            </Typography>
-            <Stack spacing={3}>
-              <Typography
-                component='a'
-                href='tel:+56995739887'
-                variant='body2'
-                color='primary'
-                sx={{
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                  textAlign: isMobile ? 'center' : 'left',
-                  '&:hover': { color: 'secondary.main' },
-                }}
+            </span>
+            <div className="flex flex-col space-y-3">
+              <a
+                href="tel:+56995739887"
+                className="text-primary hover:text-secondary transition-colors text-sm font-medium"
               >
                 +56 9 9573 9887
-              </Typography>
-              <Typography
-                component='a'
-                href='tel:+56982811148'
-                variant='body2'
-                color='primary'
-                sx={{
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                  textAlign: isMobile ? 'center' : 'left',
-                  '&:hover': { color: 'secondary.main' },
-                }}
+              </a>
+              <a
+                href="tel:+56982811148"
+                className="text-primary hover:text-secondary transition-colors text-sm font-medium"
               >
                 +56 9 8281 1148
-              </Typography>
-              <Typography
-                component='a'
-                href='mailto:altamiraductos@gmail.com'
-                variant='body2'
-                color='primary'
-                sx={{
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                  textAlign: isMobile ? 'center' : 'left',
-                  '&:hover': { color: 'secondary.main' },
-                  wordBreak: 'break-all',
-                }}
+              </a>
+              <a
+                href="mailto:altamiraductos@gmail.com"
+                className="text-primary hover:text-secondary transition-colors break-all text-sm font-medium"
               >
                 altamiraductos@gmail.com
-              </Typography>
-            </Stack>
-          </Grid>
+              </a>
+            </div>
+          </div>
 
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant='caption'
-              color='primary.main'
-              sx={{
-                textTransform: 'uppercase',
-                letterSpacing: 1,
-                fontWeight: 700,
-                display: 'block',
-                mb: 2,
-                mt: { xs: 2, md: 0 },
-                textAlign: isMobile ? 'center' : 'left',
-              }}
-            >
+          <div className="md:col-span-4 text-center md:text-left">
+            <span className="block text-primary uppercase tracking-widest font-bold text-xs mb-4">
               Certificaciones
-            </Typography>
-            <Stack
-              direction='row'
-              spacing={2}
-              sx={{ mb: 2, justifyContent: isMobile ? 'center' : 'left' }}
-            >
-              <Box
-                sx={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 1,
-                  bgcolor: 'background.paper',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: `1px solid ${theme.palette.divider}`,
-                }}
-              >
-                <BadgeCheck color={theme.palette.primary.main} />
-              </Box>
-              <Box
-                sx={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 1,
-                  bgcolor: 'background.paper',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: `1px solid ${theme.palette.divider}`,
-                }}
-              >
-                <ShieldCheck color={theme.palette.primary.main} />
-              </Box>
-              <Box
-                sx={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 1,
-                  bgcolor: 'background.paper',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: `1px solid ${theme.palette.divider}`,
-                }}
-              >
-                <HardHat color={theme.palette.primary.main} />
-              </Box>
-            </Stack>
-            <Typography
-              variant='body2'
-              color='text.secondary'
-              sx={{
-                fontStyle: 'italic',
-                textAlign: isMobile ? 'center' : 'left',
-              }}
-            >
+            </span>
+            <div className="flex justify-center md:justify-start space-x-4 mb-4">
+              <div className="w-12 h-12 rounded bg-card flex items-center justify-center border border-border shadow-sm">
+                <BadgeCheck className="text-primary" />
+              </div>
+              <div className="w-12 h-12 rounded bg-card flex items-center justify-center border border-border shadow-sm">
+                <ShieldCheck className="text-primary" />
+              </div>
+              <div className="w-12 h-12 rounded bg-card flex items-center justify-center border border-border shadow-sm">
+                <HardHat className="text-primary" />
+              </div>
+            </div>
+            <p className="text-muted-foreground text-sm italic">
               Altamira Ductos. Tu comunidad en manos expertas. Resolución
               Sanitaria: Certificada.
-            </Typography>
-          </Grid>
-        </Grid>
+            </p>
+          </div>
+        </div>
 
-        <Divider sx={{ mt: 6, mb: 4 }} />
-        <Typography
-          variant='caption'
-          color='text.secondary'
-          sx={{ display: 'block', textAlign: 'center' }}
-        >
-          © {new Date().getFullYear()} Altamira Ductos | Todos los derechos
-          reservados | Desarrollado por{' '}
+        <div className="h-px bg-border my-8" />
+        
+        <p className="text-center text-muted-foreground text-xs">
+          © {new Date().getFullYear()} Altamira Ductos | Todos los derechos reservados | Desarrollado por{' '}
           <Link
-            href='https://rivascode.dev/'
-            target='_blank'
-            rel='noopener noreferrer'
-            style={{ color: theme.palette.secondary.main }}
+            href="https://rivascode.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:underline"
           >
             rivascode.dev
           </Link>
-        </Typography>
-      </Container>
-    </Box>
+        </p>
+      </div>
+    </footer>
   );
 }

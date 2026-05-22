@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { Box } from '@mui/material';
 import HeroSection from '@/sections/home/HeroSection';
 import AboutUsSection from '@/sections/home/AboutUsSection';
 import ServicesSection from '@/sections/home/ServicesSection';
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Box>
+    <main>
       <HeroSection />
       <AboutUsSection />
       <BecauseWeSection />
@@ -41,6 +40,6 @@ export default function Home() {
       <GallerySection />
 
       <ContactSection />
-    </Box>
+    </main>
   );
 }

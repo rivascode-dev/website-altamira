@@ -1,41 +1,37 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { Box, BoxProps } from '@mui/material';
 import { m, LazyMotion, domAnimation } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
-interface SectionProps extends Omit<BoxProps, 'transition' | 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onAnimationStart'> {
+import { HTMLMotionProps } from 'framer-motion';
+
+interface SectionProps extends Omit<HTMLMotionProps<'section'>, 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onAnimationStart'> {
   children: ReactNode;
   id?: string;
   delay?: number;
 }
 
-const MotionBox = m.create(Box);
-
 export default function SectionWrapper({
   children,
   id,
   delay = 0,
-  sx,
+  className,
   ...props
 }: SectionProps) {
   return (
     <LazyMotion features={domAnimation}>
-      <MotionBox
+      <m.section
         id={id}
-        component='section'
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-        sx={{
-          py: { xs: 8, md: 12 },
-          ...sx,
-        }}
+        className={cn('py-16 md:py-24', className)}
         {...props}
       >
         {children}
-      </MotionBox>
+      </m.section>
     </LazyMotion>
   );
 }

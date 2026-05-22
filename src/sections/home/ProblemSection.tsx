@@ -1,5 +1,5 @@
 'use client';
-import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
+
 import {
   Ban,
   Biohazard,
@@ -11,6 +11,7 @@ import {
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
 
 const DATA_PROBLEMS = [
   {
@@ -34,166 +35,98 @@ const DATA_PROBLEMS = [
 export default function ProblemSection() {
   return (
     <SectionWrapper
-      id='el-problema'
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        bgcolor: 'primary.main',
-      }}
+      id="el-problema"
+      className="relative overflow-hidden bg-primary"
     >
-      <Box sx={{ position: 'absolute', inset: 0, opacity: 0.1 }}>
+      <div className="absolute inset-0 opacity-10">
         <Image
-          src='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
-          alt='Qué pasa si no se limpian los ductos'
+          src="/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg"
+          alt="Qué pasa si no se limpian los ductos"
           fill
-          sizes='100vw'
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'top',
-          }}
+          sizes="100vw"
+          className="object-cover object-top"
         />
-      </Box>
-      <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 10 }}>
-        <Grid container spacing={8} sx={{ alignItems: 'center' }}>
-          <Grid size={{ xs: 12, lg: 6 }}>
-            <Typography variant='overline' color='secondary'>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <div>
+            <span className="block text-secondary font-bold tracking-widest text-sm uppercase mb-2">
               Alerta Técnica
-            </Typography>
-            <Typography variant='h3' component='h2' sx={{ color: 'white' }}>
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
               ¿Qué pasa si no se limpian los ductos?
-            </Typography>
-            <Typography variant='h6' sx={{ color: 'grey.100', mt: 2 }}>
+            </h2>
+            <p className="text-lg text-gray-200 mt-4 leading-relaxed">
               Cuando el sistema colapsa, el problema deja de ser técnico… y se
               vuelve un caos para toda la comunidad
-            </Typography>
+            </p>
 
-            <Stack spacing={3} sx={{ mt: 2 }}>
+            <div className="space-y-6 mt-8">
               {DATA_PROBLEMS.map((item, index) => (
-                <Stack
+                <div
                   key={index}
-                  direction='row'
-                  spacing={2}
-                  sx={{
-                    alignItems: 'center',
-                    '&:hover .icon-box': { bgcolor: 'secondary.main' },
-                    '&:hover .icon-svg': { color: 'white' },
-                  }}
+                  className="flex items-center space-x-4 group cursor-default"
                 >
-                  <Box
-                    className='icon-box'
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: '50%',
-                      bgcolor: 'rgba(211, 47, 47, 0.1)',
-                      border: '1px solid rgba(211, 47, 47, 0.2)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      transition: 'all 0.3s',
-                    }}
-                  >
-                    {item.icon && (
-                      <Box
-                        className='icon-svg'
-                        sx={{
-                          color: 'secondary.main',
-                          transition: 'all 0.3s',
-                          display: 'flex',
-                        }}
-                      >
-                        {item.icon}
-                      </Box>
-                    )}
-                  </Box>
-                  <Typography variant='h6' sx={{ color: 'white' }}>
+                  <div className="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-secondary flex-shrink-0">
+                    <div className="text-secondary transition-colors duration-300 group-hover:text-white flex">
+                      {item.icon}
+                    </div>
+                  </div>
+                  <span className="text-lg text-white font-medium">
                     {item.text}
-                  </Typography>
-                </Stack>
+                  </span>
+                </div>
               ))}
-            </Stack>
-          </Grid>
+            </div>
+          </div>
 
-          <Grid size={{ xs: 12, lg: 6 }}>
-            <Box
-              sx={{
-                bgcolor: 'rgba(255,255,255,0.05)',
-                backdropFilter: 'blur(4px)',
-                p: 4,
-                borderRadius: 4,
-                border: '1px solid rgba(255,255,255,0.1)',
-              }}
-            >
-              <Box
-                sx={{
-                  aspectRatio: '16/9',
-                  borderRadius: 3,
-                  overflow: 'hidden',
-                  mb: 4,
-                }}
-              >
-                <Box
-                  component='video'
-                  src='/assets/videos/altamira-ductos-derrame-dpto.mp4'
+          <div>
+            <div className="bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-white/10 shadow-xl">
+              <div className="aspect-video rounded-2xl overflow-hidden mb-6 relative bg-black/20">
+                <video
+                  src="/assets/videos/altamira-ductos-derrame-dpto.mp4"
                   muted
                   loop
                   playsInline
                   autoPlay
-                  preload='none'
-                  poster='/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg'
-                  sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  preload="none"
+                  poster="/assets/images/altamira-ductos-alerta-tecnica-fondo.jpg"
+                  className="w-full h-full object-cover"
                 />
-              </Box>
-              <Stack direction='row' spacing={2} sx={{ alignItems: 'center' }}>
-                <Video
-                  style={{
-                    color: 'white',
-                    width: 36,
-                    height: 36,
-                  }}
-                />
-                <Box>
-                  <Typography
-                    variant='body1'
-                    color='white'
-                    sx={{ color: 'white', fontWeight: 700 }}
-                  >
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <Video className="text-white w-10 h-10 flex-shrink-0" />
+                <div>
+                  <span className="block text-white font-bold text-lg">
                     Inspección en Tiempo Real
-                  </Typography>
-                  <Typography
-                    variant='caption'
-                    sx={{
-                      color: 'white',
-                      textTransform: 'uppercase',
-                      letterSpacing: 2,
-                    }}
-                  >
+                  </span>
+                  <span className="block text-white/80 uppercase tracking-widest text-xs mt-1">
                     Tecnología de Diagnóstico
-                  </Typography>
-                </Box>
-              </Stack>
-            </Box>
-          </Grid>
-        </Grid>
-        <Box sx={{ textAlign: 'center' }}>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="text-center mt-12">
           <Button
-            component={Link}
-            href='/preguntas-frecuentes'
-            variant='outlined'
-            size='large'
-            endIcon={<ArrowRight />}
-            sx={{
-              mt: 4,
-              borderColor: 'white',
-              color: 'white',
-              '&:hover': { backgroundColor: 'white', color: 'primary.main' },
-              '&:active': { transform: 'scale(0.95)' },
-            }}
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-white text-white bg-transparent hover:bg-white hover:text-primary transition-colors duration-300 group"
           >
-            Preguntas Frecuentes
+            <Link href="/preguntas-frecuentes">
+              Preguntas Frecuentes
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
-        </Box>
-      </Container>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }

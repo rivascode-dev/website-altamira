@@ -1,4 +1,4 @@
-import MuiRootProvider from '@/providers/MuiRootProvider';
+import './globals.css';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
@@ -55,6 +55,10 @@ export const metadata: Metadata = {
   },
 };
 
+import { ConditionalHeader } from '@/layout/ConditionalHeader';
+import { ConditionalFooter } from '@/layout/ConditionalFooter';
+import WhatsAppFab from '@/components/WhatsAppFab';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body className="min-h-screen flex flex-col relative bg-background text-foreground">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5F4NBTGQ"
@@ -99,10 +103,21 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <MuiRootProvider>
+        
+        <div className="sticky top-0 z-[1100]">
+          <ConditionalHeader />
+        </div>
+        
+        <main className="flex-grow relative z-1">
           {children}
-          <SpeedInsights />
-        </MuiRootProvider>
+        </main>
+        
+        <div className="px-4 md:px-8 lg:px-12 py-8 relative z-1 border-t border-border">
+          <ConditionalFooter />
+        </div>
+        
+        <WhatsAppFab />
+        <SpeedInsights />
       </body>
     </html>
   );

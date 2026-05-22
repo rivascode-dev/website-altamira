@@ -1,21 +1,14 @@
 'use client';
-import {
-  Box,
-  Container,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Stack,
-} from '@mui/material';
-import { motion } from 'framer-motion';
+
+import { useState } from 'react';
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const faqCategories = [
   {
     title: '1. Mantenimiento y Periodicidad',
-
     questions: [
       {
         q: '¿Cada cuánto tiempo se deben limpiar los ductos en un edificio?',
@@ -77,98 +70,83 @@ const faqCategories = [
 ];
 
 export default function FAQContent() {
+  const [openIndexes, setOpenIndexes] = useState<{ [key: string]: boolean }>({});
+
+  const toggleAccordion = (catIndex: number, qIndex: number) => {
+    const key = `${catIndex}-${qIndex}`;
+    setOpenIndexes((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
-    <SectionWrapper id='faq-content'>
-      <Container maxWidth='md'>
-        <Stack spacing={8}>
+    <SectionWrapper id="faq-content" className="py-16 md:py-24 bg-white dark:bg-background">
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+        <div className="space-y-16">
           {faqCategories.map((category, catIndex) => (
-            <Box key={catIndex}>
-              <motion.div
+            <LazyMotion features={domAnimation} key={catIndex}>
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: catIndex * 0.1 }}
               >
-                <Stack
-                  direction='row'
-                  spacing={2}
-                  sx={{ alignItems: 'center', mb: 3 }}
-                >
-                  {/* <Box sx={{ color: 'primary.main' }}>{category.icon}</Box> */}
-                  <Typography
-                    variant='h3'
-                    color='primary.main'
-                    sx={{ fontWeight: 700 }}
-                  >
+                <div className="mb-8">
+                  <h3 className="text-3xl font-bold text-primary">
                     {category.title}
-                  </Typography>
-                </Stack>
+                  </h3>
+                </div>
 
-                <Box>
-                  {category.questions.map((item, qIndex) => (
-                    <Accordion
-                      key={qIndex}
-                      sx={{
-                        mb: 1,
-                        '&:before': { display: 'none' },
-                        boxShadow: 'none',
-                        borderBottom: '1px solid',
-                        borderColor: 'divider',
-                        bgcolor: 'transparent',
-                      }}
-                    >
-                      <AccordionSummary
-                        expandIcon={<ChevronDown color='#D32F2F' />}
-                        sx={{ px: 0 }}
+                <div className="space-y-2">
+                  {category.questions.map((item, qIndex) => {
+                    const key = `${catIndex}-${qIndex}`;
+                    const isOpen = !!openIndexes[key];
+
+                    return (
+                      <div
+                        key={qIndex}
+                        className="border-b border-border bg-transparent"
                       >
-                        <Typography
-                          variant='h5'
-                          sx={{ fontWeight: 600, color: 'text.primary' }}
+                        <button
+                          onClick={() => toggleAccordion(catIndex, qIndex)}
+                          className="w-full flex items-center justify-between py-5 text-left focus:outline-none"
                         >
-                          {item.q}
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails sx={{ px: 0, pb: 4 }}>
-                        <Typography
-                          variant='body1'
-                          sx={{
-                            color: 'text.secondary',
-                            lineHeight: 1.8,
-                            whiteSpace: 'pre-line',
-                          }}
+                          <span className="text-xl font-semibold text-primary pr-8">
+                            {item.q}
+                          </span>
+                          <ChevronDown
+                            className={cn(
+                              "text-secondary w-6 h-6 flex-shrink-0 transition-transform duration-300",
+                              isOpen && "rotate-180"
+                            )}
+                          />
+                        </button>
+                        
+                        <div
+                          className={cn(
+                            "overflow-hidden transition-all duration-300",
+                            isOpen ? "max-h-[1000px] opacity-100 pb-6" : "max-h-0 opacity-0"
+                          )}
                         >
-                          {item.a}
-                        </Typography>
-                      </AccordionDetails>
-                    </Accordion>
-                  ))}
-                </Box>
-              </motion.div>
-            </Box>
+                          <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+                            {item.a}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </m.div>
+            </LazyMotion>
           ))}
-          <Box
-            sx={{
-              mt: 4,
-              p: 4,
-              borderRadius: 4,
-              bgcolor: 'grey.50',
-              textAlign: 'center',
-              border: '1px solid',
-              borderColor: 'divider',
-            }}
-          >
-            <Typography
-              variant='body2'
-              color='text.secondary'
-              sx={{ fontStyle: 'italic' }}
-            >
+
+          <div className="mt-12 p-8 rounded-3xl bg-gray-50 dark:bg-card border border-border text-center">
+            <p className="text-muted-foreground text-lg italic">
               Para consultas técnicas o solicitudes de presupuesto, por favor
               contáctenos a través de nuestro portal de soporte o directamente a
               nuestro canal de ventas.
-            </Typography>
-          </Box>
-        </Stack>
-      </Container>
+            </p>
+          </div>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }
