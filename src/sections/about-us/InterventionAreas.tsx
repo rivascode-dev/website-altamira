@@ -1,6 +1,3 @@
-'use client';
-
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import {
   Pipette,
   Droplets,
@@ -82,45 +79,39 @@ export default function InterventionAreas() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <LazyMotion features={domAnimation}>
-            {AREAS.map((area, index) => (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col h-full"
-              >
-                <div className="space-y-6 flex-grow">
-                  <div className="flex items-center gap-4 pb-4 border-b border-white/10">
-                    <div className="text-secondary">{area.icon}</div>
-                    <h3 className="text-xl font-bold text-secondary">
-                      {area.category}
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {area.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className="p-6 bg-white/5 rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
-                      >
-                        <div className="flex flex-col space-y-3">
-                          <h4 className="text-lg font-bold flex items-center gap-3 text-white">
-                            {item.title}
-                          </h4>
-                          <p className="text-white/70 leading-relaxed text-sm">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+          {AREAS.map((area, index) => (
+            <div
+              key={index}
+              className="flex flex-col h-full"
+            >
+              <div className="space-y-6 flex-grow">
+                <div className="flex items-center gap-4 pb-4 border-b border-white/10">
+                  <div className="text-secondary">{area.icon}</div>
+                  <h3 className="text-xl font-bold text-secondary">
+                    {area.category}
+                  </h3>
                 </div>
-              </m.div>
-            ))}
-          </LazyMotion>
+
+                <div className="space-y-4">
+                  {area.items.map((item, i) => (
+                    <div
+                      key={i}
+                      className="p-6 bg-white/5 rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
+                    >
+                      <div className="flex flex-col space-y-3">
+                        <h4 className="text-lg font-bold flex items-center gap-3 text-white">
+                          {item.title}
+                        </h4>
+                        <p className="text-white/70 leading-relaxed text-sm">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </SectionWrapper>

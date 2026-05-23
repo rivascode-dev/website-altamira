@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
+import Image from 'next/image';
 import { Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -185,17 +185,12 @@ export default function GalleryContent() {
           </div>
         </div>
 
-        <LazyMotion features={domAnimation}>
+        <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredItems.map((item) => (
-              <m.div
+              <div
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                layout
-                className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md group"
+                className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md group transition-all duration-300"
               >
                 {item.isVideo ? (
                   <video
@@ -207,10 +202,12 @@ export default function GalleryContent() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 )}
 
@@ -225,10 +222,10 @@ export default function GalleryContent() {
                     {item.title}
                   </h4>
                 </div>
-              </m.div>
+              </div>
             ))}
           </div>
-        </LazyMotion>
+        </div>
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">

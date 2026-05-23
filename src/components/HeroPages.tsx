@@ -1,6 +1,5 @@
 'use client';
 
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
@@ -77,22 +76,16 @@ export default function HeroPages({
             </ol>
           </nav>
 
-          <LazyMotion features={domAnimation}>
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-white text-4xl md:text-7xl font-semibold leading-tight">
-                {title}
-              </h1>
-              {subtitle && (
-                <h2 className="text-secondary mt-4 max-w-3xl text-xl md:text-2xl font-normal italic">
-                  {subtitle}
-                </h2>
-              )}
-            </m.div>
-          </LazyMotion>
+          <div className="animate-fade-in-up">
+            <h1 className="text-white text-4xl md:text-7xl font-semibold leading-tight">
+              {title}
+            </h1>
+            {subtitle && (
+              <h2 className="text-secondary mt-4 max-w-3xl text-xl md:text-2xl font-normal italic">
+                {subtitle}
+              </h2>
+            )}
+          </div>
         </div>
       </div>
     </SectionWrapper>

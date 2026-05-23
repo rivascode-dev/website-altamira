@@ -1,9 +1,9 @@
 /**
  * Utilidad para disparar eventos al dataLayer de Google Tag Manager.
  */
-export const trackEvent = (eventName: string, params: Record<string, any> = {}) => {
-  if (typeof window !== 'undefined' && (window as any).dataLayer) {
-    (window as any).dataLayer.push({
+export const trackEvent = (eventName: string, params: Record<string, unknown> = {}) => {
+  if (typeof window !== 'undefined' && 'dataLayer' in window) {
+    (window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
       event: eventName,
       ...params,
     });

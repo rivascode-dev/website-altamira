@@ -32,13 +32,14 @@ const DATA_PROBLEMS = [
   },
 ];
 
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 // ... inside component ...
 export default function ProblemSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const isInView = useInView(videoRef, { once: true, margin: "200px" });
+  const [videoRef, isInView] = useIntersectionObserver<HTMLVideoElement>({
+    freezeOnceVisible: true,
+    rootMargin: '200px',
+  });
 
   return (
     <SectionWrapper

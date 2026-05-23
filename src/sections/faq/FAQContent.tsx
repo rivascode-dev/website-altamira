@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -82,13 +81,8 @@ export default function FAQContent() {
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="space-y-16">
           {faqCategories.map((category, catIndex) => (
-            <LazyMotion features={domAnimation} key={catIndex}>
-              <m.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: catIndex * 0.1 }}
-              >
+            <div key={catIndex}>
+              <div>
                 <div className="mb-8">
                   <h3 className="text-3xl font-bold text-primary">
                     {category.title}
@@ -134,8 +128,8 @@ export default function FAQContent() {
                     );
                   })}
                 </div>
-              </m.div>
-            </LazyMotion>
+              </div>
+            </div>
           ))}
 
           <div className="mt-12 p-8 rounded-3xl bg-gray-50 dark:bg-card border border-border text-center">

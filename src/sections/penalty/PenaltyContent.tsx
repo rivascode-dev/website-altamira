@@ -1,6 +1,3 @@
-'use client';
-
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import {
   Gavel,
@@ -16,83 +13,68 @@ export default function PenaltyContent() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <div className="space-y-24">
           {/* Marco Normativo */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-7">
-              <LazyMotion features={domAnimation}>
-                <m.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className="space-y-6"
-                >
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
-                    Marco Normativo y Responsabilidad Legal
-                  </h2>
-                  <p className="text-xl text-muted-foreground leading-relaxed">
-                    El mantenimiento de las instalaciones sanitarias no es solo
-                    una cuestión de operatividad y limpieza; es una{' '}
-                    <strong className="text-primary font-bold">obligación legal</strong> que recae sobre las
-                    administraciones y comunidades de copropietarios.
-                  </p>
-                  
-                  <hr className="border-border my-6" />
-                  
-                  <div className="flex gap-6 items-start">
-                    <Gavel
-                      className="text-secondary w-8 h-8 flex-shrink-0 mt-1"
-                    />
-                    <div>
-                      <h3 className="text-2xl font-bold text-primary mb-3">
-                        Ley N° 21.442 sobre Copropiedad Inmobiliaria
-                      </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Según la <strong className="text-primary font-bold">Ley N° 21.442</strong>, las comunidades
-                        y administradores están obligados a mantener en correcto
-                        estado las instalaciones del edificio mediante
-                        mantenciones periódicas que garanticen la seguridad y
-                        salud de los residentes.
-                      </p>
-                    </div>
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
+                  Marco Normativo y Responsabilidad Legal
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  El mantenimiento de las instalaciones sanitarias no es solo
+                  una cuestión de operatividad y limpieza; es una{' '}
+                  <strong className="text-primary font-bold">obligación legal</strong> que recae sobre las
+                  administraciones y comunidades de copropietarios.
+                </p>
+                
+                <hr className="border-border my-6" />
+                
+                <div className="flex gap-6 items-start">
+                  <Gavel
+                    className="text-secondary w-8 h-8 flex-shrink-0 mt-1"
+                  />
+                  <div>
+                    <h3 className="text-2xl font-bold text-primary mb-3">
+                      Ley N° 21.442 sobre Copropiedad Inmobiliaria
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Según la <strong className="text-primary font-bold">Ley N° 21.442</strong>, las comunidades
+                      y administradores están obligados a mantener en correcto
+                      estado las instalaciones del edificio mediante
+                      mantenciones periódicas que garanticen la seguridad y
+                      salud de los residentes.
+                    </p>
                   </div>
-                </m.div>
-              </LazyMotion>
+                </div>
+              </div>
             </div>
 
             <div className="md:col-span-5">
-              <LazyMotion features={domAnimation}>
-                <m.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <div className="bg-primary/5 p-8 rounded-3xl border border-border h-full">
-                    <h4 className="text-xl font-bold text-primary mb-6">
-                      El cumplimiento de esta normativa asegura:
-                    </h4>
-                    <div className="space-y-4">
-                      {[
-                        'La integridad física de los habitantes.',
-                        'El correcto funcionamiento de las áreas comunes.',
-                        'El respaldo legal ante eventuales fiscalizaciones o siniestros.',
-                      ].map((item, i) => (
-                        <div
-                          key={i}
-                          className="flex gap-4 items-center"
-                        >
-                          <ShieldCheck
-                            className="w-6 h-6 text-primary flex-shrink-0"
-                          />
-                          <p className="font-medium text-lg text-primary">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+              <div>
+                <div className="bg-primary/5 p-8 rounded-3xl border border-border h-full">
+                  <h4 className="text-xl font-bold text-primary mb-6">
+                    El cumplimiento de esta normativa asegura:
+                  </h4>
+                  <div className="space-y-4">
+                    {[
+                      'La integridad física de los habitantes.',
+                      'El correcto funcionamiento de las áreas comunes.',
+                      'El respaldo legal ante eventuales fiscalizaciones o siniestros.',
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-4 items-center"
+                      >
+                        <ShieldCheck
+                          className="w-6 h-6 text-primary flex-shrink-0"
+                        />
+                        <p className="font-medium text-lg text-primary">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                </m.div>
-              </LazyMotion>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -119,27 +101,19 @@ export default function PenaltyContent() {
                   icon: <Gavel className="w-10 h-10" />,
                 },
               ].map((item, i) => (
-                <LazyMotion features={domAnimation} key={i}>
-                  <m.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="h-full"
-                  >
-                    <div className="bg-white dark:bg-card p-8 rounded-3xl border border-border transition-all duration-300 hover:border-secondary hover:shadow-[0_10px_30px_rgba(211,47,47,0.1)] hover:-translate-y-2 flex flex-col h-full min-h-[320px]">
-                      <div className="text-secondary mb-6">
-                        {item.icon}
-                      </div>
-                      <h3 className="text-2xl font-extrabold text-primary mb-4">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
-                        {item.desc}
-                      </p>
+                <div key={i} className="h-full">
+                  <div className="bg-white dark:bg-card p-8 rounded-3xl border border-border transition-all duration-300 hover:border-secondary hover:shadow-[0_10px_30px_rgba(211,47,47,0.1)] hover:-translate-y-2 flex flex-col h-full min-h-[320px]">
+                    <div className="text-secondary mb-6">
+                      {item.icon}
                     </div>
-                  </m.div>
-                </LazyMotion>
+                    <h3 className="text-2xl font-extrabold text-primary mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

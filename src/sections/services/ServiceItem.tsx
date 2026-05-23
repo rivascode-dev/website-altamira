@@ -1,6 +1,3 @@
-'use client';
-
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import SectionWrapper from '@/components/SectionWrapper';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -40,52 +37,37 @@ export default function ServiceItem({
           )}
         >
           <div className={cn(reverse && "md:order-2")}>
-            <LazyMotion features={domAnimation}>
-              <m.div
-                initial={{ opacity: 0, x: reverse ? 30 : -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight">
-                  {title}
-                </h2>
-                
-                <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-                  {content}
-                </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight">
+                {title}
+              </h2>
+              
+              <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                {content}
+              </div>
 
-                {quote && (
-                  <div className="mt-8 bg-secondary/5 border-l-4 border-secondary p-4 rounded-r-lg">
-                    <p className="text-xl text-primary font-semibold italic">
-                      {quote}
-                    </p>
-                  </div>
-                )}
-              </m.div>
-            </LazyMotion>
+              {quote && (
+                <div className="mt-8 bg-secondary/5 border-l-4 border-secondary p-4 rounded-r-lg">
+                  <p className="text-xl text-primary font-semibold italic">
+                    {quote}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className={cn(reverse && "md:order-1")}>
-            <LazyMotion features={domAnimation}>
-              <m.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)]">
-                  <Image
-                    src={image}
-                    alt={imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              </m.div>
-            </LazyMotion>
+            <div>
+              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.1)]">
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

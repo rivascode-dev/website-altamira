@@ -5,7 +5,7 @@ import { emailSchema } from '@/schemas/emailSchema';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function sendEmail(prevState: any, formData: FormData) {
+export async function sendEmail(prevState: unknown, formData: FormData) {
   try {
     const rawData = Object.fromEntries(formData.entries());
 
@@ -43,7 +43,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
       };
     }
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Altamira Ductos <onboarding@resend.dev>',
       to: ['marjorie.limpiezadeductos@gmail.com'],
       subject: `Mensaje de Contacto - ${name}`,

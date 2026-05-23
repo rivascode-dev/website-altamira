@@ -1,6 +1,3 @@
-'use client';
-
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import { ShieldCheck, Zap, Users, FileBarChart } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 
@@ -51,39 +48,33 @@ export default function ValueProposition() {
             Nuestra Propuesta de Valor
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-normal">
-            Operamos bajo el concepto de "Prevención hoy, tranquilidad mañana".
+            Operamos bajo el concepto de &quot;Prevención hoy, tranquilidad mañana&quot;.
             Entendemos que el mantenimiento no es un gasto, sino una inversión
             obligatoria para evitar colapsos sanitarios y multas legales.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <LazyMotion features={domAnimation}>
-            {VALUE_PROPS.map((prop, index) => (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col"
+          {VALUE_PROPS.map((prop, index) => (
+            <div
+              key={index}
+              className="flex flex-col"
+            >
+              <div
+                className={`bg-white dark:bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col justify-center items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] flex-grow min-h-[300px] ${prop.borderClass}`}
               >
-                <div
-                  className={`bg-white dark:bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col justify-center items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] flex-grow min-h-[300px] ${prop.borderClass}`}
-                >
-                  <div className={`p-4 rounded-2xl mb-6 ${prop.colorClass} ${prop.bgClass}`}>
-                    {prop.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-4 w-[80%] mx-auto leading-snug">
-                    {prop.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {prop.desc}
-                  </p>
+                <div className={`p-4 rounded-2xl mb-6 ${prop.colorClass} ${prop.bgClass}`}>
+                  {prop.icon}
                 </div>
-              </m.div>
-            ))}
-          </LazyMotion>
+                <h3 className="text-xl font-bold text-primary mb-4 w-[80%] mx-auto leading-snug">
+                  {prop.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {prop.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </SectionWrapper>

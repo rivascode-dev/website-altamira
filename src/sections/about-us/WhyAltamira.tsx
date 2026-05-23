@@ -1,6 +1,3 @@
-'use client';
-
-import { m, LazyMotion, domAnimation } from 'framer-motion';
 import { Trophy, HeartHandshake, ShieldAlert } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
 import { cn } from '@/lib/utils';
@@ -63,15 +60,9 @@ export default function WhyAltamira() {
         </div>
 
         <div className="space-y-8 md:space-y-12">
-          <LazyMotion features={domAnimation}>
+          <div className="space-y-8 md:space-y-12">
             {PILARES.map((pilar, index) => (
-              <m.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
+              <div key={index}>
                 <div
                   className={cn(
                     "flex flex-col items-center gap-8 md:gap-12 p-6 md:p-10 rounded-[3rem]",
@@ -107,9 +98,9 @@ export default function WhyAltamira() {
                     </ul>
                   </div>
                 </div>
-              </m.div>
+              </div>
             ))}
-          </LazyMotion>
+          </div>
         </div>
       </div>
     </SectionWrapper>
