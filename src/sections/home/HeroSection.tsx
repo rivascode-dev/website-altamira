@@ -1,9 +1,7 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+import PulsingDot from '@/components/PulsingDot';
 
 export default function HeroSection() {
   return (
@@ -26,11 +24,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="max-w-[850px]">
           <div className="inline-flex items-center px-4 py-1.5 bg-secondary text-white text-xs font-semibold tracking-wider uppercase rounded-full mb-6">
-            <motion.div
-              animate={{ opacity: [1, 0.3, 1], scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-2 h-2 bg-white rounded-full mr-2.5 shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-            />
+            <PulsingDot />
             <span className="tracking-[0.1em] md:tracking-[0.2em] uppercase">
               Empresa dedicada exclusivamente a edificios y condominios
             </span>
