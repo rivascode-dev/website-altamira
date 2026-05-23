@@ -1,4 +1,4 @@
-'use client';
+
 
 import SectionWrapper from '@/components/SectionWrapper';
 import { cn } from '@/lib/utils';

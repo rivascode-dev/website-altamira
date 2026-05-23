@@ -1,4 +1,4 @@
-'use client';
+
 
 import SectionWrapper from '@/components/SectionWrapper';
 import { ArrowRight } from 'lucide-react';

@@ -1,4 +1,4 @@
-'use client';
+
 
 import ServiceItem from '@/sections/services/ServiceItem';
 import EmergenciesSection from '@/sections/services/EmergenciesSection';

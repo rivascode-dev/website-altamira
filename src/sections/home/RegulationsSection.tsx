@@ -1,4 +1,4 @@
-'use client';
+
 
 import { BadgeCheck, ArrowRight } from 'lucide-react';
 import SectionWrapper from '@/components/SectionWrapper';
