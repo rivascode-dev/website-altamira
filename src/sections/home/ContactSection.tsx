@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { sendEmail } from '@/actions/sendEmail';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import { trackEvent, TRACKING_EVENTS } from '@/utils/gtm';
 
 const DATA_CONTACT = [
   {
@@ -79,6 +80,10 @@ export default function ContactSection() {
 
       if (result.success) {
         setAlertInfo({ type: 'success', message: result.message });
+        trackEvent(TRACKING_EVENTS.FORM_SUBMIT, {
+          event_category: 'lead',
+          event_label: 'formulario_contacto',
+        });
         reset();
       } else {
         setAlertInfo({ type: 'error', message: result.message });

@@ -12,6 +12,6 @@ export const trackEvent = (eventName: string, params: Record<string, unknown> = 
 
 export const TRACKING_EVENTS = {
   WHATSAPP_CLICK: 'whatsapp_click',
-  FORM_SUBMIT: 'form_submit',
+  FORM_SUBMIT: 'generate_lead',
   PHONE_CLICK: 'phone_click',
 };
