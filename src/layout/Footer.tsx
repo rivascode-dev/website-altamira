@@ -3,8 +3,15 @@
 import { BadgeCheck, ShieldCheck, HardHat } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { trackEvent, TRACKING_EVENTS } from '@/utils/gtm';
 
 export default function Footer() {
+  const handlePhoneClick = (number: string) => {
+    trackEvent(TRACKING_EVENTS.PHONE_CLICK, {
+      event_category: 'engagement',
+      event_label: number,
+    });
+  };
   return (
     <footer className="bg-background py-12 border-t border-border/50">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
@@ -27,12 +34,14 @@ export default function Footer() {
             <div className="flex flex-col space-y-3">
               <a
                 href="tel:+56995739887"
+                onClick={() => handlePhoneClick('+56995739887')}
                 className="text-primary hover:text-secondary transition-colors text-sm font-medium"
               >
                 +56 9 9573 9887
               </a>
               <a
                 href="tel:+56982811148"
+                onClick={() => handlePhoneClick('+56982811148')}
                 className="text-primary hover:text-secondary transition-colors text-sm font-medium"
               >
                 +56 9 8281 1148

@@ -1,4 +1,4 @@
-
+'use client';
 
 import {
   ArrowRight,
@@ -8,8 +8,15 @@ import {
 import SectionWrapper from '@/components/SectionWrapper';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
+import { trackEvent, TRACKING_EVENTS } from '@/utils/gtm';
 
 export default function EmergencyBannerSection() {
+  const handleWhatsAppClick = () => {
+    trackEvent(TRACKING_EVENTS.WHATSAPP_CLICK, {
+      event_category: 'engagement',
+      event_label: 'emergency_banner',
+    });
+  };
   return (
     <SectionWrapper id="emergencias" className="py-12 md:py-16 bg-secondary">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
@@ -35,6 +42,7 @@ export default function EmergencyBannerSection() {
               href="https://wa.me/56982811148"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-12 px-6 rounded-xl transition-all duration-300 active:scale-95 shadow-sm"
             >
               WhatsApp Urgencias
